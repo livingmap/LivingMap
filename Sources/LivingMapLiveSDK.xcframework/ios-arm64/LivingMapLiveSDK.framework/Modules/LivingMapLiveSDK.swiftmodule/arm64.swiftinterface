@@ -1,0 +1,43 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LivingMapLiveSDK
+import Alamofire
+import Foundation
+@_exported import LivingMapLiveSDK
+import LivingMapSDK
+import Swift
+import _Concurrency
+public struct LivingMapLiveRegistrationConfiguration : Swift.Codable {
+  public init(destinationFeatureId: Swift.String?, originFeatureId: Swift.String?, name: Swift.String, code: Swift.String?)
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class LivingMapLiveSDKActor : LivingMapSDK.LivingMapLocationListener {
+  public func startLiveReporting() throws
+  public func stopLiveReporting() throws
+  public func setLiveReportingTimeout(durationUntilStopMillis: Swift.Double) throws
+  public func locationReceived(location: LivingMapSDK.LivingMapLocation)
+  @objc deinit
+}
+public class LivingMapLiveConfig {
+  public init(clientId: Swift.String, clientSecret: Swift.String, liveReportingServiceUrl: Swift.String, securityServiceUrl: Swift.String, uuid: Swift.String, updateCadenceMillis: Swift.Double, registrationConfiguration: LivingMapLiveSDK.LivingMapLiveRegistrationConfiguration)
+  @objc deinit
+}
+public class LivingMapLiveSDKManager {
+  public init(sdkManager: LivingMapSDK.LivingMapSDKManager)
+  public func register(config: LivingMapLiveSDK.LivingMapLiveConfig, handler: @escaping (LivingMapLiveSDK.LivingMapLiveSDKActor?) -> Swift.Void)
+  public func deregister(actor: LivingMapLiveSDK.LivingMapLiveSDKActor) -> Swift.Bool
+  public static func getVersion() -> Swift.String
+  @objc deinit
+}
+public enum LivingMapLiveServiceException : Swift.Error {
+  case timeOutException
+  case serviceAlreadyRunningException
+  public static func == (a: LivingMapLiveSDK.LivingMapLiveServiceException, b: LivingMapLiveSDK.LivingMapLiveServiceException) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapLiveSDK.LivingMapLiveServiceException : Swift.Equatable {}
+extension LivingMapLiveSDK.LivingMapLiveServiceException : Swift.Hashable {}

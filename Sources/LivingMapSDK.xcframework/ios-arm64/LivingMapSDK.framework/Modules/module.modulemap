@@ -1,0 +1,11 @@
+framework module LivingMapSDK {
+  umbrella header "LivingMapSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module LivingMapSDK.Swift {
+    header "LivingMapSDK-Swift.h"
+    requires objc
+}
