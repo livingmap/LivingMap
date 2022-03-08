@@ -55,30 +55,18 @@ LivingMapSDK is a Swift binaries that provides mapping, routing, positioning and
 ## Requirements
 
 | Platform  | Minimum Swift Version | Installation                                                                                                         | Status       |
-| --------- | --------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------ |
-| iOS 10.0+ | 5.3                   | [CocoaPods](#cocoapods), [Carthage](#carthage), [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
-
-## Versions
-
-Latest and stable : 10.3.7  
-Stable: 10.3.6
+|-----------| --------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------ |
+| iOS 13.0+ | 5.3                   | [CocoaPods](#cocoapods), [Carthage](#carthage), [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
 
 ## Installation
-
-#### SDKs Dependencies
-
-- Alamofire v5.4.3
-- SwiftProtobuf
 
 ### CocoaPods
 
 ---
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate LivingMapSDKs into your Xcode project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions.
 
-## Using the Custom Specs Repo
-
-In order to use the framework artefacts linked by this repo a slight modification to XCode project podfile is necessary.
+In order to use the framework artefacts linked by this repo a slight modification to your podfile is necessary.
 
 You must explicitly state that this repo is a source for the Cocopods integration system. Add this line of code under the platform declaration but above the project declaration in the podfile.
 
@@ -97,20 +85,21 @@ Point to the latest version:-
 Point to the specific version (recommended):-
 
 ```ruby
-    pod 'LivingMapSDK', '10.3.7'
-    pod 'LivingMapLiveSDK', '10.3.7'
-    pod 'AirlineAccelerator', '10.3.7'
+    pod 'LivingMapSDK', '11.0.0'
+    pod 'LivingMapLiveSDK', '11.0.0'
+    pod 'AirlineAccelerator', '11.0.0'
 ```
 
-### Add SDK Pod Dependencies
-
-for version 10.3.7 :
-
-add the following dependecies in your project `podfile`
+Additionally, the following framework is required:
 
 ```ruby
-    pod 'Alamofire', '5.4.3'
     pod 'SwiftProtobuf'
+```
+
+To install or update your new dependencies, from terminal run:
+
+```ruby
+    pod [install|update]
 ```
 
 ### Carthage
@@ -130,49 +119,46 @@ binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccel
 Point to the specific version (recommended):-
 
 ```ogdl
-binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapSDK.json" == 10.3.7
-binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapLiveSDK.json" == 10.3.7
-binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccelerator.json" == 10.3.7
+binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapSDK.json" == 11.0.0
+binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapLiveSDK.json" == 11.0.0
+binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccelerator.json" == 11.0.0
 ```
 
-### Add SDK Carthage Dependencies
-
-for version 10.3.7 :
-add the following dependecies in your project `Cartfile`
+Additionally, the following framework is required:
 
 ```ruby
-    github "Alamofire/Alamofire" == 5.4.3
     github "apple/swift-protobuf"
 ```
 
-to download the dependecies use the following command in the project deirectory
+To download the dependencies use the following command in the project directory:
 
 `carthage update --use-xcframeworks --platform ios`
 
-to clear carthage cache before update
+To clear carthage cache before updating:
 
 `rm -rf ~/Library/Caches/org.carthage.CarthageKit`
 
-the frameworks/xcFrameworks downloaded in the `<project>/Carthage/Build` directory
-attach the frameworks/xcFrameworks in the project through one of the following approaches:
+Attach the downloaded frameworks/xcFrameworks which are located in the `<project>/Carthage/Build` directory 
+to the project through one of the following approaches:
 
-- in the project tabs General --> Frameworks, Libraries, and Embedded Content
+- In the project tabs General --> Frameworks, Libraries, and Embedded Content
+- In the project tabs Build Phases --> Embed Frameworks
 
-- in the project tabs Build Phases --> Embeded Frameworks
-
-make sure the frameworks/xcFrameworks embeded and signed.
+Ensure the frameworks/xcFrameworks are embedded and signed.
 
 ### Swift Package Manager
 
 ---
 
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler.
+he [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code. 
+It is integrated into Xcode and thus dependencies can be managed via Xcode directly.
 
-adding LivingMapSDKs as a dependency can be done through Xcode:
+Adding LivingMapSDKs and its dependencies can be done through Xcode in the following way:
 
-- in your project file tab select `Add Packages`
-- use LivingMap github link `https://github.com/livingmap/LivingMap` in the search
-- add the livingMap package to your project and you are all set
+- In Xcode, navigate to `File -> Add Packages`
+- Search using `https://github.com/livingmap/LivingMap` to find the LivingMap Package
+- Select the LivingMap package, set the version to v11.0.0 and click Add Project
+
 
 ### Permissions
 

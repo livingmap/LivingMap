@@ -1,8 +1,6 @@
-//
-//  File.swift
-//  
-//
-//  Created by Soha Ahmed on 09/02/2022.
-//
+public struct LivingMap {
+    public private(set) var text = "Hello, World!"
 
-import Foundation
+    public init() {
+    }
+}
