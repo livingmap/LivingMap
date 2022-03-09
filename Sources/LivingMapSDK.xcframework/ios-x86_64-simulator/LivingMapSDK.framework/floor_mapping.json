@@ -1,0 +1,28 @@
+{
+   "floor_mapping":[
+      {
+         "lm_floor":3,
+         "apple_floor":1
+      },
+      {
+         "lm_floor":4,
+         "apple_floor":2
+      },
+      {
+         "lm_floor":1,
+         "apple_floor":-1
+      },
+      {
+         "lm_floor":2,
+         "apple_floor":0
+      },
+      {
+         "lm_floor":5,
+         "apple_floor":3
+      },
+      {
+         "lm_floor":6,
+         "apple_floor":4
+      }
+   ]
+}

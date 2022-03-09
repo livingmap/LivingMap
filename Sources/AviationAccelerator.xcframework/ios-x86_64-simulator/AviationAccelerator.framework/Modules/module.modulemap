@@ -1,0 +1,11 @@
+framework module AviationAccelerator {
+  umbrella header "AviationAccelerator.h"
+
+  export *
+  module * { export * }
+}
+
+module AviationAccelerator.Swift {
+    header "AviationAccelerator-Swift.h"
+    requires objc
+}

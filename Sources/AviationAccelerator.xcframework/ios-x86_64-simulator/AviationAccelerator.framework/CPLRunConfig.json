@@ -1,0 +1,171 @@
+{
+    "grid_file_name": "particle-filter-data/grids/star_fra/frankfurt.bin",
+    "gateway_list_file_name": "particle-filter-data/grids/star_fra/gateway_list_star_fra.json",
+    "floor_height_file_name": "particle-filter-data/grids/star_fra/floor_heights_star_fra.json",
+    "data_synchronization_time_period": 0.02,
+    "random_seed": 32,
+    "particle_filter": {
+        "initial_particle_count": 5000,
+        "initialization_method": "circle",
+        "initialization_range_meters": 5,
+        "step_length": 0.78,
+        "sigma_step_length": 0.4,
+        "sigma_heading": 0.8,
+        "sigma_magnetic_sensor": [15, 15],
+        "use_step_length_resilience": false,
+        "use_dtw_weighting": false,
+        "metrics_history_size": 20,
+        "resample_offset_distance_meters": 0.25,
+        "inject_reachable_only": true,
+        "resampling": {
+            "resampling_method": "dynamic",
+            "resampling_delay_steps": 0,
+            "effective_sample_size_threshold": 0.80,
+            "dynamic_resampling": {
+                "bundle_size": 50,
+                "window_size": 3,
+                "minimum_occupancy": 4,
+                "new_bins_threshold": 30
+            }
+        },
+        "clustering": {
+            "method": "rtefc",
+            "best_cluster_weight_threshold": 0.1,
+            "best_cluster_num_particles_threshold": 0.2,
+            "rtefc": {
+                "max_num_clusters": 10,
+                "max_distance": 20,
+                "filter_coefficient": 0.75,
+                "merge_clusters": true,
+                "merge_max_distance": 10
+            }
+        }
+    },
+    "ltm": {
+        "use_ltm": false,
+        "initialize_with_ltm": false,
+        "history_size": 50,
+        "heading_tolerance": 0.5,
+        "length_tolerance": 15,
+        "num_neighbors_per_trajectory": 20,
+        "max_warping_distance": 150,
+        "num_particles_per_neighbor": 50,
+        "max_circle_radius_per_neighbor": 10
+    },
+    "calibration": {
+        "mag_bias": [0, 0, 0],
+        "acc_bias": [0, 0, 0],
+        "gyr_bias": [0, 0, 0],
+        "mag_matrix": [
+            1, 0, 0,
+            0, 1, 0,
+            0, 0, 1
+        ],
+        "acc_matrix": [
+            -9.81, 0, 0,
+            0, -9.81, 0,
+            0, 0, -9.81
+        ],
+        "gyr_matrix": [
+            1, 0, 0,
+            0, 1, 0,
+            0, 0, 1
+        ]
+    },
+    "heading_estimation": {
+        "method": "logheading",
+        "eigenvalue": 0.01,
+        "enable_replay": true,
+        "mag_norm_threshold": 15,
+        "delay_after_mag_perturbation": 2,
+        "old_values_history_duration": 3,
+        "magnetic_declination": 0.154,
+        "mag_noise": [0.4225, 0.47197, 0.39062],
+        "acc_noise": [0.000256, 0.00024336, 0.00081225],
+        "gyr_noise": [8.7984e-07, 6.6912e-07, 6.0373e-07],
+        "mag_reference_vector": [-0.034124, 19.518, -44.746]
+    },
+    "floor_estimation": {
+        "method": "pressure-based",
+        "floor_pressure_ranges": [],
+        "identification_period": 3,
+        "moving_average_filter_window_size": 2,
+        "altitude_change_threshold": 0.25,
+        "stabilization_period": 2,
+        "noise_threshold": 0.01
+    },
+    "activity_classification": {
+        "height_change_rate_ranges": {
+            "stairs": [0, 0.35],
+            "escalator": [0.18, 0.55],
+            "elevator": [0.55, 25]
+        }
+    },
+    "positioning_switching": {
+        "particle_depletion_exit_threshold": 15,
+        "particle_depletion_check_threshold": 50,
+        "particle_depletion_reset_threshold": 80,
+        "max_distance_from_gateway_for_pdr": 25,
+        "min_distance_from_gateway_for_gps": 15,
+        "min_distance_from_gateway_for_cpl": 10,
+        "alternative_proximity_threshold": 10,
+        "beacon_good_accuracy": 50,
+        "core_location_good_accuracy": 15,
+        "gps_proximity_threshold": 20,
+        "gps_good_accuracy": 40,
+        "cluster_count_threshold": 2,
+        "particles_area_threshold": 100000,
+        "resample_count_threshold": 6,
+        "steps_since_initialization_threshold": 50,
+        "action_history_size": 40,
+        "reset_action_thresholds": {
+            "score_for_check_locations": 1,
+            "score_for_reset": 3,
+            "reset_to_alternative_threshold": 15,
+            "switch_to_alternative_threshold": 21
+        }
+    },
+    "position_recovery": {
+        "use_position_recovery": true,
+        "position_recovery_after_resampling": true,
+        "active_clusters_threshold": 3,
+        "cluster_depletion_threshold": 60,
+        "cluster_heading_change_threshold": 0.7,
+        "cluster_distance_change_threshold": 5,
+        "cluster_location_history_min_distance": 3,
+        "cluster_location_history_size": 6,
+        "cluster_max_num_allowed_recoveries": 1,
+        "cluster_attempt_history_size": 5,
+        "resize_factors": [0.1, 0.2, 0.3, -0.1, -0.2, -0.3],
+        "rotation_angles": [0.04, -0.04, 0.085, -0.085, 0.174533, -0.174533, 0.349066, -0.349066, 0.523599, -0.523599],
+        "wall_proximity": 1,
+        "heading_offset_limit": 1.5708,
+        "heading_offset_attenuation": 0.05,
+        "drift_heading_threshold": 0.785,
+        "mag_change_recovery": {
+            "enabled": true,
+            "travelator_proximity": 10,
+            "travelator_heading_tolerance": 0.35,
+            "min_distance": 5,
+            "adjustment_ranges": [
+                {"min_travelator_length": 0, "forward_adjustment_range": [0.1, 0.4], "backward_adjustment_range": [0.0, 0.2]},
+                {"min_travelator_length": 40, "forward_adjustment_range": [0.1, 0.5], "backward_adjustment_range": [0.0, 0.2]},
+                {"min_travelator_length": 65, "forward_adjustment_range": [0.1, 1.0], "backward_adjustment_range": [0.0, 0.0]}
+            ]
+        }
+    },
+    "step_length_estimation": {
+        "method": "none",
+        "use_real_time_step_frequency": false,
+        "m_estimator_coefficients": [0.4, 0.08, 0.4, 0.1, 0.275, 1.8],
+        "m_estimator_queue_size": 5,
+        "scarlett_estimator_k_coefficient": 2.0,
+        "scarlett_estimator_queue_size": 20,
+        "scarlett_improved_estimator_k_coefficient": 2.5,
+        "scarlett_improved_estimator_queue_size": 5,
+        "scarlett_improved_estimator_only_xy": true,
+        "kim_estimator_k_coefficient": 0.725,
+        "kim_estimator_only_xy": true,
+        "weinberg_estimator_k_coefficient": 0.515
+    }
+}
