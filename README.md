@@ -55,7 +55,7 @@ LivingMapSDK is a Swift binaries that provides mapping, routing, positioning and
 ## Requirements
 
 | Platform  | Minimum Swift Version | Installation                                                                                                         | Status       |
-|-----------| --------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------ |
+| --------- | --------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------ |
 | iOS 13.0+ | 5.3                   | [CocoaPods](#cocoapods), [Carthage](#carthage), [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
 
 ## Installation
@@ -85,15 +85,9 @@ Point to the latest version:-
 Point to the specific version (recommended):-
 
 ```ruby
-    pod 'LivingMapSDK', '11.0.0'
-    pod 'LivingMapLiveSDK', '11.0.0'
-    pod 'AirlineAccelerator', '11.0.0'
-```
-
-Additionally, the following framework is required:
-
-```ruby
-    pod 'SwiftProtobuf'
+    pod 'LivingMapSDK', '11.1.0'
+    pod 'LivingMapLiveSDK', '11.1.0'
+    pod 'AirlineAccelerator', '11.1.0'
 ```
 
 To install or update your new dependencies, from terminal run:
@@ -119,15 +113,9 @@ binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccel
 Point to the specific version (recommended):-
 
 ```ogdl
-binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapSDK.json" == 11.0.0
-binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapLiveSDK.json" == 11.0.0
-binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccelerator.json" == 11.0.0
-```
-
-Additionally, the following framework is required:
-
-```ruby
-    github "apple/swift-protobuf"
+binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapSDK.json" == 11.1.0
+binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapLiveSDK.json" == 11.1.0
+binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccelerator.json" == 11.1.0
 ```
 
 To download the dependencies use the following command in the project directory:
@@ -138,7 +126,7 @@ To clear carthage cache before updating:
 
 `rm -rf ~/Library/Caches/org.carthage.CarthageKit`
 
-Attach the downloaded frameworks/xcFrameworks which are located in the `<project>/Carthage/Build` directory 
+Attach the downloaded frameworks/xcFrameworks which are located in the `<project>/Carthage/Build` directory
 to the project through one of the following approaches:
 
 - In the project tabs General --> Frameworks, Libraries, and Embedded Content
@@ -150,15 +138,14 @@ Ensure the frameworks/xcFrameworks are embedded and signed.
 
 ---
 
-he [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code. 
+he [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code.
 It is integrated into Xcode and thus dependencies can be managed via Xcode directly.
 
 Adding LivingMapSDKs and its dependencies can be done through Xcode in the following way:
 
 - In Xcode, navigate to `File -> Add Packages`
 - Search using `https://github.com/livingmap/LivingMap` to find the LivingMap Package
-- Select the LivingMap package, set the version to v11.0.0 and click Add Project
-
+- Select the LivingMap package, set the version to v11.1.0 and click Add Project
 
 ### Permissions
 
