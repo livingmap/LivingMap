@@ -1,5 +1,6 @@
 {
     "10.3.6" : "https://github.com/livingmap/LivingMap/releases/download/LIVEv10.3.6/LivingMapLiveSDK.xcframework.zip",
     "10.3.7" : "https://github.com/livingmap/LivingMap/releases/download/LIVEv10.3.7/LivingMapLiveSDK.xcframework.zip",
-    "11.0.0" : "https://github.com/livingmap/LivingMap/releases/download/11.0.0/LivingMapLiveSDK.xcframework.zip"
+    "11.0.0" : "https://github.com/livingmap/LivingMap/releases/download/11.0.0/LivingMapLiveSDK.xcframework.zip",
+    "11.1.0" : "https://github.com/livingmap/LivingMap/releases/download/11.1.0-alpha/LivingMapLiveSDK.xcframework.zip"
 }

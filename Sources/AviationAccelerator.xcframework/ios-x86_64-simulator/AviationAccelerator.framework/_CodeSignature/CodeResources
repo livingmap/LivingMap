@@ -6,11 +6,11 @@
 	<dict>
 		<key>CPLRunConfig.json</key>
 		<data>
-		G3ulmfMEa3ZpR4rXwBAJl3gdJpQ=
+		OU6PvhydV646akmpKK38upS2k0M=
 		</data>
 		<key>Headers/AviationAccelerator-Swift.h</key>
 		<data>
-		TS9aaHfcVlHHs3OOAwCUY5/97Bc=
+		emUUV8wvHBlUvw0hEMVH74zs5G4=
 		</data>
 		<key>Headers/AviationAccelerator.h</key>
 		<data>
@@ -18,39 +18,39 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+ZT0UfexEC21mx5lvR3GAKAOgg4=
+		erBC72t+jHmsbuycSztvz9EM5cA=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		MJXYLzK9hEDNIMnUoKuDfGiK8R0=
+		ZAPyVQp5AU0ttXO5a8Th5TEmITU=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		MJXYLzK9hEDNIMnUoKuDfGiK8R0=
+		ZAPyVQp5AU0ttXO5a8Th5TEmITU=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		tTE2oneUxkPAuSJQb5DA9AJcPKU=
+		+IwDWzT8a/R+TplukTbv5VZReZA=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		vvWYmDPdKKGQuGglAwtj0tTLmFw=
+		nOhnDonrb8iHmuzaRFAYJeJ0kYg=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		W3SkMA1R6jpKGd4YjkTSq7j6WuY=
+		1dwKW8DM4qFqfEQMO4HdH3DWhss=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		tTE2oneUxkPAuSJQb5DA9AJcPKU=
+		+IwDWzT8a/R+TplukTbv5VZReZA=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		vvWYmDPdKKGQuGglAwtj0tTLmFw=
+		nOhnDonrb8iHmuzaRFAYJeJ0kYg=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		W3SkMA1R6jpKGd4YjkTSq7j6WuY=
+		1dwKW8DM4qFqfEQMO4HdH3DWhss=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,14 +63,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XiAirqNUWFo5dFrMAxqEFrIQImzX79tGO+VY6hUnzwM=
+			o004HpyGffQWUf6cJ/PmaoPbqw7uRB322/31mLMB628=
 			</data>
 		</dict>
 		<key>Headers/AviationAccelerator-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lTv/4V4SNY6TdBWhnOl6nqufaUSM7DWM80ln5a5DJs8=
+			B1/QJopKLIjPbdpBbbL7GIeYwlIcGMM6ngAPLFdpDSY=
 			</data>
 		</dict>
 		<key>Headers/AviationAccelerator.h</key>
@@ -84,56 +84,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oUB/WzrFyL222BZ5MeOl+9LIuDiPaPqib0aYpoA9ZFg=
+			TnJuqJ3PI6PcLOzuBqrsGI2Pu9MmvsJeHOUcDCyTBSY=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oUB/WzrFyL222BZ5MeOl+9LIuDiPaPqib0aYpoA9ZFg=
+			TnJuqJ3PI6PcLOzuBqrsGI2Pu9MmvsJeHOUcDCyTBSY=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JhKWJUOjLKQD7JTv5RvwSq3SAmxI7x3sX+bEfRiNMBc=
+			6jX1KAs9tKbnn0K+13xFP6PywMgK75uUNKuqjeNpo8g=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dT/QBKjKZpLZQjs49wrIlbC5dM5q0dMt8wqaxQTDl+I=
+			9nQZKV5JtA+O1sl+F5ur8RfqxyUPPMLxKDY0ash4wt0=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UDgmgoJ5IvDW+OCJrh8NsxzHuZ19sqOEdAg51bTN/KQ=
+			nVoDdDPwVqZW0dXU3oD1lYaGHwv/Vy3JpUH0i2H3soQ=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JhKWJUOjLKQD7JTv5RvwSq3SAmxI7x3sX+bEfRiNMBc=
+			6jX1KAs9tKbnn0K+13xFP6PywMgK75uUNKuqjeNpo8g=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dT/QBKjKZpLZQjs49wrIlbC5dM5q0dMt8wqaxQTDl+I=
+			9nQZKV5JtA+O1sl+F5ur8RfqxyUPPMLxKDY0ash4wt0=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UDgmgoJ5IvDW+OCJrh8NsxzHuZ19sqOEdAg51bTN/KQ=
+			nVoDdDPwVqZW0dXU3oD1lYaGHwv/Vy3JpUH0i2H3soQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

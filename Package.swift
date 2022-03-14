@@ -12,9 +12,7 @@ let package = Package(
             name: "LivingMap",
             targets: ["LivingMapSDK", "LivingMapLiveSDK", "AviationAccelerator", "LivingMap"]),
     ],
-    dependencies: [
-        .package(name: "SwiftProtobuf", url: "https://github.com/apple/swift-protobuf.git", .exact("1.6.0"))
-    ],
+    dependencies: [],
     targets: [
         .binaryTarget(name: "LivingMapSDK",
                       path: "Sources/LivingMapSDK.xcframework"
@@ -25,9 +23,6 @@ let package = Package(
         .binaryTarget(name: "AviationAccelerator",
                       path: "Sources/AviationAccelerator.xcframework"
                      ),
-        .target(name: "LivingMap",
-                dependencies: ["SwiftProtobuf"]
-               ),
 
     ]
 )
