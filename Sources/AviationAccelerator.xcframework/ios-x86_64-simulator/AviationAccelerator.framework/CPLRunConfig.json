@@ -11,7 +11,7 @@
         "step_length": 0.78,
         "sigma_step_length": 0.4,
         "sigma_heading": 0.8,
-        "sigma_magnetic_sensor": [15, 15],
+        "sigma_magnetic_sensor": [20, 20],
         "use_step_length_resilience": false,
         "use_dtw_weighting": false,
         "metrics_history_size": 20,
@@ -20,7 +20,7 @@
         "resampling": {
             "resampling_method": "dynamic",
             "resampling_delay_steps": 0,
-            "effective_sample_size_threshold": 0.80,
+            "effective_sample_size_threshold": 0.75,
             "dynamic_resampling": {
                 "bundle_size": 50,
                 "window_size": 3,
@@ -110,19 +110,19 @@
         "min_distance_from_gateway_for_cpl": 10,
         "alternative_proximity_threshold": 10,
         "beacon_good_accuracy": 50,
-        "core_location_good_accuracy": 15,
+        "core_location_good_accuracy": 10,
         "gps_proximity_threshold": 20,
         "gps_good_accuracy": 40,
         "cluster_count_threshold": 2,
         "particles_area_threshold": 100000,
-        "resample_count_threshold": 6,
+        "resample_count_threshold": 8,
         "steps_since_initialization_threshold": 50,
         "action_history_size": 40,
         "reset_action_thresholds": {
             "score_for_check_locations": 1,
             "score_for_reset": 3,
-            "reset_to_alternative_threshold": 15,
-            "switch_to_alternative_threshold": 21
+            "reset_to_alternative_threshold": 20,
+            "switch_to_alternative_threshold": 26
         }
     },
     "position_recovery": {

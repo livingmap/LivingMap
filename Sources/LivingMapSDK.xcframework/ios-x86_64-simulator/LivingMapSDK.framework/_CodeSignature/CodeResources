@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Frameworks/libCPL-ios-emulators_x86_64.a</key>
+		<data>
+		nQ+onOB14/puigN/ZvR3gd2XItU=
+		</data>
 		<key>Headers/CPLCRS.h</key>
 		<data>
 		b5IOMnJyfHYNLNFK4VpBjcWSnWM=
@@ -66,7 +70,7 @@
 		</data>
 		<key>Headers/LivingMapSDK-Swift.h</key>
 		<data>
-		zCNWPGRnmHtHLOh5z87lN+8DvD0=
+		s48rm0/aIrMK6dYnZUHVhSH8huA=
 		</data>
 		<key>Headers/LivingMapSDK.h</key>
 		<data>
@@ -98,23 +102,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		PpI+iig2YAISlnYc95atP4gH3Ys=
+		zFOaaLlKMrrWKzNfzP+HorXe9lE=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/analytics/coremldata.bin</key>
 		<data>
-		KhRCZekJgy0zAMC0xlUlmCJ6Rog=
+		oRZRqSmgZUGwU6679AgH1wostt0=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/coremldata.bin</key>
 		<data>
-		e5o3OIWbvyxJZ/oGciO29t6Ruj0=
+		XsenmbZ3ihBYEcGN5Z53Nb/5fgE=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<data>
-		sTXX7bKcQ/RlOYLK1BGMaOtr/N8=
+		LzdRuv8xudLLOSszeM98oq6Q8UA=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.net</key>
 		<data>
-		lNku2MdZ/u7Ky+nFC7hCVZ+WBTQ=
+		146FTrCtoEQ3l9Uc9Z26xSBAy+Q=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.shape</key>
 		<data>
@@ -122,7 +126,7 @@
 		</data>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.weights</key>
 		<data>
-		KPWT/7KTe7qP481oRwFdruauKY8=
+		8zwzUfLGAIR6I1BEXnYAtJdhicI=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/model/coremldata.bin</key>
 		<data>
@@ -146,35 +150,19 @@
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		l5StLaMJBTXNE6mLlge5zEl0KI4=
-		</data>
-		<key>Modules/LivingMapSDK.swiftmodule/Project/x86_64.swiftsourceinfo</key>
-		<data>
-		l5StLaMJBTXNE6mLlge5zEl0KI4=
+		nKtxr6Te49gPgh+IWG1nqhKRYsM=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		FKGftuiNLOTbLb32JgPTycFIzDY=
+		E0rLrqwW4/eNXzM576aXuygaVnI=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		3lM4SmXMhxm2oqPwpLfx7tut6HE=
+		3yOHKfDMVkVm5aLXJ7QJkMJUEL8=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ikTb/2AF8yK6ZoWLBy7vectz2NE=
-		</data>
-		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		FKGftuiNLOTbLb32JgPTycFIzDY=
-		</data>
-		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		3lM4SmXMhxm2oqPwpLfx7tut6HE=
-		</data>
-		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		ikTb/2AF8yK6ZoWLBy7vectz2NE=
+		v7nbQF3aCjIEERP1Zv5olD8pQj0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -191,6 +179,13 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/libCPL-ios-emulators_x86_64.a</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+p9zAp13zCDEyr6DQQ5D6VVBfSKV5Ehqghxlu/+bFqA=
+			</data>
+		</dict>
 		<key>Headers/CPLCRS.h</key>
 		<dict>
 			<key>hash2</key>
@@ -300,7 +295,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			z3uPqZgAsz0f6kU1nKQS2SzD1usCYqHlus4JETm69HU=
+			eMWJgAieZE0LubSyF2GylUZyQF06qrkyICi7Tn1zNXY=
 			</data>
 		</dict>
 		<key>Headers/LivingMapSDK.h</key>
@@ -356,28 +351,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HosPu9uBdqzDES0zW0CA16UsbBkwIXEoaaKmViPC0iY=
+			eyxyqnfThfVbhB5bGjZB2BEHPwY1ZRz6gtv8UENcddM=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/coremldata.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lUdsXuojTkHmaOWV3a4r3o0J3E3G26Qc5R7/dr6AoQ4=
+			6eHnXmrgqEyalxR6iEyITEM9pfehXi0V2mKszqQclI4=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1Tld6qPNQv6aQw2yb1gy/69habKChKtyvUUf8PIyNuU=
+			XQJKYQ3fLbfRyPiVYQC2CrPl9/Aq37S1enTKTcoLQVc=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.net</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5Tr+fpweRbCwhnGaNoDO5QYgp3sTyHJik/tWeNd98sc=
+			UEIgLoJZC2zsTu+PBZvW6hkPzO8wF/cTJ8f7HECUCns=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.shape</key>
@@ -391,7 +386,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			byOkqlBmkTIm3G0GjnAQMurUDtsgXOAHn6+ZRsp2Nfc=
+			Ghd464ZjmqpFTTi0Sg5sulvccRL6AHc+obM9ZQDjxFg=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/model/coremldata.bin</key>
@@ -433,56 +428,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z13pP8RGvF/Km7fm98sM2tNOzW6x4P0sNp0lTZYQnIg=
-			</data>
-		</dict>
-		<key>Modules/LivingMapSDK.swiftmodule/Project/x86_64.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Z13pP8RGvF/Km7fm98sM2tNOzW6x4P0sNp0lTZYQnIg=
+			UpW6lnZQzw5/zIHBPt3iXMvPlUXHf24tPLfLXyR8yhM=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XkUOXujR6tEppWg93VPVH98yZfKtu0M6aP5AphIJGWk=
+			IlsDLlg8VGgmNk3szOAbon6zuRqAtQ67tStNYl+jnXw=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y7dpMqZvjPKcz4j4eA9H2Uw8vCndEwuRfNtE4klpedo=
+			5wIQS/HOKS0/PltnHm89c/fLUw012o16ebqmbNs/w8k=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iqspjM6pI1hYiLqy45D22rb8qIzLPU3IOCPCdC5D0yI=
-			</data>
-		</dict>
-		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			XkUOXujR6tEppWg93VPVH98yZfKtu0M6aP5AphIJGWk=
-			</data>
-		</dict>
-		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Y7dpMqZvjPKcz4j4eA9H2Uw8vCndEwuRfNtE4klpedo=
-			</data>
-		</dict>
-		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			iqspjM6pI1hYiLqy45D22rb8qIzLPU3IOCPCdC5D0yI=
+			uOY9dvQm9bSuB4cfEpCsAcWo5XAyEHKGXXuW8DDart8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

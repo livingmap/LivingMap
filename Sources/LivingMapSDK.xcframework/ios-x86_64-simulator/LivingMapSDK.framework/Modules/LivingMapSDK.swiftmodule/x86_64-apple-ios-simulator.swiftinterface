@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
-// swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name LivingMapSDK
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LivingMapSDK
 import Accelerate
 import Combine
 import CoreBluetooth
@@ -16,7 +16,6 @@ import Foundation/*.TimeInterval*/
 import MobileCoreServices
 import Network
 import Swift
-import SwiftProtobuf
 import SwiftUI
 import SystemConfiguration
 import UIKit
@@ -225,8 +224,8 @@ extension LivingMapSDK.DataStreamRequest.Stream {
 }
 @_hasMissingDesignatedInitializers public class DownloadRequest : LivingMapSDK.Request {
   public struct Options : Swift.OptionSet {
-    public static var createIntermediateDirectories: LivingMapSDK.DownloadRequest.Options
-    public static var removePreviousFile: LivingMapSDK.DownloadRequest.Options
+    public static let createIntermediateDirectories: LivingMapSDK.DownloadRequest.Options
+    public static let removePreviousFile: LivingMapSDK.DownloadRequest.Options
     public let rawValue: Swift.Int
     public init(rawValue: Swift.Int)
     public typealias ArrayLiteralElement = LivingMapSDK.DownloadRequest.Options
@@ -463,6 +462,27 @@ extension LivingMapSDK.AFError : Foundation.LocalizedError {
     get
   }
 }
+extension LivingMapSDK.Message {
+  public func serializedData(partial: Swift.Bool = false) throws -> Foundation.Data
+  @inlinable public init(serializedData data: Foundation.Data, extensions: LivingMapSDK.ExtensionMap? = nil, partial: Swift.Bool = false, options: LivingMapSDK.BinaryDecodingOptions = BinaryDecodingOptions()) throws {
+    self.init()
+    try merge(contiguousBytes: data, extensions: extensions, partial: partial, options: options)
+  }
+  @inlinable public init<Bytes>(contiguousBytes bytes: Bytes, extensions: LivingMapSDK.ExtensionMap? = nil, partial: Swift.Bool = false, options: LivingMapSDK.BinaryDecodingOptions = BinaryDecodingOptions()) throws where Bytes : Foundation.ContiguousBytes {
+    self.init()
+    try merge(contiguousBytes: bytes, extensions: extensions, partial: partial, options: options)
+  }
+  @inlinable public mutating func merge(serializedData data: Foundation.Data, extensions: LivingMapSDK.ExtensionMap? = nil, partial: Swift.Bool = false, options: LivingMapSDK.BinaryDecodingOptions = BinaryDecodingOptions()) throws {
+    try merge(contiguousBytes: data, extensions: extensions, partial: partial, options: options)
+  }
+  @inlinable public mutating func merge<Bytes>(contiguousBytes bytes: Bytes, extensions: LivingMapSDK.ExtensionMap? = nil, partial: Swift.Bool = false, options: LivingMapSDK.BinaryDecodingOptions = BinaryDecodingOptions()) throws where Bytes : Foundation.ContiguousBytes {
+    try bytes.withUnsafeBytes { (body: UnsafeRawBufferPointer) in
+      try _merge(rawBuffer: body, extensions: extensions, partial: partial, options: options)
+    }
+  }
+  @usableFromInline
+  internal mutating func _merge(rawBuffer body: Swift.UnsafeRawBufferPointer, extensions: LivingMapSDK.ExtensionMap?, partial: Swift.Bool, options: LivingMapSDK.BinaryDecodingOptions) throws
+}
 public struct ManifestCallbacks {
   public let onManifestFailure: ((LivingMapSDK.LivingMapError) throws -> Swift.Void)?
   public let onCacheCompletion: ((LivingMapSDK.CacheManifest) -> Swift.Void)?
@@ -470,9 +490,98 @@ public struct ManifestCallbacks {
   public let cacheProgressUpdate: ((LivingMapSDK.CacheProgress) -> Swift.Void)?
   public init(onManifestRetrieval: ((LivingMapSDK.CacheManifest) -> Swift.Void)? = nil, onManifestFailure: ((LivingMapSDK.LivingMapError) throws -> Swift.Void)? = nil, onCacheCompletion: ((LivingMapSDK.CacheManifest) -> Swift.Void)? = nil, cacheProgressUpdate: ((LivingMapSDK.CacheProgress) -> Swift.Void)? = nil)
 }
+public struct Google_Protobuf_Duration {
+  public var seconds: Swift.Int64
+  public var nanos: Swift.Int32
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_Duration : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Duration : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Duration, rhs: LivingMapSDK.Google_Protobuf_Duration) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Message {
+  public init(unpackingAny: LivingMapSDK.Google_Protobuf_Any, extensions: LivingMapSDK.ExtensionMap? = nil, options: LivingMapSDK.BinaryDecodingOptions = BinaryDecodingOptions()) throws
+}
+@frozen public struct AnyCodable : Swift.Codable {
+  public let value: Any
+  public init<T>(_ value: T?)
+}
+extension LivingMapSDK.AnyCodable : LivingMapSDK._AnyEncodable, LivingMapSDK._AnyDecodable {
+}
+extension LivingMapSDK.AnyCodable : Swift.Equatable {
+  public static func == (lhs: LivingMapSDK.AnyCodable, rhs: LivingMapSDK.AnyCodable) -> Swift.Bool
+}
+extension LivingMapSDK.AnyCodable : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension LivingMapSDK.AnyCodable : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension LivingMapSDK.AnyCodable : Swift.ExpressibleByNilLiteral {
+}
+extension LivingMapSDK.AnyCodable : Swift.ExpressibleByBooleanLiteral {
+  public typealias BooleanLiteralType = Swift.Bool
+}
+extension LivingMapSDK.AnyCodable : Swift.ExpressibleByIntegerLiteral {
+  public typealias IntegerLiteralType = Swift.Int
+}
+extension LivingMapSDK.AnyCodable : Swift.ExpressibleByFloatLiteral {
+  public typealias FloatLiteralType = Swift.Double
+}
+extension LivingMapSDK.AnyCodable : Swift.ExpressibleByStringLiteral {
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+}
+extension LivingMapSDK.AnyCodable : Swift.ExpressibleByArrayLiteral {
+  public typealias ArrayLiteralElement = Any
+}
+extension LivingMapSDK.AnyCodable : Swift.ExpressibleByDictionaryLiteral {
+  public typealias Key = Swift.AnyHashable
+  public typealias Value = Any
+}
+public struct Google_Protobuf_Timestamp {
+  public var seconds: Swift.Int64
+  public var nanos: Swift.Int32
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_Timestamp : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Timestamp : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Timestamp, rhs: LivingMapSDK.Google_Protobuf_Timestamp) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers public class LivingMapErrorHandler {
   public static func logError(error: Foundation.NSError)
   @objc deinit
+}
+extension LivingMapSDK.Message {
+  public static func jsonString<C>(from collection: C, options: LivingMapSDK.JSONEncodingOptions = JSONEncodingOptions()) throws -> Swift.String where Self == C.Element, C : Swift.Collection
+  public static func jsonUTF8Data<C>(from collection: C, options: LivingMapSDK.JSONEncodingOptions = JSONEncodingOptions()) throws -> Foundation.Data where Self == C.Element, C : Swift.Collection
+  public static func array(fromJSONString jsonString: Swift.String, options: LivingMapSDK.JSONDecodingOptions = JSONDecodingOptions()) throws -> [Self]
+  public static func array(fromJSONString jsonString: Swift.String, extensions: LivingMapSDK.ExtensionMap = SimpleExtensionMap(), options: LivingMapSDK.JSONDecodingOptions = JSONDecodingOptions()) throws -> [Self]
+  public static func array(fromJSONUTF8Data jsonUTF8Data: Foundation.Data, options: LivingMapSDK.JSONDecodingOptions = JSONDecodingOptions()) throws -> [Self]
+  public static func array(fromJSONUTF8Data jsonUTF8Data: Foundation.Data, extensions: LivingMapSDK.ExtensionMap = SimpleExtensionMap(), options: LivingMapSDK.JSONDecodingOptions = JSONDecodingOptions()) throws -> [Self]
 }
 public typealias AFDataResponse<Success> = LivingMapSDK.DataResponse<Success, LivingMapSDK.AFError>
 public typealias AFDownloadResponse<Success> = LivingMapSDK.DownloadResponse<Success, LivingMapSDK.AFError>
@@ -534,6 +643,122 @@ extension LivingMapSDK.DownloadResponse {
   public func tryMap<NewSuccess>(_ transform: (Success) throws -> NewSuccess) -> LivingMapSDK.DownloadResponse<NewSuccess, Swift.Error>
   public func mapError<NewFailure>(_ transform: (Failure) -> NewFailure) -> LivingMapSDK.DownloadResponse<Success, NewFailure> where NewFailure : Swift.Error
   public func tryMapError<NewFailure>(_ transform: (Failure) throws -> NewFailure) -> LivingMapSDK.DownloadResponse<Success, Swift.Error> where NewFailure : Swift.Error
+}
+public struct UnknownStorage : Swift.Equatable {
+  public var data: Foundation.Data {
+    get
+  }
+  public init()
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (a: LivingMapSDK.UnknownStorage, b: LivingMapSDK.UnknownStorage) -> Swift.Bool
+}
+public protocol Visitor {
+  mutating func visitSingularFloatField(value: Swift.Float, fieldNumber: Swift.Int) throws
+  mutating func visitSingularDoubleField(value: Swift.Double, fieldNumber: Swift.Int) throws
+  mutating func visitSingularInt32Field(value: Swift.Int32, fieldNumber: Swift.Int) throws
+  mutating func visitSingularInt64Field(value: Swift.Int64, fieldNumber: Swift.Int) throws
+  mutating func visitSingularUInt32Field(value: Swift.UInt32, fieldNumber: Swift.Int) throws
+  mutating func visitSingularUInt64Field(value: Swift.UInt64, fieldNumber: Swift.Int) throws
+  mutating func visitSingularSInt32Field(value: Swift.Int32, fieldNumber: Swift.Int) throws
+  mutating func visitSingularSInt64Field(value: Swift.Int64, fieldNumber: Swift.Int) throws
+  mutating func visitSingularFixed32Field(value: Swift.UInt32, fieldNumber: Swift.Int) throws
+  mutating func visitSingularFixed64Field(value: Swift.UInt64, fieldNumber: Swift.Int) throws
+  mutating func visitSingularSFixed32Field(value: Swift.Int32, fieldNumber: Swift.Int) throws
+  mutating func visitSingularSFixed64Field(value: Swift.Int64, fieldNumber: Swift.Int) throws
+  mutating func visitSingularBoolField(value: Swift.Bool, fieldNumber: Swift.Int) throws
+  mutating func visitSingularStringField(value: Swift.String, fieldNumber: Swift.Int) throws
+  mutating func visitSingularBytesField(value: Foundation.Data, fieldNumber: Swift.Int) throws
+  mutating func visitSingularEnumField<E>(value: E, fieldNumber: Swift.Int) throws where E : LivingMapSDK.Enum
+  mutating func visitSingularMessageField<M>(value: M, fieldNumber: Swift.Int) throws where M : LivingMapSDK.Message
+  mutating func visitSingularGroupField<G>(value: G, fieldNumber: Swift.Int) throws where G : LivingMapSDK.Message
+  mutating func visitRepeatedFloatField(value: [Swift.Float], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedDoubleField(value: [Swift.Double], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedInt32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedInt64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedUInt32Field(value: [Swift.UInt32], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedUInt64Field(value: [Swift.UInt64], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedSInt32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedSInt64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedFixed32Field(value: [Swift.UInt32], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedFixed64Field(value: [Swift.UInt64], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedSFixed32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedSFixed64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedBoolField(value: [Swift.Bool], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedStringField(value: [Swift.String], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedBytesField(value: [Foundation.Data], fieldNumber: Swift.Int) throws
+  mutating func visitRepeatedEnumField<E>(value: [E], fieldNumber: Swift.Int) throws where E : LivingMapSDK.Enum
+  mutating func visitRepeatedMessageField<M>(value: [M], fieldNumber: Swift.Int) throws where M : LivingMapSDK.Message
+  mutating func visitRepeatedGroupField<G>(value: [G], fieldNumber: Swift.Int) throws where G : LivingMapSDK.Message
+  mutating func visitPackedFloatField(value: [Swift.Float], fieldNumber: Swift.Int) throws
+  mutating func visitPackedDoubleField(value: [Swift.Double], fieldNumber: Swift.Int) throws
+  mutating func visitPackedInt32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  mutating func visitPackedInt64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  mutating func visitPackedUInt32Field(value: [Swift.UInt32], fieldNumber: Swift.Int) throws
+  mutating func visitPackedUInt64Field(value: [Swift.UInt64], fieldNumber: Swift.Int) throws
+  mutating func visitPackedSInt32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  mutating func visitPackedSInt64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  mutating func visitPackedFixed32Field(value: [Swift.UInt32], fieldNumber: Swift.Int) throws
+  mutating func visitPackedFixed64Field(value: [Swift.UInt64], fieldNumber: Swift.Int) throws
+  mutating func visitPackedSFixed32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  mutating func visitPackedSFixed64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  mutating func visitPackedBoolField(value: [Swift.Bool], fieldNumber: Swift.Int) throws
+  mutating func visitPackedEnumField<E>(value: [E], fieldNumber: Swift.Int) throws where E : LivingMapSDK.Enum
+  mutating func visitMapField<KeyType, ValueType>(fieldType: LivingMapSDK._ProtobufMap<KeyType, ValueType>.Type, value: LivingMapSDK._ProtobufMap<KeyType, ValueType>.BaseType, fieldNumber: Swift.Int) throws where KeyType : LivingMapSDK.MapKeyType, ValueType : LivingMapSDK.MapValueType
+  mutating func visitMapField<KeyType, ValueType>(fieldType: LivingMapSDK._ProtobufEnumMap<KeyType, ValueType>.Type, value: LivingMapSDK._ProtobufEnumMap<KeyType, ValueType>.BaseType, fieldNumber: Swift.Int) throws where KeyType : LivingMapSDK.MapKeyType, ValueType : LivingMapSDK.Enum, ValueType.RawValue == Swift.Int
+  mutating func visitMapField<KeyType, ValueType>(fieldType: LivingMapSDK._ProtobufMessageMap<KeyType, ValueType>.Type, value: LivingMapSDK._ProtobufMessageMap<KeyType, ValueType>.BaseType, fieldNumber: Swift.Int) throws where KeyType : LivingMapSDK.MapKeyType, ValueType : LivingMapSDK.Message, ValueType : Swift.Hashable
+  mutating func visitExtensionFields(fields: LivingMapSDK.ExtensionFieldValueSet, start: Swift.Int, end: Swift.Int) throws
+  mutating func visitExtensionFieldsAsMessageSet(fields: LivingMapSDK.ExtensionFieldValueSet, start: Swift.Int, end: Swift.Int) throws
+  mutating func visitUnknown(bytes: Foundation.Data) throws
+}
+extension LivingMapSDK.Visitor {
+  public mutating func visitSingularFloatField(value: Swift.Float, fieldNumber: Swift.Int) throws
+  public mutating func visitSingularInt32Field(value: Swift.Int32, fieldNumber: Swift.Int) throws
+  public mutating func visitSingularUInt32Field(value: Swift.UInt32, fieldNumber: Swift.Int) throws
+  public mutating func visitSingularSInt32Field(value: Swift.Int32, fieldNumber: Swift.Int) throws
+  public mutating func visitSingularSInt64Field(value: Swift.Int64, fieldNumber: Swift.Int) throws
+  public mutating func visitSingularFixed32Field(value: Swift.UInt32, fieldNumber: Swift.Int) throws
+  public mutating func visitSingularFixed64Field(value: Swift.UInt64, fieldNumber: Swift.Int) throws
+  public mutating func visitSingularSFixed32Field(value: Swift.Int32, fieldNumber: Swift.Int) throws
+  public mutating func visitSingularSFixed64Field(value: Swift.Int64, fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedFloatField(value: [Swift.Float], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedDoubleField(value: [Swift.Double], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedInt32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedInt64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedUInt32Field(value: [Swift.UInt32], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedUInt64Field(value: [Swift.UInt64], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedSInt32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedSInt64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedFixed32Field(value: [Swift.UInt32], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedFixed64Field(value: [Swift.UInt64], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedSFixed32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedSFixed64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedBoolField(value: [Swift.Bool], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedStringField(value: [Swift.String], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedBytesField(value: [Foundation.Data], fieldNumber: Swift.Int) throws
+  public mutating func visitRepeatedEnumField<E>(value: [E], fieldNumber: Swift.Int) throws where E : LivingMapSDK.Enum
+  public mutating func visitRepeatedMessageField<M>(value: [M], fieldNumber: Swift.Int) throws where M : LivingMapSDK.Message
+  public mutating func visitRepeatedGroupField<G>(value: [G], fieldNumber: Swift.Int) throws where G : LivingMapSDK.Message
+  public mutating func visitPackedFloatField(value: [Swift.Float], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedDoubleField(value: [Swift.Double], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedInt32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedInt64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedUInt32Field(value: [Swift.UInt32], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedUInt64Field(value: [Swift.UInt64], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedSInt32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedSInt64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedFixed32Field(value: [Swift.UInt32], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedFixed64Field(value: [Swift.UInt64], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedSFixed32Field(value: [Swift.Int32], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedSFixed64Field(value: [Swift.Int64], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedBoolField(value: [Swift.Bool], fieldNumber: Swift.Int) throws
+  public mutating func visitPackedEnumField<E>(value: [E], fieldNumber: Swift.Int) throws where E : LivingMapSDK.Enum
+  public mutating func visitSingularGroupField<G>(value: G, fieldNumber: Swift.Int) throws where G : LivingMapSDK.Message
+  public mutating func visitExtensionFieldsAsMessageSet(fields: LivingMapSDK.ExtensionFieldValueSet, start: Swift.Int, end: Swift.Int) throws
+  public mutating func visitExtensionFields(fields: LivingMapSDK.ExtensionFieldValueSet, start: Swift.Int, end: Swift.Int) throws
+}
+public struct TextFormatEncodingOptions {
+  public var printUnknownFields: Swift.Bool
+  public init()
 }
 @_hasMissingDesignatedInitializers public class LMLocation : Swift.Codable, Foundation.NSCopying {
   public var x: Swift.Double
@@ -651,6 +876,10 @@ extension LivingMapSDK.RequestInterceptor where Self == LivingMapSDK.Interceptor
   public static func interceptor(adapters: [LivingMapSDK.RequestAdapter] = [], retriers: [LivingMapSDK.RequestRetrier] = [], interceptors: [LivingMapSDK.RequestInterceptor] = []) -> LivingMapSDK.Interceptor
 }
 public struct FileDownloadCallbacks {
+}
+public struct TextFormatDecodingOptions {
+  public var messageDepthLimit: Swift.Int
+  public init()
 }
 public protocol EventMonitor {
   var queue: Dispatch.DispatchQueue { get }
@@ -880,6 +1109,9 @@ open class ClosureEventMonitor : LivingMapSDK.EventMonitor {
   open func request(_ request: LivingMapSDK.DownloadRequest, didParseResponse response: LivingMapSDK.DownloadResponse<Foundation.URL?, LivingMapSDK.AFError>)
   @objc deinit
 }
+public protocol _ProtoNameProviding {
+  static var _protobuf_nameMap: LivingMapSDK._NameMap { get }
+}
 public enum PMKError : Swift.Error {
   case invalidCallingConvention
   case returnedSelf
@@ -918,6 +1150,29 @@ public enum CatchPolicy {
     get
   }
 }
+public enum JSONDecodingError : Swift.Error {
+  case failure
+  case malformedNumber
+  case numberRange
+  case malformedMap
+  case malformedBool
+  case malformedString
+  case invalidUTF8
+  case missingFieldNames
+  case schemaMismatch
+  case unrecognizedEnumValue
+  case illegalNull
+  case unquotedMapKey
+  case leadingZero
+  case truncated
+  case malformedDuration
+  case malformedTimestamp
+  case malformedFieldMask
+  case trailingGarbage
+  case conflictingOneOf
+  case messageDepthLimit
+  case unknownField(Swift.String)
+}
 public struct HTTPHeaders {
   public init()
   public init(_ headers: [LivingMapSDK.HTTPHeader])
@@ -932,7 +1187,7 @@ public struct HTTPHeaders {
   public func value(for name: Swift.String) -> Swift.String?
   public subscript(name: Swift.String) -> Swift.String? {
     get
-    set(newValue)
+    set
   }
   public var dictionary: [Swift.String : Swift.String] {
     get
@@ -1000,17 +1255,17 @@ extension LivingMapSDK.HTTPHeader {
   public static func userAgent(_ value: Swift.String) -> LivingMapSDK.HTTPHeader
 }
 extension LivingMapSDK.HTTPHeaders {
-  public static var `default`: LivingMapSDK.HTTPHeaders
+  public static let `default`: LivingMapSDK.HTTPHeaders
 }
 extension LivingMapSDK.HTTPHeader {
-  public static var defaultAcceptEncoding: LivingMapSDK.HTTPHeader
-  public static var defaultAcceptLanguage: LivingMapSDK.HTTPHeader
-  public static var defaultUserAgent: LivingMapSDK.HTTPHeader
+  public static let defaultAcceptEncoding: LivingMapSDK.HTTPHeader
+  public static let defaultAcceptLanguage: LivingMapSDK.HTTPHeader
+  public static let defaultUserAgent: LivingMapSDK.HTTPHeader
 }
 extension Foundation.URLRequest {
   public var headers: LivingMapSDK.HTTPHeaders {
     get
-    set(newValue)
+    set
   }
 }
 extension Foundation.HTTPURLResponse {
@@ -1021,7 +1276,7 @@ extension Foundation.HTTPURLResponse {
 extension Foundation.URLSessionConfiguration {
   public var headers: LivingMapSDK.HTTPHeaders {
     get
-    set(newValue)
+    set
   }
 }
 public class MapNotification {
@@ -1064,6 +1319,345 @@ public class MapNotification {
   @objc deinit
 }
 public func hang<T>(_ promise: LivingMapSDK.Promise<T>) throws -> T
+public struct Google_Protobuf_DoubleValue {
+  public var value: Swift.Double
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_FloatValue {
+  public var value: Swift.Float
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_Int64Value {
+  public var value: Swift.Int64
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_UInt64Value {
+  public var value: Swift.UInt64
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_Int32Value {
+  public var value: Swift.Int32
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_UInt32Value {
+  public var value: Swift.UInt32
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_BoolValue {
+  public var value: Swift.Bool
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_StringValue {
+  public var value: Swift.String
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_BytesValue {
+  public var value: Foundation.Data
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_DoubleValue : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_FloatValue : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Int64Value : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_UInt64Value : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Int32Value : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_UInt32Value : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_BoolValue : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_StringValue : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_BytesValue : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_DoubleValue : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_DoubleValue, rhs: LivingMapSDK.Google_Protobuf_DoubleValue) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_FloatValue : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_FloatValue, rhs: LivingMapSDK.Google_Protobuf_FloatValue) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_Int64Value : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Int64Value, rhs: LivingMapSDK.Google_Protobuf_Int64Value) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_UInt64Value : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_UInt64Value, rhs: LivingMapSDK.Google_Protobuf_UInt64Value) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_Int32Value : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Int32Value, rhs: LivingMapSDK.Google_Protobuf_Int32Value) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_UInt32Value : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_UInt32Value, rhs: LivingMapSDK.Google_Protobuf_UInt32Value) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_BoolValue : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_BoolValue, rhs: LivingMapSDK.Google_Protobuf_BoolValue) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_StringValue : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_StringValue, rhs: LivingMapSDK.Google_Protobuf_StringValue) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_BytesValue : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_BytesValue, rhs: LivingMapSDK.Google_Protobuf_BytesValue) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Google_Protobuf_NullValue : LivingMapSDK.Enum {
+  public typealias RawValue = Swift.Int
+  case nullValue
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_NullValue : Swift.CaseIterable {
+  public static var allCases: [LivingMapSDK.Google_Protobuf_NullValue]
+  public typealias AllCases = [LivingMapSDK.Google_Protobuf_NullValue]
+}
+public struct Google_Protobuf_Struct {
+  public var fields: [Swift.String : LivingMapSDK.Google_Protobuf_Value]
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_Value {
+  public var kind: LivingMapSDK.Google_Protobuf_Value.OneOf_Kind?
+  public var nullValue: LivingMapSDK.Google_Protobuf_NullValue {
+    get
+    set
+  }
+  public var numberValue: Swift.Double {
+    get
+    set
+  }
+  public var stringValue: Swift.String {
+    get
+    set
+  }
+  public var boolValue: Swift.Bool {
+    get
+    set
+  }
+  public var structValue: LivingMapSDK.Google_Protobuf_Struct {
+    get
+    set
+  }
+  public var listValue: LivingMapSDK.Google_Protobuf_ListValue {
+    get
+    set
+  }
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public enum OneOf_Kind : Swift.Equatable {
+    case nullValue(LivingMapSDK.Google_Protobuf_NullValue)
+    case numberValue(Swift.Double)
+    case stringValue(Swift.String)
+    case boolValue(Swift.Bool)
+    case structValue(LivingMapSDK.Google_Protobuf_Struct)
+    case listValue(LivingMapSDK.Google_Protobuf_ListValue)
+    public static func == (a: LivingMapSDK.Google_Protobuf_Value.OneOf_Kind, b: LivingMapSDK.Google_Protobuf_Value.OneOf_Kind) -> Swift.Bool
+  }
+  public init()
+}
+public struct Google_Protobuf_ListValue {
+  public var values: [LivingMapSDK.Google_Protobuf_Value]
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_NullValue : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Struct : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Value : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Value.OneOf_Kind : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_ListValue : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_NullValue : LivingMapSDK._ProtoNameProviding {
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+}
+extension LivingMapSDK.Google_Protobuf_Struct : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Struct, rhs: LivingMapSDK.Google_Protobuf_Struct) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_Value : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Value, rhs: LivingMapSDK.Google_Protobuf_Value) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_ListValue : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_ListValue, rhs: LivingMapSDK.Google_Protobuf_ListValue) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol ProtoDecoder {
+  mutating func handleConflictingOneOf() throws
+  mutating func nextFieldNumber() throws -> Swift.Int?
+  mutating func decodeSingularFloatField(value: inout Swift.Float) throws
+  mutating func decodeSingularFloatField(value: inout Swift.Float?) throws
+  mutating func decodeRepeatedFloatField(value: inout [Swift.Float]) throws
+  mutating func decodeSingularDoubleField(value: inout Swift.Double) throws
+  mutating func decodeSingularDoubleField(value: inout Swift.Double?) throws
+  mutating func decodeRepeatedDoubleField(value: inout [Swift.Double]) throws
+  mutating func decodeSingularInt32Field(value: inout Swift.Int32) throws
+  mutating func decodeSingularInt32Field(value: inout Swift.Int32?) throws
+  mutating func decodeRepeatedInt32Field(value: inout [Swift.Int32]) throws
+  mutating func decodeSingularInt64Field(value: inout Swift.Int64) throws
+  mutating func decodeSingularInt64Field(value: inout Swift.Int64?) throws
+  mutating func decodeRepeatedInt64Field(value: inout [Swift.Int64]) throws
+  mutating func decodeSingularUInt32Field(value: inout Swift.UInt32) throws
+  mutating func decodeSingularUInt32Field(value: inout Swift.UInt32?) throws
+  mutating func decodeRepeatedUInt32Field(value: inout [Swift.UInt32]) throws
+  mutating func decodeSingularUInt64Field(value: inout Swift.UInt64) throws
+  mutating func decodeSingularUInt64Field(value: inout Swift.UInt64?) throws
+  mutating func decodeRepeatedUInt64Field(value: inout [Swift.UInt64]) throws
+  mutating func decodeSingularSInt32Field(value: inout Swift.Int32) throws
+  mutating func decodeSingularSInt32Field(value: inout Swift.Int32?) throws
+  mutating func decodeRepeatedSInt32Field(value: inout [Swift.Int32]) throws
+  mutating func decodeSingularSInt64Field(value: inout Swift.Int64) throws
+  mutating func decodeSingularSInt64Field(value: inout Swift.Int64?) throws
+  mutating func decodeRepeatedSInt64Field(value: inout [Swift.Int64]) throws
+  mutating func decodeSingularFixed32Field(value: inout Swift.UInt32) throws
+  mutating func decodeSingularFixed32Field(value: inout Swift.UInt32?) throws
+  mutating func decodeRepeatedFixed32Field(value: inout [Swift.UInt32]) throws
+  mutating func decodeSingularFixed64Field(value: inout Swift.UInt64) throws
+  mutating func decodeSingularFixed64Field(value: inout Swift.UInt64?) throws
+  mutating func decodeRepeatedFixed64Field(value: inout [Swift.UInt64]) throws
+  mutating func decodeSingularSFixed32Field(value: inout Swift.Int32) throws
+  mutating func decodeSingularSFixed32Field(value: inout Swift.Int32?) throws
+  mutating func decodeRepeatedSFixed32Field(value: inout [Swift.Int32]) throws
+  mutating func decodeSingularSFixed64Field(value: inout Swift.Int64) throws
+  mutating func decodeSingularSFixed64Field(value: inout Swift.Int64?) throws
+  mutating func decodeRepeatedSFixed64Field(value: inout [Swift.Int64]) throws
+  mutating func decodeSingularBoolField(value: inout Swift.Bool) throws
+  mutating func decodeSingularBoolField(value: inout Swift.Bool?) throws
+  mutating func decodeRepeatedBoolField(value: inout [Swift.Bool]) throws
+  mutating func decodeSingularStringField(value: inout Swift.String) throws
+  mutating func decodeSingularStringField(value: inout Swift.String?) throws
+  mutating func decodeRepeatedStringField(value: inout [Swift.String]) throws
+  mutating func decodeSingularBytesField(value: inout Foundation.Data) throws
+  mutating func decodeSingularBytesField(value: inout Foundation.Data?) throws
+  mutating func decodeRepeatedBytesField(value: inout [Foundation.Data]) throws
+  mutating func decodeSingularEnumField<E>(value: inout E) throws where E : LivingMapSDK.Enum, E.RawValue == Swift.Int
+  mutating func decodeSingularEnumField<E>(value: inout E?) throws where E : LivingMapSDK.Enum, E.RawValue == Swift.Int
+  mutating func decodeRepeatedEnumField<E>(value: inout [E]) throws where E : LivingMapSDK.Enum, E.RawValue == Swift.Int
+  mutating func decodeSingularMessageField<M>(value: inout M?) throws where M : LivingMapSDK.Message
+  mutating func decodeRepeatedMessageField<M>(value: inout [M]) throws where M : LivingMapSDK.Message
+  mutating func decodeSingularGroupField<G>(value: inout G?) throws where G : LivingMapSDK.Message
+  mutating func decodeRepeatedGroupField<G>(value: inout [G]) throws where G : LivingMapSDK.Message
+  mutating func decodeMapField<KeyType, ValueType>(fieldType: LivingMapSDK._ProtobufMap<KeyType, ValueType>.Type, value: inout LivingMapSDK._ProtobufMap<KeyType, ValueType>.BaseType) throws where KeyType : LivingMapSDK.MapKeyType, ValueType : LivingMapSDK.MapValueType
+  mutating func decodeMapField<KeyType, ValueType>(fieldType: LivingMapSDK._ProtobufEnumMap<KeyType, ValueType>.Type, value: inout LivingMapSDK._ProtobufEnumMap<KeyType, ValueType>.BaseType) throws where KeyType : LivingMapSDK.MapKeyType, ValueType : LivingMapSDK.Enum, ValueType.RawValue == Swift.Int
+  mutating func decodeMapField<KeyType, ValueType>(fieldType: LivingMapSDK._ProtobufMessageMap<KeyType, ValueType>.Type, value: inout LivingMapSDK._ProtobufMessageMap<KeyType, ValueType>.BaseType) throws where KeyType : LivingMapSDK.MapKeyType, ValueType : LivingMapSDK.Message, ValueType : Swift.Hashable
+  mutating func decodeExtensionField(values: inout LivingMapSDK.ExtensionFieldValueSet, messageType: LivingMapSDK.Message.Type, fieldNumber: Swift.Int) throws
+  mutating func decodeExtensionFieldsAsMessageSet(values: inout LivingMapSDK.ExtensionFieldValueSet, messageType: LivingMapSDK.Message.Type) throws
+}
+extension LivingMapSDK.ProtoDecoder {
+  public mutating func decodeExtensionFieldsAsMessageSet(values: inout LivingMapSDK.ExtensionFieldValueSet, messageType: LivingMapSDK.Message.Type) throws
+}
+public protocol ExtensibleMessage : LivingMapSDK.Message {
+  var _protobuf_extensionFieldValues: LivingMapSDK.ExtensionFieldValueSet { get set }
+}
+extension LivingMapSDK.ExtensibleMessage {
+  public mutating func setExtensionValue<F>(ext: LivingMapSDK.MessageExtension<F, Self>, value: F.ValueType) where F : LivingMapSDK.ExtensionField
+  public func getExtensionValue<F>(ext: LivingMapSDK.MessageExtension<F, Self>) -> F.ValueType? where F : LivingMapSDK.ExtensionField
+  public func hasExtensionValue<F>(ext: LivingMapSDK.MessageExtension<F, Self>) -> Swift.Bool where F : LivingMapSDK.ExtensionField
+  public mutating func clearExtensionValue<F>(ext: LivingMapSDK.MessageExtension<F, Self>) where F : LivingMapSDK.ExtensionField
+}
+extension LivingMapSDK.ExtensibleMessage {
+  public mutating func setExtensionValue<T>(ext: LivingMapSDK.MessageExtension<LivingMapSDK.RepeatedExtensionField<T>, Self>, value: [T.BaseType]) where T : LivingMapSDK.FieldType
+  public mutating func setExtensionValue<T>(ext: LivingMapSDK.MessageExtension<LivingMapSDK.PackedExtensionField<T>, Self>, value: [T.BaseType]) where T : LivingMapSDK.FieldType
+  public mutating func setExtensionValue<E>(ext: LivingMapSDK.MessageExtension<LivingMapSDK.RepeatedEnumExtensionField<E>, Self>, value: [E]) where E : LivingMapSDK.Enum, E.RawValue == Swift.Int
+  public mutating func setExtensionValue<E>(ext: LivingMapSDK.MessageExtension<LivingMapSDK.PackedEnumExtensionField<E>, Self>, value: [E]) where E : LivingMapSDK.Enum, E.RawValue == Swift.Int
+  public mutating func setExtensionValue<M>(ext: LivingMapSDK.MessageExtension<LivingMapSDK.RepeatedMessageExtensionField<M>, Self>, value: [M]) where M : LivingMapSDK.Message, M : Swift.Equatable
+  public mutating func setExtensionValue<M>(ext: LivingMapSDK.MessageExtension<LivingMapSDK.RepeatedGroupExtensionField<M>, Self>, value: [M]) where M : LivingMapSDK.Message, M : Swift.Hashable
+}
 public class AFSession {
   public var sessionWithAuth: LivingMapSDK.Session!
   public var sessionNoAuth: LivingMapSDK.Session!
@@ -1077,6 +1671,12 @@ public class RoutingRequestMetadataOptions : Swift.Codable {
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
+}
+public struct Version {
+  public static let major: Swift.Int
+  public static let minor: Swift.Int
+  public static let revision: Swift.Int
+  public static let versionString: Swift.String
 }
 public struct LMLivePositioningConfig : Swift.Codable {
   public var project: Swift.String
@@ -1131,6 +1731,22 @@ public enum FloorEstimationSystem : Swift.String, Swift.Codable {
     get
   }
 }
+public struct Google_Protobuf_Empty {
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_Empty : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Empty : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Empty, rhs: LivingMapSDK.Google_Protobuf_Empty) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public protocol URLConvertible {
   func asURL() throws -> Foundation.URL
 }
@@ -1163,6 +1779,36 @@ public enum LogEvent {
   case pendingGuaranteeDeallocated
   case cauterized(Swift.Error)
 }
+extension LivingMapSDK.Google_Protobuf_Value : Swift.ExpressibleByIntegerLiteral {
+  public typealias IntegerLiteralType = Swift.Int64
+  public init(integerLiteral value: Swift.Int64)
+}
+extension LivingMapSDK.Google_Protobuf_Value : Swift.ExpressibleByFloatLiteral {
+  public typealias FloatLiteralType = Swift.Double
+  public init(floatLiteral value: Swift.Double)
+}
+extension LivingMapSDK.Google_Protobuf_Value : Swift.ExpressibleByBooleanLiteral {
+  public typealias BooleanLiteralType = Swift.Bool
+  public init(booleanLiteral value: Swift.Bool)
+}
+extension LivingMapSDK.Google_Protobuf_Value : Swift.ExpressibleByStringLiteral {
+  public typealias StringLiteralType = Swift.String
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+  public init(stringLiteral value: Swift.String)
+  public init(unicodeScalarLiteral value: Swift.String)
+  public init(extendedGraphemeClusterLiteral value: Swift.String)
+}
+extension LivingMapSDK.Google_Protobuf_Value : Swift.ExpressibleByNilLiteral {
+  public init(nilLiteral: ())
+}
+extension LivingMapSDK.Google_Protobuf_Value {
+  public init(numberValue: Swift.Double)
+  public init(stringValue: Swift.String)
+  public init(boolValue: Swift.Bool)
+  public init(structValue: LivingMapSDK.Google_Protobuf_Struct)
+  public init(listValue: LivingMapSDK.Google_Protobuf_ListValue)
+}
 public struct LMLocationConfig : Swift.Codable {
   public var runtimeSignalUidMatchRatio: Swift.Float
   public var surveySignalUidMatchRatio: Swift.Float
@@ -1182,10 +1828,31 @@ public struct LMLocationConfig : Swift.Codable {
   public func getDebugInfoAsString() -> Swift.String
   @objc deinit
 }
+public enum BinaryEncodingError : Swift.Error {
+  case anyTranscodeFailure
+  case missingRequiredFields
+  public static func == (a: LivingMapSDK.BinaryEncodingError, b: LivingMapSDK.BinaryEncodingError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_ListValue : Swift.ExpressibleByArrayLiteral {
+  public typealias Element = LivingMapSDK.Google_Protobuf_Value
+  public init(arrayLiteral elements: LivingMapSDK.Google_Protobuf_ListValue.Element...)
+  public typealias ArrayLiteralElement = LivingMapSDK.Google_Protobuf_ListValue.Element
+}
+extension LivingMapSDK.Google_Protobuf_ListValue {
+  public init(values: [LivingMapSDK.Google_Protobuf_Value])
+  public subscript(index: Swift.Int) -> LivingMapSDK.Google_Protobuf_Value {
+    get
+    set(newValue)
+  }
+}
 extension Foundation.URLRequest {
   public var method: LivingMapSDK.HTTPMethod? {
     get
-    set(newValue)
+    set
   }
   public func validate() throws
 }
@@ -1194,11 +1861,410 @@ public struct Checksums : Swift.Codable, Swift.Equatable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public enum Google_Protobuf_Syntax : LivingMapSDK.Enum {
+  public typealias RawValue = Swift.Int
+  case proto2
+  case proto3
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_Syntax : Swift.CaseIterable {
+  public static var allCases: [LivingMapSDK.Google_Protobuf_Syntax]
+  public typealias AllCases = [LivingMapSDK.Google_Protobuf_Syntax]
+}
+public struct Google_Protobuf_Type {
+  public var name: Swift.String
+  public var fields: [LivingMapSDK.Google_Protobuf_Field]
+  public var oneofs: [Swift.String]
+  public var options: [LivingMapSDK.Google_Protobuf_Option]
+  public var sourceContext: LivingMapSDK.Google_Protobuf_SourceContext {
+    get
+    set
+  }
+  public var hasSourceContext: Swift.Bool {
+    get
+  }
+  public mutating func clearSourceContext()
+  public var syntax: LivingMapSDK.Google_Protobuf_Syntax
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_Field {
+  public var kind: LivingMapSDK.Google_Protobuf_Field.Kind
+  public var cardinality: LivingMapSDK.Google_Protobuf_Field.Cardinality
+  public var number: Swift.Int32
+  public var name: Swift.String
+  public var typeURL: Swift.String
+  public var oneofIndex: Swift.Int32
+  public var packed: Swift.Bool
+  public var options: [LivingMapSDK.Google_Protobuf_Option]
+  public var jsonName: Swift.String
+  public var defaultValue: Swift.String
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public enum Kind : LivingMapSDK.Enum {
+    public typealias RawValue = Swift.Int
+    case typeUnknown
+    case typeDouble
+    case typeFloat
+    case typeInt64
+    case typeUint64
+    case typeInt32
+    case typeFixed64
+    case typeFixed32
+    case typeBool
+    case typeString
+    case typeGroup
+    case typeMessage
+    case typeBytes
+    case typeUint32
+    case typeEnum
+    case typeSfixed32
+    case typeSfixed64
+    case typeSint32
+    case typeSint64
+    case UNRECOGNIZED(Swift.Int)
+    public init()
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum Cardinality : LivingMapSDK.Enum {
+    public typealias RawValue = Swift.Int
+    case unknown
+    case optional
+    case required
+    case repeated
+    case UNRECOGNIZED(Swift.Int)
+    public init()
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_Field.Kind : Swift.CaseIterable {
+  public static var allCases: [LivingMapSDK.Google_Protobuf_Field.Kind]
+  public typealias AllCases = [LivingMapSDK.Google_Protobuf_Field.Kind]
+}
+extension LivingMapSDK.Google_Protobuf_Field.Cardinality : Swift.CaseIterable {
+  public static var allCases: [LivingMapSDK.Google_Protobuf_Field.Cardinality]
+  public typealias AllCases = [LivingMapSDK.Google_Protobuf_Field.Cardinality]
+}
+public struct Google_Protobuf_Enum {
+  public var name: Swift.String
+  public var enumvalue: [LivingMapSDK.Google_Protobuf_EnumValue]
+  public var options: [LivingMapSDK.Google_Protobuf_Option]
+  public var sourceContext: LivingMapSDK.Google_Protobuf_SourceContext {
+    get
+    set
+  }
+  public var hasSourceContext: Swift.Bool {
+    get
+  }
+  public mutating func clearSourceContext()
+  public var syntax: LivingMapSDK.Google_Protobuf_Syntax
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_EnumValue {
+  public var name: Swift.String
+  public var number: Swift.Int32
+  public var options: [LivingMapSDK.Google_Protobuf_Option]
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_Option {
+  public var name: Swift.String
+  public var value: LivingMapSDK.Google_Protobuf_Any {
+    get
+    set
+  }
+  public var hasValue: Swift.Bool {
+    get
+  }
+  public mutating func clearValue()
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_Syntax : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Type : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Field : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Field.Kind : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Field.Cardinality : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Enum : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_EnumValue : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Option : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Syntax : LivingMapSDK._ProtoNameProviding {
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+}
+extension LivingMapSDK.Google_Protobuf_Type : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Type, rhs: LivingMapSDK.Google_Protobuf_Type) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_Field : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Field, rhs: LivingMapSDK.Google_Protobuf_Field) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_Field.Kind : LivingMapSDK._ProtoNameProviding {
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+}
+extension LivingMapSDK.Google_Protobuf_Field.Cardinality : LivingMapSDK._ProtoNameProviding {
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+}
+extension LivingMapSDK.Google_Protobuf_Enum : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Enum, rhs: LivingMapSDK.Google_Protobuf_Enum) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_EnumValue : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_EnumValue, rhs: LivingMapSDK.Google_Protobuf_EnumValue) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_Option : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Option, rhs: LivingMapSDK.Google_Protobuf_Option) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public typealias CustomEventAPICallback = (Foundation.NSDictionary?) -> Swift.Void
 public protocol LivingMapMappingEvents : LivingMapSDK.LivingMapPositioningEvents {
   func mapReady()
   func mapClosed()
   func destinationReached()
+}
+public enum AnyUnpackError : Swift.Error {
+  case typeMismatch
+  case malformedWellKnownTypeJSON
+  case malformedAnyField
+  public static func == (a: LivingMapSDK.AnyUnpackError, b: LivingMapSDK.AnyUnpackError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol FieldType {
+  associatedtype BaseType : Swift.Hashable
+  static var proto3DefaultValue: Self.BaseType { get }
+  static func decodeSingular<D>(value: inout Self.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  static func decodeRepeated<D>(value: inout [Self.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  static func visitSingular<V>(value: Self.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  static func visitRepeated<V>(value: [Self.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  static func visitPacked<V>(value: [Self.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public protocol MapKeyType : LivingMapSDK.FieldType {
+  static func _lessThan(lhs: Self.BaseType, rhs: Self.BaseType) -> Swift.Bool
+}
+extension LivingMapSDK.MapKeyType where Self.BaseType : Swift.Comparable {
+  public static func _lessThan(lhs: Self.BaseType, rhs: Self.BaseType) -> Swift.Bool
+}
+public protocol MapValueType : LivingMapSDK.FieldType {
+}
+public struct ProtobufFloat : LivingMapSDK.FieldType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.Float
+  public static var proto3DefaultValue: Swift.Float {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufFloat.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufFloat.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufFloat.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufFloat.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufFloat.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufDouble : LivingMapSDK.FieldType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.Double
+  public static var proto3DefaultValue: Swift.Double {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufDouble.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufDouble.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufDouble.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufDouble.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufDouble.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufInt32 : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.Int32
+  public static var proto3DefaultValue: Swift.Int32 {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufInt32.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufInt32.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufInt32.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufInt32.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufInt32.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufInt64 : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.Int64
+  public static var proto3DefaultValue: Swift.Int64 {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufInt64.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufInt64.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufInt64.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufInt64.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufInt64.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufUInt32 : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.UInt32
+  public static var proto3DefaultValue: Swift.UInt32 {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufUInt32.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufUInt32.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufUInt32.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufUInt32.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufUInt32.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufUInt64 : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.UInt64
+  public static var proto3DefaultValue: Swift.UInt64 {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufUInt64.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufUInt64.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufUInt64.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufUInt64.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufUInt64.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufSInt32 : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.Int32
+  public static var proto3DefaultValue: Swift.Int32 {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufSInt32.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufSInt32.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufSInt32.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufSInt32.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufSInt32.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufSInt64 : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.Int64
+  public static var proto3DefaultValue: Swift.Int64 {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufSInt64.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufSInt64.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufSInt64.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufSInt64.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufSInt64.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufFixed32 : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.UInt32
+  public static var proto3DefaultValue: Swift.UInt32 {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufFixed32.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufFixed32.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufFixed32.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufFixed32.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufFixed32.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufFixed64 : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.UInt64
+  public static var proto3DefaultValue: Swift.UInt64 {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufFixed64.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufFixed64.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufFixed64.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufFixed64.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufFixed64.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufSFixed32 : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.Int32
+  public static var proto3DefaultValue: Swift.Int32 {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufSFixed32.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufSFixed32.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufSFixed32.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufSFixed32.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufSFixed32.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufSFixed64 : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.Int64
+  public static var proto3DefaultValue: Swift.Int64 {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufSFixed64.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufSFixed64.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufSFixed64.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufSFixed64.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufSFixed64.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufBool : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.Bool
+  public static var proto3DefaultValue: Swift.Bool {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufBool.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufBool.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufBool.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufBool.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufBool.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func _lessThan(lhs: LivingMapSDK.ProtobufBool.BaseType, rhs: LivingMapSDK.ProtobufBool.BaseType) -> Swift.Bool
+}
+public struct ProtobufString : LivingMapSDK.FieldType, LivingMapSDK.MapKeyType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Swift.String
+  public static var proto3DefaultValue: Swift.String {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufString.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufString.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufString.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufString.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufString.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+}
+public struct ProtobufBytes : LivingMapSDK.FieldType, LivingMapSDK.MapValueType {
+  public typealias BaseType = Foundation.Data
+  public static var proto3DefaultValue: Foundation.Data {
+    get
+  }
+  public static func decodeSingular<D>(value: inout LivingMapSDK.ProtobufBytes.BaseType?, from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func decodeRepeated<D>(value: inout [LivingMapSDK.ProtobufBytes.BaseType], from decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public static func visitSingular<V>(value: LivingMapSDK.ProtobufBytes.BaseType, fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitRepeated<V>(value: [LivingMapSDK.ProtobufBytes.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func visitPacked<V>(value: [LivingMapSDK.ProtobufBytes.BaseType], fieldNumber: Swift.Int, with visitor: inout V) throws where V : LivingMapSDK.Visitor
 }
 extension UIKit.UIAlertController {
   @_Concurrency.MainActor(unsafe) public func show()
@@ -1231,14 +2297,14 @@ public protocol LivingMapInterface : LivingMapSDK.LivingMapPositioningEvents {
   func stepInfoUpdated(_ step: LivingMapSDK.LMStep)
 }
 extension LivingMapSDK.Request {
-  public static var didResumeNotification: Foundation.Notification.Name
-  public static var didSuspendNotification: Foundation.Notification.Name
-  public static var didCancelNotification: Foundation.Notification.Name
-  public static var didFinishNotification: Foundation.Notification.Name
-  public static var didResumeTaskNotification: Foundation.Notification.Name
-  public static var didSuspendTaskNotification: Foundation.Notification.Name
-  public static var didCancelTaskNotification: Foundation.Notification.Name
-  public static var didCompleteTaskNotification: Foundation.Notification.Name
+  public static let didResumeNotification: Foundation.Notification.Name
+  public static let didSuspendNotification: Foundation.Notification.Name
+  public static let didCancelNotification: Foundation.Notification.Name
+  public static let didFinishNotification: Foundation.Notification.Name
+  public static let didResumeTaskNotification: Foundation.Notification.Name
+  public static let didSuspendTaskNotification: Foundation.Notification.Name
+  public static let didCancelTaskNotification: Foundation.Notification.Name
+  public static let didCompleteTaskNotification: Foundation.Notification.Name
 }
 extension Foundation.Notification {
   public var request: LivingMapSDK.Request? {
@@ -1258,20 +2324,7 @@ extension Foundation.Notification {
 }
 public typealias AFResult<Success> = Swift.Result<Success, LivingMapSDK.AFError>
 public enum Model : Swift.String {
-  case simulator
-  case iPhone5
-  case iPhone5S
-  case iPhone6
-  case iPhone6Plus
-  case iPhone6S
-  case iPhone6SPlus
-  case iPhoneSE
-  case iPhone7
-  case iPhone7Plus
-  case iPhone8
-  case iPhone8Plus
-  case iPhoneX
-  case unrecognized
+  case simulator, iPhone5, iPhone5S, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, unrecognized
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -1441,7 +2494,7 @@ public struct LMLogConfig : LivingMapSDK.LMLogConfigurationProtocol {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class LMLogger {
-  public static var shared: LivingMapSDK.LMLogger
+  public static let shared: LivingMapSDK.LMLogger
   public var configuration: LivingMapSDK.LMLogConfigurationProtocol
   @objc deinit
 }
@@ -1472,7 +2525,7 @@ extension LivingMapSDK.Promise {
   final public func wait() throws -> T
 }
 extension LivingMapSDK.Promise where T == Swift.Void {
-  public convenience init()
+  convenience public init()
   public static var value: LivingMapSDK.Promise<Swift.Void> {
     get
   }
@@ -1490,10 +2543,10 @@ public enum PMKNamespacer {
   }
 }
 open class MultipartFormData {
-  public static var encodingMemoryThreshold: Swift.UInt64
+  public static let encodingMemoryThreshold: Swift.UInt64
   open var contentType: Swift.String {
     get
-    set(value)
+    set
   }
   public var contentLength: Swift.UInt64 {
     get
@@ -1525,10 +2578,7 @@ public enum MapView : Swift.String {
   }
 }
 public enum CacheProgress : Swift.String {
-  case GETTING_CACHE_MANIFEST
-  case GETTING_CACHE_CHECKSUMS
-  case GETTING_CACHE_PACKS
-  case DECOMPRESSING_CACHE_PACKS
+  case GETTING_CACHE_MANIFEST, GETTING_CACHE_CHECKSUMS, GETTING_CACHE_PACKS, DECOMPRESSING_CACHE_PACKS
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -1569,8 +2619,8 @@ public struct Redirector {
     case doNotFollow
     case modify((Foundation.URLSessionTask, Foundation.URLRequest, Foundation.HTTPURLResponse) -> Foundation.URLRequest?)
   }
-  public static var follow: LivingMapSDK.Redirector
-  public static var doNotFollow: LivingMapSDK.Redirector
+  public static let follow: LivingMapSDK.Redirector
+  public static let doNotFollow: LivingMapSDK.Redirector
   public let behavior: LivingMapSDK.Redirector.Behavior
   public init(behavior: LivingMapSDK.Redirector.Behavior)
 }
@@ -1586,39 +2636,56 @@ extension LivingMapSDK.RedirectHandler where Self == LivingMapSDK.Redirector {
   }
   public static func modify(using closure: @escaping (Foundation.URLSessionTask, Foundation.URLRequest, Foundation.HTTPURLResponse) -> Foundation.URLRequest?) -> LivingMapSDK.Redirector
 }
+public struct _NameMap : Swift.ExpressibleByDictionaryLiteral {
+  public enum NameDescription {
+    case same(proto: Swift.StaticString)
+    case standard(proto: Swift.StaticString)
+    case unique(proto: Swift.StaticString, json: Swift.StaticString)
+    case aliased(proto: Swift.StaticString, aliases: [Swift.StaticString])
+  }
+  public init()
+  public init(dictionaryLiteral elements: (Swift.Int, LivingMapSDK._NameMap.NameDescription)...)
+  public typealias Key = Swift.Int
+  public typealias Value = LivingMapSDK._NameMap.NameDescription
+}
 public func download(fileURL: Foundation.URL, fallbackRequest: Foundation.URLRequest, handler: @escaping ((Foundation.HTTPURLResponse?, Foundation.Data?) -> Swift.Void)) -> LivingMapSDK.Request?
 public func download(request: Foundation.URLRequest, handler: @escaping ((Foundation.HTTPURLResponse?, Foundation.Data?) -> Swift.Void)) -> LivingMapSDK.Request?
+public struct JSONEncodingOptions {
+  public var alwaysPrintEnumsAsInts: Swift.Bool
+  public var preserveProtoFieldNames: Swift.Bool
+  public init()
+}
 @_hasMissingDesignatedInitializers open class LivingMapConstants {
-  public static var HTTP_PROTOCOL: Swift.String
-  public static var URL_SCHEME: Swift.String
-  public static var HTTP_ORIGIN_KEY: Swift.String
-  public static var HTTP_ORIGIN_VALUE_TEMPLATE: Swift.String
-  public static var URL_SCHEME_FORMATTED: Swift.String
-  public static var SLASH: Swift.String
-  public static var SCREEN_MODE: Swift.String
-  public static var MOBILESDK: Swift.String
-  public static var DISABLE_WEBVIEW_GEOLOCATION: Swift.String
-  public static var URL_VIEW_VALUE: Swift.String
+  public static let HTTP_PROTOCOL: Swift.String
+  public static let URL_SCHEME: Swift.String
+  public static let HTTP_ORIGIN_KEY: Swift.String
+  public static let HTTP_ORIGIN_VALUE_TEMPLATE: Swift.String
+  public static let URL_SCHEME_FORMATTED: Swift.String
+  public static let SLASH: Swift.String
+  public static let SCREEN_MODE: Swift.String
+  public static let MOBILESDK: Swift.String
+  public static let DISABLE_WEBVIEW_GEOLOCATION: Swift.String
+  public static let URL_VIEW_VALUE: Swift.String
   @_hasMissingDesignatedInitializers open class MapStyles {
-    public static var DEFAULT: Swift.String
-    public static var AUTISM: Swift.String
-    public static var DYSLEXIA: Swift.String
-    public static var HIGH_CONTRAST: Swift.String
-    public static var HIGH_CONTRAST_1_25x: Swift.String
-    public static var HIGH_CONTRAST_1_5x: Swift.String
+    public static let DEFAULT: Swift.String
+    public static let AUTISM: Swift.String
+    public static let DYSLEXIA: Swift.String
+    public static let HIGH_CONTRAST: Swift.String
+    public static let HIGH_CONTRAST_1_25x: Swift.String
+    public static let HIGH_CONTRAST_1_5x: Swift.String
     @objc deinit
   }
-  public static var OFFLINE_STORAGE_DIRNAME: Swift.String
-  public static var OFFLINE_MAPURL_SCHEME: Swift.String
-  public static var CACHE_ENDPOINT: Swift.String
-  public static var FLOOR_HEIGHTS_FILE: Swift.String
-  public static var FLOOR_MAPPING_FILE: Swift.String
-  public static var GATEWAY_POINTS_FILE: Swift.String
-  public static var POSITIONING_ASSETS_ROOT_DIRECTORY: Swift.String
-  public static var GRIDS_CACHE_DIRECTORY: Swift.String
-  public static var JSON_ASSETS_CACHE_DIRECTORY: Swift.String
-  public static var MAG_FILE: Swift.String
-  public static var BEACON_FILE: Swift.String
+  public static let OFFLINE_STORAGE_DIRNAME: Swift.String
+  public static let OFFLINE_MAPURL_SCHEME: Swift.String
+  public static let CACHE_ENDPOINT: Swift.String
+  public static let FLOOR_HEIGHTS_FILE: Swift.String
+  public static let FLOOR_MAPPING_FILE: Swift.String
+  public static let GATEWAY_POINTS_FILE: Swift.String
+  public static let POSITIONING_ASSETS_ROOT_DIRECTORY: Swift.String
+  public static let GRIDS_CACHE_DIRECTORY: Swift.String
+  public static let JSON_ASSETS_CACHE_DIRECTORY: Swift.String
+  public static let MAG_FILE: Swift.String
+  public static let BEACON_FILE: Swift.String
   public enum ConnectivityStatus : Swift.String {
     case ONLINE
     case OFFLINE
@@ -1628,9 +2695,9 @@ public func download(request: Foundation.URLRequest, handler: @escaping ((Founda
       get
     }
   }
-  public static var EXTRAS_POSITIONING_AVAILABLE_KEY: Swift.String
-  public static var KEYCLOAK_URL: Swift.String
-  public static var KEYCLOAK_LOGIN: Swift.String
+  public static let EXTRAS_POSITIONING_AVAILABLE_KEY: Swift.String
+  public static let KEYCLOAK_URL: Swift.String
+  public static let KEYCLOAK_LOGIN: Swift.String
   @objc deinit
 }
 public protocol ParameterEncoder {
@@ -1647,7 +2714,6 @@ open class JSONParameterEncoder : LivingMapSDK.ParameterEncoder {
   public static var sortedKeys: LivingMapSDK.JSONParameterEncoder {
     get
   }
-  final public let encoder: Foundation.JSONEncoder
   public init(encoder: Foundation.JSONEncoder = JSONEncoder())
   open func encode<Parameters>(_ parameters: Parameters?, into request: Foundation.URLRequest) throws -> Foundation.URLRequest where Parameters : Swift.Encodable
   @objc deinit
@@ -1656,7 +2722,6 @@ extension LivingMapSDK.ParameterEncoder where Self == LivingMapSDK.JSONParameter
   public static var json: LivingMapSDK.JSONParameterEncoder {
     get
   }
-  public static func json(encoder: Foundation.JSONEncoder = JSONEncoder()) -> LivingMapSDK.JSONParameterEncoder
 }
 open class URLEncodedFormParameterEncoder : LivingMapSDK.ParameterEncoder {
   public enum Destination {
@@ -1684,6 +2749,62 @@ extension LivingMapSDK.ParameterEncoder where Self == LivingMapSDK.URLEncodedFor
   }
   public static func urlEncodedForm(encoder: LivingMapSDK.URLEncodedFormEncoder = URLEncodedFormEncoder(), destination: LivingMapSDK.URLEncodedFormParameterEncoder.Destination = .methodDependent) -> LivingMapSDK.URLEncodedFormParameterEncoder
 }
+extension LivingMapSDK.Google_Protobuf_DoubleValue : Swift.ExpressibleByFloatLiteral {
+  public typealias WrappedType = LivingMapSDK.ProtobufDouble
+  public typealias FloatLiteralType = LivingMapSDK.Google_Protobuf_DoubleValue.WrappedType.BaseType
+  public init(_ value: LivingMapSDK.Google_Protobuf_DoubleValue.WrappedType.BaseType)
+  public init(floatLiteral: LivingMapSDK.Google_Protobuf_DoubleValue.FloatLiteralType)
+}
+extension LivingMapSDK.Google_Protobuf_FloatValue : Swift.ExpressibleByFloatLiteral {
+  public typealias WrappedType = LivingMapSDK.ProtobufFloat
+  public typealias FloatLiteralType = Swift.Float
+  public init(_ value: LivingMapSDK.Google_Protobuf_FloatValue.WrappedType.BaseType)
+  public init(floatLiteral: LivingMapSDK.Google_Protobuf_FloatValue.FloatLiteralType)
+}
+extension LivingMapSDK.Google_Protobuf_Int64Value : Swift.ExpressibleByIntegerLiteral {
+  public typealias WrappedType = LivingMapSDK.ProtobufInt64
+  public typealias IntegerLiteralType = LivingMapSDK.Google_Protobuf_Int64Value.WrappedType.BaseType
+  public init(_ value: LivingMapSDK.Google_Protobuf_Int64Value.WrappedType.BaseType)
+  public init(integerLiteral: LivingMapSDK.Google_Protobuf_Int64Value.IntegerLiteralType)
+}
+extension LivingMapSDK.Google_Protobuf_UInt64Value : Swift.ExpressibleByIntegerLiteral {
+  public typealias WrappedType = LivingMapSDK.ProtobufUInt64
+  public typealias IntegerLiteralType = LivingMapSDK.Google_Protobuf_UInt64Value.WrappedType.BaseType
+  public init(_ value: LivingMapSDK.Google_Protobuf_UInt64Value.WrappedType.BaseType)
+  public init(integerLiteral: LivingMapSDK.Google_Protobuf_UInt64Value.IntegerLiteralType)
+}
+extension LivingMapSDK.Google_Protobuf_Int32Value : Swift.ExpressibleByIntegerLiteral {
+  public typealias WrappedType = LivingMapSDK.ProtobufInt32
+  public typealias IntegerLiteralType = LivingMapSDK.Google_Protobuf_Int32Value.WrappedType.BaseType
+  public init(_ value: LivingMapSDK.Google_Protobuf_Int32Value.WrappedType.BaseType)
+  public init(integerLiteral: LivingMapSDK.Google_Protobuf_Int32Value.IntegerLiteralType)
+}
+extension LivingMapSDK.Google_Protobuf_UInt32Value : Swift.ExpressibleByIntegerLiteral {
+  public typealias WrappedType = LivingMapSDK.ProtobufUInt32
+  public typealias IntegerLiteralType = LivingMapSDK.Google_Protobuf_UInt32Value.WrappedType.BaseType
+  public init(_ value: LivingMapSDK.Google_Protobuf_UInt32Value.WrappedType.BaseType)
+  public init(integerLiteral: LivingMapSDK.Google_Protobuf_UInt32Value.IntegerLiteralType)
+}
+extension LivingMapSDK.Google_Protobuf_BoolValue : Swift.ExpressibleByBooleanLiteral {
+  public typealias WrappedType = LivingMapSDK.ProtobufBool
+  public typealias BooleanLiteralType = Swift.Bool
+  public init(_ value: LivingMapSDK.Google_Protobuf_BoolValue.WrappedType.BaseType)
+  public init(booleanLiteral: Swift.Bool)
+}
+extension LivingMapSDK.Google_Protobuf_StringValue : Swift.ExpressibleByStringLiteral {
+  public typealias WrappedType = LivingMapSDK.ProtobufString
+  public typealias StringLiteralType = Swift.String
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+  public init(_ value: LivingMapSDK.Google_Protobuf_StringValue.WrappedType.BaseType)
+  public init(stringLiteral: Swift.String)
+  public init(extendedGraphemeClusterLiteral: Swift.String)
+  public init(unicodeScalarLiteral: Swift.String)
+}
+extension LivingMapSDK.Google_Protobuf_BytesValue {
+  public typealias WrappedType = LivingMapSDK.ProtobufBytes
+  public init(_ value: LivingMapSDK.Google_Protobuf_BytesValue.WrappedType.BaseType)
+}
 @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 public struct DataResponsePublisher<Value> : Combine.Publisher {
   public typealias Output = LivingMapSDK.DataResponse<Value, LivingMapSDK.AFError>
@@ -1708,9 +2829,9 @@ extension LivingMapSDK.DataRequest {
   public func publishString(queue: Dispatch.DispatchQueue = .main, preprocessor: LivingMapSDK.DataPreprocessor = StringResponseSerializer.defaultDataPreprocessor, encoding: Swift.String.Encoding? = nil, emptyResponseCodes: Swift.Set<Swift.Int> = StringResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<LivingMapSDK.HTTPMethod> = StringResponseSerializer.defaultEmptyRequestMethods) -> LivingMapSDK.DataResponsePublisher<Swift.String>
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   @available(*, deprecated, message: "Renamed publishDecodable(type:queue:preprocessor:decoder:emptyResponseCodes:emptyRequestMethods).")
-  @_disfavoredOverload public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, preprocessor: LivingMapSDK.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: LivingMapSDK.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyResponseMethods: Swift.Set<LivingMapSDK.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> LivingMapSDK.DataResponsePublisher<T> where T : Swift.Decodable
+  @_disfavoredOverload public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, preprocessor: LivingMapSDK.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: LivingMapSDK.DataDecoder = JSONDecoder() as DataDecoder, emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyResponseMethods: Swift.Set<LivingMapSDK.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> LivingMapSDK.DataResponsePublisher<T> where T : Swift.Decodable
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
-  public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, preprocessor: LivingMapSDK.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: LivingMapSDK.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<LivingMapSDK.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> LivingMapSDK.DataResponsePublisher<T> where T : Swift.Decodable
+  public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, preprocessor: LivingMapSDK.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: LivingMapSDK.DataDecoder = JSONDecoder() as DataDecoder, emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<LivingMapSDK.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> LivingMapSDK.DataResponsePublisher<T> where T : Swift.Decodable
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishUnserialized(queue: Dispatch.DispatchQueue = .main) -> LivingMapSDK.DataResponsePublisher<Foundation.Data?>
 }
@@ -1731,7 +2852,7 @@ extension LivingMapSDK.DataStreamRequest {
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   final public func publishString(queue: Dispatch.DispatchQueue = .main) -> LivingMapSDK.DataStreamPublisher<Swift.String>
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
-  final public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, decoder: LivingMapSDK.DataDecoder = JSONDecoder(), preprocessor: LivingMapSDK.DataPreprocessor = PassthroughPreprocessor()) -> LivingMapSDK.DataStreamPublisher<T> where T : Swift.Decodable
+  final public func publishDecodable<T>(type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, decoder: LivingMapSDK.DataDecoder = JSONDecoder() as DataDecoder, preprocessor: LivingMapSDK.DataPreprocessor = PassthroughPreprocessor()) -> LivingMapSDK.DataStreamPublisher<T> where T : Swift.Decodable
 }
 @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
 public struct DownloadResponsePublisher<Value> : Combine.Publisher {
@@ -1769,6 +2890,16 @@ extension LivingMapSDK.DownloadResponsePublisher where Value == Foundation.URL? 
 extension LivingMapSDK.DownloadRequest {
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func publishUnserialized(on queue: Dispatch.DispatchQueue = .main) -> LivingMapSDK.DownloadResponsePublisher<Foundation.URL?>
+}
+extension LivingMapSDK.Message {
+  public func textFormatString() -> Swift.String
+  public func textFormatString(options: LivingMapSDK.TextFormatEncodingOptions) -> Swift.String
+  public init(textFormatString: Swift.String, options: LivingMapSDK.TextFormatDecodingOptions = TextFormatDecodingOptions(), extensions: LivingMapSDK.ExtensionMap? = nil) throws
+}
+public enum Internal {
+  public static let emptyData: Foundation.Data
+  public static func areAllInitialized(_ listOfMessages: [LivingMapSDK.Message]) -> Swift.Bool
+  public static func areAllInitialized<K>(_ mapToMessages: [K : LivingMapSDK.Message]) -> Swift.Bool where K : Swift.Hashable
 }
 public protocol Thenable : AnyObject {
   associatedtype T
@@ -1887,6 +3018,25 @@ public struct JSONEncoding : LivingMapSDK.ParameterEncoding {
   public func encode(_ urlRequest: LivingMapSDK.URLRequestConvertible, with parameters: LivingMapSDK.Parameters?) throws -> Foundation.URLRequest
   public func encode(_ urlRequest: LivingMapSDK.URLRequestConvertible, withJSONObject jsonObject: Any? = nil) throws -> Foundation.URLRequest
 }
+public enum BinaryDecodingError : Swift.Error {
+  case trailingGarbage
+  case truncated
+  case invalidUTF8
+  case malformedProtobuf
+  case missingRequiredFields
+  case internalExtensionError
+  case messageDepthLimit
+  public static func == (a: LivingMapSDK.BinaryDecodingError, b: LivingMapSDK.BinaryDecodingError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct JSONDecodingOptions {
+  public var messageDepthLimit: Swift.Int
+  public var ignoreUnknownFields: Swift.Bool
+  public init()
+}
 @objc @_inheritsConvenienceInitializers open class ConnectivityMonitor : ObjectiveC.NSObject {
   public func startMonitoring(livingMapEvents: LivingMapSDK.LivingMapPositioningEvents? = nil)
   open func isReachable() -> Swift.Bool
@@ -1909,11 +3059,102 @@ public protocol AlamofireExtended {
 extension LivingMapSDK.AlamofireExtended {
   public static var af: LivingMapSDK.AlamofireExtension<Self>.Type {
     get
-    set(newValue)
+    set
   }
   public var af: LivingMapSDK.AlamofireExtension<Self> {
     get
-    set(newValue)
+    set
+  }
+}
+extension LivingMapSDK.Google_Protobuf_Timestamp {
+  public init(seconds: Swift.Int64 = 0, nanos: Swift.Int32 = 0)
+}
+extension LivingMapSDK.Google_Protobuf_Timestamp {
+  public init(timeIntervalSince1970: Foundation.TimeInterval)
+  public init(timeIntervalSinceReferenceDate: Foundation.TimeInterval)
+  public init(date: Foundation.Date)
+  public var timeIntervalSince1970: Foundation.TimeInterval {
+    get
+  }
+  public var timeIntervalSinceReferenceDate: Foundation.TimeInterval {
+    get
+  }
+  public var date: Foundation.Date {
+    get
+  }
+}
+public func + (lhs: LivingMapSDK.Google_Protobuf_Timestamp, rhs: LivingMapSDK.Google_Protobuf_Duration) -> LivingMapSDK.Google_Protobuf_Timestamp
+public func + (lhs: LivingMapSDK.Google_Protobuf_Duration, rhs: LivingMapSDK.Google_Protobuf_Timestamp) -> LivingMapSDK.Google_Protobuf_Timestamp
+public func - (lhs: LivingMapSDK.Google_Protobuf_Timestamp, rhs: LivingMapSDK.Google_Protobuf_Duration) -> LivingMapSDK.Google_Protobuf_Timestamp
+public struct Google_Protobuf_Api {
+  public var name: Swift.String
+  public var methods: [LivingMapSDK.Google_Protobuf_Method]
+  public var options: [LivingMapSDK.Google_Protobuf_Option]
+  public var version: Swift.String
+  public var sourceContext: LivingMapSDK.Google_Protobuf_SourceContext {
+    get
+    set
+  }
+  public var hasSourceContext: Swift.Bool {
+    get
+  }
+  public mutating func clearSourceContext()
+  public var mixins: [LivingMapSDK.Google_Protobuf_Mixin]
+  public var syntax: LivingMapSDK.Google_Protobuf_Syntax
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_Method {
+  public var name: Swift.String
+  public var requestTypeURL: Swift.String
+  public var requestStreaming: Swift.Bool
+  public var responseTypeURL: Swift.String
+  public var responseStreaming: Swift.Bool
+  public var options: [LivingMapSDK.Google_Protobuf_Option]
+  public var syntax: LivingMapSDK.Google_Protobuf_Syntax
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+public struct Google_Protobuf_Mixin {
+  public var name: Swift.String
+  public var root: Swift.String
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_Api : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Method : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Mixin : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Api : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Api, rhs: LivingMapSDK.Google_Protobuf_Api) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_Method : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Method, rhs: LivingMapSDK.Google_Protobuf_Method) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension LivingMapSDK.Google_Protobuf_Mixin : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Mixin, rhs: LivingMapSDK.Google_Protobuf_Mixin) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
   }
 }
 public protocol LivingMapPositioningEvents : LivingMapSDK.LivingMapLocationListener {
@@ -1923,7 +3164,7 @@ public protocol LivingMapPositioningEvents : LivingMapSDK.LivingMapLocationListe
   func onLowCalibrationStatus(calibrationAlert: UIKit.UIAlertController)
 }
 open class Session {
-  public static var `default`: LivingMapSDK.Session
+  public static let `default`: LivingMapSDK.Session
   final public let session: Foundation.URLSession
   final public let delegate: LivingMapSDK.SessionDelegate
   final public let rootQueue: Dispatch.DispatchQueue
@@ -1937,7 +3178,7 @@ open class Session {
   final public let eventMonitor: LivingMapSDK.CompositeEventMonitor
   final public let defaultEventMonitors: [LivingMapSDK.EventMonitor]
   public init(session: Foundation.URLSession, delegate: LivingMapSDK.SessionDelegate, rootQueue: Dispatch.DispatchQueue, startRequestsImmediately: Swift.Bool = true, requestQueue: Dispatch.DispatchQueue? = nil, serializationQueue: Dispatch.DispatchQueue? = nil, interceptor: LivingMapSDK.RequestInterceptor? = nil, serverTrustManager: LivingMapSDK.ServerTrustManager? = nil, redirectHandler: LivingMapSDK.RedirectHandler? = nil, cachedResponseHandler: LivingMapSDK.CachedResponseHandler? = nil, eventMonitors: [LivingMapSDK.EventMonitor] = [])
-  public convenience init(configuration: Foundation.URLSessionConfiguration = URLSessionConfiguration.af.default, delegate: LivingMapSDK.SessionDelegate = SessionDelegate(), rootQueue: Dispatch.DispatchQueue = DispatchQueue(label: "org.alamofire.session.rootQueue"), startRequestsImmediately: Swift.Bool = true, requestQueue: Dispatch.DispatchQueue? = nil, serializationQueue: Dispatch.DispatchQueue? = nil, interceptor: LivingMapSDK.RequestInterceptor? = nil, serverTrustManager: LivingMapSDK.ServerTrustManager? = nil, redirectHandler: LivingMapSDK.RedirectHandler? = nil, cachedResponseHandler: LivingMapSDK.CachedResponseHandler? = nil, eventMonitors: [LivingMapSDK.EventMonitor] = [])
+  convenience public init(configuration: Foundation.URLSessionConfiguration = URLSessionConfiguration.af.default, delegate: LivingMapSDK.SessionDelegate = SessionDelegate(), rootQueue: Dispatch.DispatchQueue = DispatchQueue(label: "org.alamofire.session.rootQueue"), startRequestsImmediately: Swift.Bool = true, requestQueue: Dispatch.DispatchQueue? = nil, serializationQueue: Dispatch.DispatchQueue? = nil, interceptor: LivingMapSDK.RequestInterceptor? = nil, serverTrustManager: LivingMapSDK.ServerTrustManager? = nil, redirectHandler: LivingMapSDK.RedirectHandler? = nil, cachedResponseHandler: LivingMapSDK.CachedResponseHandler? = nil, eventMonitors: [LivingMapSDK.EventMonitor] = [])
   @objc deinit
   public func withAllRequests(perform action: @escaping (Swift.Set<LivingMapSDK.Request>) -> Swift.Void)
   public func cancelAllRequests(completingOnQueue queue: Dispatch.DispatchQueue = .main, completion: (() -> Swift.Void)? = nil)
@@ -2010,8 +3251,6 @@ public struct Urls : Swift.Codable, Swift.Equatable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public func newJSONDecoder() -> Foundation.JSONDecoder
-public func newJSONEncoder() -> Foundation.JSONEncoder
 public class LivingMapSDKManager {
   public var mapVC: LivingMapSDK.LMWebViewController?
   public init()
@@ -2041,19 +3280,44 @@ extension LivingMapSDK.LivingMapSDKManager {
   public func onMapReady()
   public func destinationReached()
 }
+public protocol Enum : Swift.Hashable, Swift.RawRepresentable {
+  init()
+  init?(rawValue: Swift.Int)
+  var rawValue: Swift.Int { get }
+}
+extension LivingMapSDK.Enum {
+  public func hash(into hasher: inout Swift.Hasher)
+}
 public struct HTTPMethod : Swift.RawRepresentable, Swift.Equatable, Swift.Hashable {
-  public static var connect: LivingMapSDK.HTTPMethod
-  public static var delete: LivingMapSDK.HTTPMethod
-  public static var get: LivingMapSDK.HTTPMethod
-  public static var head: LivingMapSDK.HTTPMethod
-  public static var options: LivingMapSDK.HTTPMethod
-  public static var patch: LivingMapSDK.HTTPMethod
-  public static var post: LivingMapSDK.HTTPMethod
-  public static var put: LivingMapSDK.HTTPMethod
-  public static var trace: LivingMapSDK.HTTPMethod
+  public static let connect: LivingMapSDK.HTTPMethod
+  public static let delete: LivingMapSDK.HTTPMethod
+  public static let get: LivingMapSDK.HTTPMethod
+  public static let head: LivingMapSDK.HTTPMethod
+  public static let options: LivingMapSDK.HTTPMethod
+  public static let patch: LivingMapSDK.HTTPMethod
+  public static let post: LivingMapSDK.HTTPMethod
+  public static let put: LivingMapSDK.HTTPMethod
+  public static let trace: LivingMapSDK.HTTPMethod
   public let rawValue: Swift.String
   public init(rawValue: Swift.String)
   public typealias RawValue = Swift.String
+}
+public struct Google_Protobuf_SourceContext {
+  public var fileName: Swift.String
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_SourceContext : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_SourceContext : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_SourceContext, rhs: LivingMapSDK.Google_Protobuf_SourceContext) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public protocol LivingMapLocationListener : AnyObject {
   func locationReceived(location: LivingMapSDK.LMLocation)
@@ -2063,30 +3327,54 @@ public protocol DebugModeListener : AnyObject {
   func onCPLMetricsUpdate(offset: Swift.Double, depletion: Swift.Double)
   func onAltitudeUpdate(altitude: Swift.Double, pressure: Swift.Double)
 }
-@frozen public struct AnyDecodable : Swift.Decodable {
-  public let value: Any
-  public init<T>(_ value: T?)
+public struct SimpleExtensionMap : LivingMapSDK.ExtensionMap, Swift.ExpressibleByArrayLiteral, Swift.CustomDebugStringConvertible {
+  public typealias Element = LivingMapSDK.AnyMessageExtension
+  public init()
+  public init(arrayLiteral: LivingMapSDK.SimpleExtensionMap.Element...)
+  public init(_ others: LivingMapSDK.SimpleExtensionMap...)
+  public subscript(messageType: LivingMapSDK.Message.Type, fieldNumber: Swift.Int) -> LivingMapSDK.AnyMessageExtension? {
+    get
+  }
+  public func fieldNumberForProto(messageType: LivingMapSDK.Message.Type, protoFieldName: Swift.String) -> Swift.Int?
+  public mutating func insert(_ newValue: LivingMapSDK.SimpleExtensionMap.Element)
+  public mutating func insert(contentsOf: [LivingMapSDK.SimpleExtensionMap.Element])
+  public mutating func formUnion(_ other: LivingMapSDK.SimpleExtensionMap)
+  public func union(_ other: LivingMapSDK.SimpleExtensionMap) -> LivingMapSDK.SimpleExtensionMap
+  public var debugDescription: Swift.String {
+    get
+  }
+  public typealias ArrayLiteralElement = LivingMapSDK.SimpleExtensionMap.Element
 }
-@usableFromInline
-internal protocol _AnyDecodable {
-  var value: Any { get }
-  init<T>(_ value: T?)
-}
-extension LivingMapSDK.AnyDecodable : LivingMapSDK._AnyDecodable {
-}
-extension LivingMapSDK._AnyDecodable {
-  public init(from decoder: Swift.Decoder) throws
-}
-extension LivingMapSDK.AnyDecodable : Swift.Equatable {
-  public static func == (lhs: LivingMapSDK.AnyDecodable, rhs: LivingMapSDK.AnyDecodable) -> Swift.Bool
-}
-extension LivingMapSDK.AnyDecodable : Swift.CustomStringConvertible {
-  public var description: Swift.String {
+public struct ExtensionFieldValueSet : Swift.Hashable {
+  public static func == (lhs: LivingMapSDK.ExtensionFieldValueSet, rhs: LivingMapSDK.ExtensionFieldValueSet) -> Swift.Bool
+  public init()
+  public func hash(into hasher: inout Swift.Hasher)
+  public func traverse<V>(visitor: inout V, start: Swift.Int, end: Swift.Int) throws where V : LivingMapSDK.Visitor
+  public subscript(index: Swift.Int) -> LivingMapSDK.AnyExtensionField? {
+    get
+    set
+  }
+  public var isInitialized: Swift.Bool {
+    get
+  }
+  public var hashValue: Swift.Int {
     get
   }
 }
-extension LivingMapSDK.AnyDecodable : Swift.CustomDebugStringConvertible {
-  public var debugDescription: Swift.String {
+public struct Google_Protobuf_FieldMask {
+  public var paths: [Swift.String]
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_FieldMask : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_FieldMask : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_FieldMask, rhs: LivingMapSDK.Google_Protobuf_FieldMask) -> Swift.Bool
+  public var hashValue: Swift.Int {
     get
   }
 }
@@ -2123,7 +3411,7 @@ extension LivingMapSDK.Guarantee where T : Swift.Sequence, T.Element : Swift.Com
   final public func sortedValues(on: Dispatch.DispatchQueue? = conf.Q.map, flags: Dispatch.DispatchWorkItemFlags? = nil) -> LivingMapSDK.Guarantee<[T.Iterator.Element]>
 }
 extension LivingMapSDK.Guarantee where T == Swift.Void {
-  public convenience init()
+  convenience public init()
   public static var value: LivingMapSDK.Guarantee<Swift.Void> {
     get
   }
@@ -2200,7 +3488,7 @@ final public class URLEncodedFormEncoder {
   @objc deinit
 }
 extension Foundation.CharacterSet {
-  public static var afURLQueryAllowed: Foundation.CharacterSet
+  public static let afURLQueryAllowed: Foundation.CharacterSet
 }
 public protocol KalmanInput {
   var transposed: Self { get }
@@ -2230,6 +3518,11 @@ public class RouteLocation : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
+public struct BinaryDecodingOptions {
+  public var messageDepthLimit: Swift.Int
+  public var discardUnknownFields: Swift.Bool
+  public init()
+}
 public class AuthenticationParameters : Swift.Codable {
   final public let environment: Swift.String
   final public let clientId: Swift.String
@@ -2238,6 +3531,25 @@ public class AuthenticationParameters : Swift.Codable {
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
+}
+public enum BinaryDelimited {
+  public enum Error : Swift.Error {
+    case unknownStreamError
+    case truncated
+    public static func == (a: LivingMapSDK.BinaryDelimited.Error, b: LivingMapSDK.BinaryDelimited.Error) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static func serialize(message: LivingMapSDK.Message, to stream: Foundation.OutputStream, partial: Swift.Bool = false) throws
+  public static func parse<M>(messageType: M.Type, from stream: Foundation.InputStream, extensions: LivingMapSDK.ExtensionMap? = nil, partial: Swift.Bool = false, options: LivingMapSDK.BinaryDecodingOptions = BinaryDecodingOptions()) throws -> M where M : LivingMapSDK.Message
+  public static func merge<M>(into message: inout M, from stream: Foundation.InputStream, extensions: LivingMapSDK.ExtensionMap? = nil, partial: Swift.Bool = false, options: LivingMapSDK.BinaryDecodingOptions = BinaryDecodingOptions()) throws where M : LivingMapSDK.Message
+}
+public protocol ProtobufAPIVersion_3 {
+}
+public protocol ProtobufAPIVersionCheck {
+  associatedtype Version : LivingMapSDK.ProtobufAPIVersion_3
 }
 @frozen public struct AnyEncodable : Swift.Encodable {
   public let value: Any
@@ -2330,7 +3642,7 @@ public class AuthenticationInterceptor<AuthenticatorType> : LivingMapSDK.Request
   }
   public var credential: LivingMapSDK.AuthenticationInterceptor<AuthenticatorType>.Credential? {
     get
-    set(newValue)
+    set
   }
   public init(authenticator: AuthenticatorType, credential: LivingMapSDK.AuthenticationInterceptor<AuthenticatorType>.Credential? = nil, refreshWindow: LivingMapSDK.AuthenticationInterceptor<AuthenticatorType>.RefreshWindow? = RefreshWindow())
   public func adapt(_ urlRequest: Foundation.URLRequest, for session: LivingMapSDK.Session, completion: @escaping (Swift.Result<Foundation.URLRequest, Swift.Error>) -> Swift.Void)
@@ -2341,6 +3653,12 @@ public class AuthenticationInterceptor<AuthenticatorType> : LivingMapSDK.Request
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
+}
+extension LivingMapSDK.Google_Protobuf_Any {
+  @discardableResult
+  public static func register(messageType: LivingMapSDK.Message.Type) -> Swift.Bool
+  public static func messageType(forTypeURL url: Swift.String) -> LivingMapSDK.Message.Type?
+  public static func messageType(forMessageName name: Swift.String) -> LivingMapSDK.Message.Type?
 }
 public struct LMCalibrationConfig : Swift.Codable {
   public var magneticFieldUpperThreshold: Swift.Double
@@ -2369,8 +3687,8 @@ public struct ResponseCacher {
     case doNotCache
     case modify((Foundation.URLSessionDataTask, Foundation.CachedURLResponse) -> Foundation.CachedURLResponse?)
   }
-  public static var cache: LivingMapSDK.ResponseCacher
-  public static var doNotCache: LivingMapSDK.ResponseCacher
+  public static let cache: LivingMapSDK.ResponseCacher
+  public static let doNotCache: LivingMapSDK.ResponseCacher
   public let behavior: LivingMapSDK.ResponseCacher.Behavior
   public init(behavior: LivingMapSDK.ResponseCacher.Behavior)
 }
@@ -2418,7 +3736,7 @@ extension LivingMapSDK.Thenable where Self.T : Swift.Sequence, Self.T.Element : 
   @available(*, deprecated, message: "See: `sortedValues`")
   public func sorted(on: Dispatch.DispatchQueue? = conf.Q.map) -> LivingMapSDK.Promise<[Self.T.Iterator.Element]>
 }
-public var AF: LivingMapSDK.Session
+public let AF: LivingMapSDK.Session
 public struct MimeType {
   public var value: Swift.String {
     get
@@ -2426,6 +3744,30 @@ public struct MimeType {
   public init(path: Swift.String)
   public init(path: Foundation.NSString)
   public init(url: Foundation.URL)
+}
+public struct Google_Protobuf_Any {
+  public var typeURL: Swift.String {
+    get
+    set
+  }
+  public var value: Foundation.Data {
+    get
+    set
+  }
+  public var unknownFields: LivingMapSDK.UnknownStorage
+  public init()
+}
+extension LivingMapSDK.Google_Protobuf_Any : @unchecked Swift.Sendable {
+}
+extension LivingMapSDK.Google_Protobuf_Any : LivingMapSDK.Message, LivingMapSDK._MessageImplementationBase, LivingMapSDK._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: LivingMapSDK._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public static func == (lhs: LivingMapSDK.Google_Protobuf_Any, rhs: LivingMapSDK.Google_Protobuf_Any) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public struct LMSensorUpdateFrequencies : Swift.Codable {
   public var foreground: LivingMapSDK.LMSensorUpdateFrequencies.SensorValues
@@ -2491,47 +3833,47 @@ public class LivingMapError : Swift.Error {
   public init(severity: LivingMapSDK.LivingMapErrorSeverity, errorCode: LivingMapSDK.LivingMapErrorCode, errorMessage: Swift.String)
   @objc deinit
 }
-@frozen public struct AnyCodable : Swift.Codable {
+public struct _ProtobufMap<KeyType, ValueType> where KeyType : LivingMapSDK.MapKeyType, ValueType : LivingMapSDK.FieldType {
+  public typealias Key = KeyType.BaseType
+  public typealias Value = ValueType.BaseType
+  public typealias BaseType = Swift.Dictionary<LivingMapSDK._ProtobufMap<KeyType, ValueType>.Key, LivingMapSDK._ProtobufMap<KeyType, ValueType>.Value>
+}
+public struct _ProtobufMessageMap<KeyType, ValueType> where KeyType : LivingMapSDK.MapKeyType, ValueType : LivingMapSDK.Message, ValueType : Swift.Hashable {
+  public typealias Key = KeyType.BaseType
+  public typealias Value = ValueType
+  public typealias BaseType = Swift.Dictionary<LivingMapSDK._ProtobufMessageMap<KeyType, ValueType>.Key, LivingMapSDK._ProtobufMessageMap<KeyType, ValueType>.Value>
+}
+public struct _ProtobufEnumMap<KeyType, ValueType> where KeyType : LivingMapSDK.MapKeyType, ValueType : LivingMapSDK.Enum {
+  public typealias Key = KeyType.BaseType
+  public typealias Value = ValueType
+  public typealias BaseType = Swift.Dictionary<LivingMapSDK._ProtobufEnumMap<KeyType, ValueType>.Key, LivingMapSDK._ProtobufEnumMap<KeyType, ValueType>.Value>
+}
+@frozen public struct AnyDecodable : Swift.Decodable {
   public let value: Any
   public init<T>(_ value: T?)
 }
-extension LivingMapSDK.AnyCodable : LivingMapSDK._AnyEncodable, LivingMapSDK._AnyDecodable {
+@usableFromInline
+internal protocol _AnyDecodable {
+  var value: Any { get }
+  init<T>(_ value: T?)
 }
-extension LivingMapSDK.AnyCodable : Swift.Equatable {
-  public static func == (lhs: LivingMapSDK.AnyCodable, rhs: LivingMapSDK.AnyCodable) -> Swift.Bool
+extension LivingMapSDK.AnyDecodable : LivingMapSDK._AnyDecodable {
 }
-extension LivingMapSDK.AnyCodable : Swift.CustomStringConvertible {
+extension LivingMapSDK._AnyDecodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+extension LivingMapSDK.AnyDecodable : Swift.Equatable {
+  public static func == (lhs: LivingMapSDK.AnyDecodable, rhs: LivingMapSDK.AnyDecodable) -> Swift.Bool
+}
+extension LivingMapSDK.AnyDecodable : Swift.CustomStringConvertible {
   public var description: Swift.String {
     get
   }
 }
-extension LivingMapSDK.AnyCodable : Swift.CustomDebugStringConvertible {
+extension LivingMapSDK.AnyDecodable : Swift.CustomDebugStringConvertible {
   public var debugDescription: Swift.String {
     get
   }
-}
-extension LivingMapSDK.AnyCodable : Swift.ExpressibleByNilLiteral {
-}
-extension LivingMapSDK.AnyCodable : Swift.ExpressibleByBooleanLiteral {
-  public typealias BooleanLiteralType = Swift.Bool
-}
-extension LivingMapSDK.AnyCodable : Swift.ExpressibleByIntegerLiteral {
-  public typealias IntegerLiteralType = Swift.Int
-}
-extension LivingMapSDK.AnyCodable : Swift.ExpressibleByFloatLiteral {
-  public typealias FloatLiteralType = Swift.Double
-}
-extension LivingMapSDK.AnyCodable : Swift.ExpressibleByStringLiteral {
-  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
-  public typealias StringLiteralType = Swift.String
-  public typealias UnicodeScalarLiteralType = Swift.String
-}
-extension LivingMapSDK.AnyCodable : Swift.ExpressibleByArrayLiteral {
-  public typealias ArrayLiteralElement = Any
-}
-extension LivingMapSDK.AnyCodable : Swift.ExpressibleByDictionaryLiteral {
-  public typealias Key = Swift.AnyHashable
-  public typealias Value = Any
 }
 public enum LivingMapErrorCode : Swift.Int {
   case CannotConvertLivingMapLocationToJSON
@@ -2603,6 +3945,38 @@ public enum LivingMapErrorCode : Swift.Int {
     get
   }
 }
+public enum TextFormatDecodingError : Swift.Error {
+  case malformedText
+  case malformedNumber
+  case trailingGarbage
+  case truncated
+  case invalidUTF8
+  case schemaMismatch
+  case missingFieldNames
+  case unknownField
+  case unrecognizedEnumValue
+  case conflictingOneOf
+  case internalExtensionError
+  case messageDepthLimit
+  public static func == (a: LivingMapSDK.TextFormatDecodingError, b: LivingMapSDK.TextFormatDecodingError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum JSONEncodingError : Swift.Error {
+  case anyTranscodeFailure
+  case timestampRange
+  case durationRange
+  case fieldMaskConversion
+  case missingFieldNames
+  case missingValue
+  public static func == (a: LivingMapSDK.JSONEncodingError, b: LivingMapSDK.JSONEncodingError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public struct LMActivityClassificationConfig : Swift.Codable {
   public var predictionWindowSize: Swift.Int
   public var stateInLength: Swift.Int
@@ -2611,6 +3985,23 @@ public struct LMActivityClassificationConfig : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+extension LivingMapSDK.Google_Protobuf_Duration {
+  public init(seconds: Swift.Int64 = 0, nanos: Swift.Int32 = 0)
+}
+extension LivingMapSDK.Google_Protobuf_Duration : Swift.ExpressibleByFloatLiteral {
+  public typealias FloatLiteralType = Swift.Double
+  public init(floatLiteral value: Swift.Double)
+}
+extension LivingMapSDK.Google_Protobuf_Duration {
+  public init(timeInterval: Foundation.TimeInterval)
+  public var timeInterval: Foundation.TimeInterval {
+    get
+  }
+}
+prefix public func - (operand: LivingMapSDK.Google_Protobuf_Duration) -> LivingMapSDK.Google_Protobuf_Duration
+public func + (lhs: LivingMapSDK.Google_Protobuf_Duration, rhs: LivingMapSDK.Google_Protobuf_Duration) -> LivingMapSDK.Google_Protobuf_Duration
+public func - (lhs: LivingMapSDK.Google_Protobuf_Duration, rhs: LivingMapSDK.Google_Protobuf_Duration) -> LivingMapSDK.Google_Protobuf_Duration
+public func - (lhs: LivingMapSDK.Google_Protobuf_Timestamp, rhs: LivingMapSDK.Google_Protobuf_Timestamp) -> LivingMapSDK.Google_Protobuf_Duration
 public struct Matrix : Swift.Equatable {
   public let rows: Swift.Int, columns: Swift.Int
   public var grid: [Swift.Double]
@@ -2624,7 +4015,7 @@ public struct Matrix : Swift.Equatable {
   public func indexIsValid(forRow row: Swift.Int, column: Swift.Int) -> Swift.Bool
   public subscript(row: Swift.Int, column: Swift.Int) -> Swift.Double {
     get
-    set(newValue)
+    set
   }
 }
 public func == (lhs: LivingMapSDK.Matrix, rhs: LivingMapSDK.Matrix) -> Swift.Bool
@@ -2652,6 +4043,20 @@ extension LivingMapSDK.Matrix : Swift.CustomStringConvertible {
   public var description: Swift.String {
     get
   }
+}
+public protocol AnyMessageExtension {
+  var fieldNumber: Swift.Int { get }
+  var fieldName: Swift.String { get }
+  var messageType: LivingMapSDK.Message.Type { get }
+  func _protobuf_newField<D>(decoder: inout D) throws -> LivingMapSDK.AnyExtensionField? where D : LivingMapSDK.ProtoDecoder
+}
+public class MessageExtension<FieldType, MessageType> : LivingMapSDK.AnyMessageExtension where FieldType : LivingMapSDK.ExtensionField, MessageType : LivingMapSDK.Message {
+  final public let fieldNumber: Swift.Int
+  final public let fieldName: Swift.String
+  final public let messageType: LivingMapSDK.Message.Type
+  public init(_protobuf_fieldNumber: Swift.Int, fieldName: Swift.String)
+  public func _protobuf_newField<D>(decoder: inout D) throws -> LivingMapSDK.AnyExtensionField? where D : LivingMapSDK.ProtoDecoder
+  @objc deinit
 }
 public func when<U>(fulfilled thenables: [U]) -> LivingMapSDK.Promise<[U.T]> where U : LivingMapSDK.Thenable
 public func when<U>(fulfilled promises: U...) -> LivingMapSDK.Promise<Swift.Void> where U : LivingMapSDK.Thenable, U.T == Swift.Void
@@ -2715,12 +4120,12 @@ final public class DefaultTrustEvaluator : LivingMapSDK.ServerTrustEvaluating {
 }
 final public class RevocationTrustEvaluator : LivingMapSDK.ServerTrustEvaluating {
   public struct Options : Swift.OptionSet {
-    public static var crl: LivingMapSDK.RevocationTrustEvaluator.Options
-    public static var networkAccessDisabled: LivingMapSDK.RevocationTrustEvaluator.Options
-    public static var ocsp: LivingMapSDK.RevocationTrustEvaluator.Options
-    public static var preferCRL: LivingMapSDK.RevocationTrustEvaluator.Options
-    public static var requirePositiveResponse: LivingMapSDK.RevocationTrustEvaluator.Options
-    public static var any: LivingMapSDK.RevocationTrustEvaluator.Options
+    public static let crl: LivingMapSDK.RevocationTrustEvaluator.Options
+    public static let networkAccessDisabled: LivingMapSDK.RevocationTrustEvaluator.Options
+    public static let ocsp: LivingMapSDK.RevocationTrustEvaluator.Options
+    public static let preferCRL: LivingMapSDK.RevocationTrustEvaluator.Options
+    public static let requirePositiveResponse: LivingMapSDK.RevocationTrustEvaluator.Options
+    public static let any: LivingMapSDK.RevocationTrustEvaluator.Options
     public let rawValue: CoreFoundation.CFOptionFlags
     public init(rawValue: CoreFoundation.CFOptionFlags)
     public typealias ArrayLiteralElement = LivingMapSDK.RevocationTrustEvaluator.Options
@@ -2825,7 +4230,7 @@ extension Security.SecPolicy : LivingMapSDK.AlamofireExtended {
   public typealias ExtendedType = Security.SecPolicy
 }
 extension LivingMapSDK.AlamofireExtension where ExtendedType == Security.SecPolicy {
-  public static var `default`: Security.SecPolicy
+  public static let `default`: Security.SecPolicy
   public static func hostname(_ hostname: Swift.String) -> Security.SecPolicy
   public static func revocation(options: LivingMapSDK.RevocationTrustEvaluator.Options) throws -> Security.SecPolicy
 }
@@ -2909,7 +4314,7 @@ extension LivingMapSDK.CatchMixin where Self.T == Swift.Void {
     }
   }
   public typealias Listener = (LivingMapSDK.NetworkReachabilityManager.NetworkReachabilityStatus) -> Swift.Void
-  public static var `default`: LivingMapSDK.NetworkReachabilityManager?
+  public static let `default`: LivingMapSDK.NetworkReachabilityManager?
   open var isReachable: Swift.Bool {
     get
   }
@@ -2926,8 +4331,8 @@ extension LivingMapSDK.CatchMixin where Self.T == Swift.Void {
   open var status: LivingMapSDK.NetworkReachabilityManager.NetworkReachabilityStatus {
     get
   }
-  public convenience init?(host: Swift.String)
-  public convenience init?()
+  convenience public init?(host: Swift.String)
+  convenience public init?()
   @objc deinit
   @discardableResult
   open func startListening(onQueue queue: Dispatch.DispatchQueue = .main, onUpdatePerforming listener: @escaping LivingMapSDK.NetworkReachabilityManager.Listener) -> Swift.Bool
@@ -3098,7 +4503,7 @@ public protocol EmptyResponse {
   static func emptyValue() -> Self
 }
 public struct Empty : Swift.Codable {
-  public static var value: LivingMapSDK.Empty
+  public static let value: LivingMapSDK.Empty
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -3117,17 +4522,17 @@ final public class DecodableResponseSerializer<T> : LivingMapSDK.ResponseSeriali
   final public let decoder: LivingMapSDK.DataDecoder
   final public let emptyResponseCodes: Swift.Set<Swift.Int>
   final public let emptyRequestMethods: Swift.Set<LivingMapSDK.HTTPMethod>
-  public init(dataPreprocessor: LivingMapSDK.DataPreprocessor = DecodableResponseSerializer.defaultDataPreprocessor, decoder: LivingMapSDK.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<LivingMapSDK.HTTPMethod> = DecodableResponseSerializer.defaultEmptyRequestMethods)
+  public init(dataPreprocessor: LivingMapSDK.DataPreprocessor = DecodableResponseSerializer.defaultDataPreprocessor, decoder: LivingMapSDK.DataDecoder = JSONDecoder() as DataDecoder, emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<LivingMapSDK.HTTPMethod> = DecodableResponseSerializer.defaultEmptyRequestMethods)
   final public func serialize(request: Foundation.URLRequest?, response: Foundation.HTTPURLResponse?, data: Foundation.Data?, error: Swift.Error?) throws -> T
   public typealias SerializedObject = T
   @objc deinit
 }
 extension LivingMapSDK.ResponseSerializer {
-  public static func decodable<T>(of type: T.Type, dataPreprocessor: LivingMapSDK.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: LivingMapSDK.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<LivingMapSDK.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> LivingMapSDK.DecodableResponseSerializer<T> where Self == LivingMapSDK.DecodableResponseSerializer<T>, T : Swift.Decodable
+  public static func decodable<T>(of type: T.Type, dataPreprocessor: LivingMapSDK.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: LivingMapSDK.DataDecoder = JSONDecoder() as DataDecoder, emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<LivingMapSDK.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods) -> LivingMapSDK.DecodableResponseSerializer<T> where Self == LivingMapSDK.DecodableResponseSerializer<T>, T : Swift.Decodable
 }
 extension LivingMapSDK.DataRequest {
   @discardableResult
-  public func responseDecodable<T>(of type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, dataPreprocessor: LivingMapSDK.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: LivingMapSDK.DataDecoder = JSONDecoder(), emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<LivingMapSDK.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods, completionHandler: @escaping (LivingMapSDK.AFDataResponse<T>) -> Swift.Void) -> Self where T : Swift.Decodable
+  public func responseDecodable<T>(of type: T.Type = T.self, queue: Dispatch.DispatchQueue = .main, dataPreprocessor: LivingMapSDK.DataPreprocessor = DecodableResponseSerializer<T>.defaultDataPreprocessor, decoder: LivingMapSDK.DataDecoder = JSONDecoder() as DataDecoder, emptyResponseCodes: Swift.Set<Swift.Int> = DecodableResponseSerializer<T>.defaultEmptyResponseCodes, emptyRequestMethods: Swift.Set<LivingMapSDK.HTTPMethod> = DecodableResponseSerializer<T>.defaultEmptyRequestMethods, completionHandler: @escaping (LivingMapSDK.AFDataResponse<T>) -> Swift.Void) -> Self where T : Swift.Decodable
 }
 extension LivingMapSDK.DownloadRequest {
   @discardableResult
@@ -3173,7 +4578,252 @@ extension LivingMapSDK.DataStreamRequest {
   @discardableResult
   final public func responseStreamString(on queue: Dispatch.DispatchQueue = .main, stream: @escaping LivingMapSDK.DataStreamRequest.Handler<Swift.String, Swift.Never>) -> Self
   @discardableResult
-  final public func responseStreamDecodable<T>(of type: T.Type = T.self, on queue: Dispatch.DispatchQueue = .main, using decoder: LivingMapSDK.DataDecoder = JSONDecoder(), preprocessor: LivingMapSDK.DataPreprocessor = PassthroughPreprocessor(), stream: @escaping LivingMapSDK.DataStreamRequest.Handler<T, LivingMapSDK.AFError>) -> Self where T : Swift.Decodable
+  final public func responseStreamDecodable<T>(of type: T.Type = T.self, on queue: Dispatch.DispatchQueue = .main, using decoder: LivingMapSDK.DataDecoder = JSONDecoder() as DataDecoder, preprocessor: LivingMapSDK.DataPreprocessor = PassthroughPreprocessor(), stream: @escaping LivingMapSDK.DataStreamRequest.Handler<T, LivingMapSDK.AFError>) -> Self where T : Swift.Decodable
+}
+extension LivingMapSDK.Google_Protobuf_FieldMask {
+  public init(protoPaths: [Swift.String])
+  public init(protoPaths: Swift.String...)
+  public init?(jsonPaths: Swift.String...)
+}
+extension LivingMapSDK.Message {
+  public func jsonString(options: LivingMapSDK.JSONEncodingOptions = JSONEncodingOptions()) throws -> Swift.String
+  public func jsonUTF8Data(options: LivingMapSDK.JSONEncodingOptions = JSONEncodingOptions()) throws -> Foundation.Data
+  public init(jsonString: Swift.String, options: LivingMapSDK.JSONDecodingOptions = JSONDecodingOptions()) throws
+  public init(jsonString: Swift.String, extensions: LivingMapSDK.ExtensionMap? = nil, options: LivingMapSDK.JSONDecodingOptions = JSONDecodingOptions()) throws
+  public init(jsonUTF8Data: Foundation.Data, options: LivingMapSDK.JSONDecodingOptions = JSONDecodingOptions()) throws
+  public init(jsonUTF8Data: Foundation.Data, extensions: LivingMapSDK.ExtensionMap? = nil, options: LivingMapSDK.JSONDecodingOptions = JSONDecodingOptions()) throws
+}
+public protocol AnyExtensionField : Swift.CustomDebugStringConvertible {
+  func hash(into hasher: inout Swift.Hasher)
+  var protobufExtension: LivingMapSDK.AnyMessageExtension { get }
+  func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  mutating func decodeExtensionField<T>(decoder: inout T) throws where T : LivingMapSDK.ProtoDecoder
+  func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  var isInitialized: Swift.Bool { get }
+}
+extension LivingMapSDK.AnyExtensionField {
+  public var isInitialized: Swift.Bool {
+    get
+  }
+}
+public protocol ExtensionField : LivingMapSDK.AnyExtensionField, Swift.Hashable {
+  associatedtype ValueType
+  var value: Self.ValueType { get set }
+  init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: Self.ValueType)
+  init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+}
+public struct OptionalExtensionField<T> : LivingMapSDK.ExtensionField where T : LivingMapSDK.FieldType {
+  public typealias BaseType = T.BaseType
+  public typealias ValueType = LivingMapSDK.OptionalExtensionField<T>.BaseType
+  public var value: LivingMapSDK.OptionalExtensionField<T>.ValueType
+  public var protobufExtension: LivingMapSDK.AnyMessageExtension
+  public static func == (lhs: LivingMapSDK.OptionalExtensionField<T>, rhs: LivingMapSDK.OptionalExtensionField<T>) -> Swift.Bool
+  public init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: LivingMapSDK.OptionalExtensionField<T>.ValueType)
+  public var debugDescription: Swift.String {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  public mutating func decodeExtensionField<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct RepeatedExtensionField<T> : LivingMapSDK.ExtensionField where T : LivingMapSDK.FieldType {
+  public typealias BaseType = T.BaseType
+  public typealias ValueType = [LivingMapSDK.RepeatedExtensionField<T>.BaseType]
+  public var value: LivingMapSDK.RepeatedExtensionField<T>.ValueType
+  public var protobufExtension: LivingMapSDK.AnyMessageExtension
+  public static func == (lhs: LivingMapSDK.RepeatedExtensionField<T>, rhs: LivingMapSDK.RepeatedExtensionField<T>) -> Swift.Bool
+  public init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: LivingMapSDK.RepeatedExtensionField<T>.ValueType)
+  public func hash(into hasher: inout Swift.Hasher)
+  public func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  public var debugDescription: Swift.String {
+    get
+  }
+  public mutating func decodeExtensionField<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PackedExtensionField<T> : LivingMapSDK.ExtensionField where T : LivingMapSDK.FieldType {
+  public typealias BaseType = T.BaseType
+  public typealias ValueType = [LivingMapSDK.PackedExtensionField<T>.BaseType]
+  public var value: LivingMapSDK.PackedExtensionField<T>.ValueType
+  public var protobufExtension: LivingMapSDK.AnyMessageExtension
+  public static func == (lhs: LivingMapSDK.PackedExtensionField<T>, rhs: LivingMapSDK.PackedExtensionField<T>) -> Swift.Bool
+  public init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: LivingMapSDK.PackedExtensionField<T>.ValueType)
+  public func hash(into hasher: inout Swift.Hasher)
+  public func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  public var debugDescription: Swift.String {
+    get
+  }
+  public mutating func decodeExtensionField<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct OptionalEnumExtensionField<E> : LivingMapSDK.ExtensionField where E : LivingMapSDK.Enum, E.RawValue == Swift.Int {
+  public typealias BaseType = E
+  public typealias ValueType = E
+  public var value: LivingMapSDK.OptionalEnumExtensionField<E>.ValueType
+  public var protobufExtension: LivingMapSDK.AnyMessageExtension
+  public static func == (lhs: LivingMapSDK.OptionalEnumExtensionField<E>, rhs: LivingMapSDK.OptionalEnumExtensionField<E>) -> Swift.Bool
+  public init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: LivingMapSDK.OptionalEnumExtensionField<E>.ValueType)
+  public var debugDescription: Swift.String {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  public mutating func decodeExtensionField<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct RepeatedEnumExtensionField<E> : LivingMapSDK.ExtensionField where E : LivingMapSDK.Enum, E.RawValue == Swift.Int {
+  public typealias BaseType = E
+  public typealias ValueType = [E]
+  public var value: LivingMapSDK.RepeatedEnumExtensionField<E>.ValueType
+  public var protobufExtension: LivingMapSDK.AnyMessageExtension
+  public static func == (lhs: LivingMapSDK.RepeatedEnumExtensionField<E>, rhs: LivingMapSDK.RepeatedEnumExtensionField<E>) -> Swift.Bool
+  public init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: LivingMapSDK.RepeatedEnumExtensionField<E>.ValueType)
+  public func hash(into hasher: inout Swift.Hasher)
+  public func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  public var debugDescription: Swift.String {
+    get
+  }
+  public mutating func decodeExtensionField<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PackedEnumExtensionField<E> : LivingMapSDK.ExtensionField where E : LivingMapSDK.Enum, E.RawValue == Swift.Int {
+  public typealias BaseType = E
+  public typealias ValueType = [E]
+  public var value: LivingMapSDK.PackedEnumExtensionField<E>.ValueType
+  public var protobufExtension: LivingMapSDK.AnyMessageExtension
+  public static func == (lhs: LivingMapSDK.PackedEnumExtensionField<E>, rhs: LivingMapSDK.PackedEnumExtensionField<E>) -> Swift.Bool
+  public init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: LivingMapSDK.PackedEnumExtensionField<E>.ValueType)
+  public func hash(into hasher: inout Swift.Hasher)
+  public func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  public var debugDescription: Swift.String {
+    get
+  }
+  public mutating func decodeExtensionField<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct OptionalMessageExtensionField<M> : LivingMapSDK.ExtensionField where M : LivingMapSDK.Message, M : Swift.Equatable {
+  public typealias BaseType = M
+  public typealias ValueType = LivingMapSDK.OptionalMessageExtensionField<M>.BaseType
+  public var value: LivingMapSDK.OptionalMessageExtensionField<M>.ValueType
+  public var protobufExtension: LivingMapSDK.AnyMessageExtension
+  public static func == (lhs: LivingMapSDK.OptionalMessageExtensionField<M>, rhs: LivingMapSDK.OptionalMessageExtensionField<M>) -> Swift.Bool
+  public init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: LivingMapSDK.OptionalMessageExtensionField<M>.ValueType)
+  public var debugDescription: Swift.String {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  public mutating func decodeExtensionField<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public var isInitialized: Swift.Bool {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct RepeatedMessageExtensionField<M> : LivingMapSDK.ExtensionField where M : LivingMapSDK.Message, M : Swift.Equatable {
+  public typealias BaseType = M
+  public typealias ValueType = [LivingMapSDK.RepeatedMessageExtensionField<M>.BaseType]
+  public var value: LivingMapSDK.RepeatedMessageExtensionField<M>.ValueType
+  public var protobufExtension: LivingMapSDK.AnyMessageExtension
+  public static func == (lhs: LivingMapSDK.RepeatedMessageExtensionField<M>, rhs: LivingMapSDK.RepeatedMessageExtensionField<M>) -> Swift.Bool
+  public init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: LivingMapSDK.RepeatedMessageExtensionField<M>.ValueType)
+  public func hash(into hasher: inout Swift.Hasher)
+  public func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  public var debugDescription: Swift.String {
+    get
+  }
+  public mutating func decodeExtensionField<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public var isInitialized: Swift.Bool {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct OptionalGroupExtensionField<G> : LivingMapSDK.ExtensionField where G : LivingMapSDK.Message, G : Swift.Hashable {
+  public typealias BaseType = G
+  public typealias ValueType = LivingMapSDK.OptionalGroupExtensionField<G>.BaseType
+  public var value: G
+  public var protobufExtension: LivingMapSDK.AnyMessageExtension
+  public static func == (lhs: LivingMapSDK.OptionalGroupExtensionField<G>, rhs: LivingMapSDK.OptionalGroupExtensionField<G>) -> Swift.Bool
+  public init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: LivingMapSDK.OptionalGroupExtensionField<G>.ValueType)
+  public func hash(into hasher: inout Swift.Hasher)
+  public var debugDescription: Swift.String {
+    get
+  }
+  public func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  public mutating func decodeExtensionField<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public var isInitialized: Swift.Bool {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct RepeatedGroupExtensionField<G> : LivingMapSDK.ExtensionField where G : LivingMapSDK.Message, G : Swift.Hashable {
+  public typealias BaseType = G
+  public typealias ValueType = [LivingMapSDK.RepeatedGroupExtensionField<G>.BaseType]
+  public var value: LivingMapSDK.RepeatedGroupExtensionField<G>.ValueType
+  public var protobufExtension: LivingMapSDK.AnyMessageExtension
+  public static func == (lhs: LivingMapSDK.RepeatedGroupExtensionField<G>, rhs: LivingMapSDK.RepeatedGroupExtensionField<G>) -> Swift.Bool
+  public init(protobufExtension: LivingMapSDK.AnyMessageExtension, value: LivingMapSDK.RepeatedGroupExtensionField<G>.ValueType)
+  public func hash(into hasher: inout Swift.Hasher)
+  public var debugDescription: Swift.String {
+    get
+  }
+  public func isEqual(other: LivingMapSDK.AnyExtensionField) -> Swift.Bool
+  public mutating func decodeExtensionField<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public init?<D>(protobufExtension: LivingMapSDK.AnyMessageExtension, decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  public func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  public var isInitialized: Swift.Bool {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public let defaultAnyTypeURLPrefix: Swift.String
+extension LivingMapSDK.Google_Protobuf_Any {
+  public init(message: LivingMapSDK.Message, partial: Swift.Bool = false, typePrefix: Swift.String = defaultAnyTypeURLPrefix) throws
+  public init(textFormatString: Swift.String, options: LivingMapSDK.TextFormatDecodingOptions = TextFormatDecodingOptions(), extensions: LivingMapSDK.ExtensionMap? = nil) throws
+  public func isA<M>(_ type: M.Type) -> Swift.Bool where M : LivingMapSDK.Message
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol ExtensionMap {
+  subscript(messageType: LivingMapSDK.Message.Type, fieldNumber: Swift.Int) -> LivingMapSDK.AnyMessageExtension? { get }
+  func fieldNumberForProto(messageType: LivingMapSDK.Message.Type, protoFieldName: Swift.String) -> Swift.Int?
 }
 public struct PMKConfiguration {
   public var Q: (map: Dispatch.DispatchQueue?, return: Dispatch.DispatchQueue?)
@@ -3182,12 +4832,12 @@ public struct PMKConfiguration {
 }
 public var conf: LivingMapSDK.PMKConfiguration
 open class RetryPolicy : LivingMapSDK.RequestInterceptor {
-  public static var defaultRetryLimit: Swift.UInt
-  public static var defaultExponentialBackoffBase: Swift.UInt
-  public static var defaultExponentialBackoffScale: Swift.Double
-  public static var defaultRetryableHTTPMethods: Swift.Set<LivingMapSDK.HTTPMethod>
-  public static var defaultRetryableHTTPStatusCodes: Swift.Set<Swift.Int>
-  public static var defaultRetryableURLErrorCodes: Swift.Set<Foundation.URLError.Code>
+  public static let defaultRetryLimit: Swift.UInt
+  public static let defaultExponentialBackoffBase: Swift.UInt
+  public static let defaultExponentialBackoffScale: Swift.Double
+  public static let defaultRetryableHTTPMethods: Swift.Set<LivingMapSDK.HTTPMethod>
+  public static let defaultRetryableHTTPStatusCodes: Swift.Set<Swift.Int>
+  public static let defaultRetryableURLErrorCodes: Swift.Set<Foundation.URLError.Code>
   final public let retryLimit: Swift.UInt
   final public let exponentialBackoffBase: Swift.UInt
   final public let exponentialBackoffScale: Swift.Double
@@ -3241,7 +4891,129 @@ extension LivingMapSDK.SessionDelegate : Foundation.URLSessionDownloadDelegate {
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didWriteData bytesWritten: Swift.Int64, totalBytesWritten: Swift.Int64, totalBytesExpectedToWrite: Swift.Int64)
   @objc dynamic open func urlSession(_ session: Foundation.URLSession, downloadTask: Foundation.URLSessionDownloadTask, didFinishDownloadingTo location: Foundation.URL)
 }
+public protocol Message : Swift.CustomDebugStringConvertible {
+  init()
+  static var protoMessageName: Swift.String { get }
+  var isInitialized: Swift.Bool { get }
+  var unknownFields: LivingMapSDK.UnknownStorage { get set }
+  mutating func decodeMessage<D>(decoder: inout D) throws where D : LivingMapSDK.ProtoDecoder
+  func traverse<V>(visitor: inout V) throws where V : LivingMapSDK.Visitor
+  func hash(into hasher: inout Swift.Hasher)
+  func isEqualTo(message: LivingMapSDK.Message) -> Swift.Bool
+}
+extension LivingMapSDK.Message {
+  public var isInitialized: Swift.Bool {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public var debugDescription: Swift.String {
+    get
+  }
+  public static func with(_ populator: (inout Self) throws -> ()) rethrows -> Self
+}
+public protocol _MessageImplementationBase : LivingMapSDK.Message, Swift.Hashable {
+  func _protobuf_generated_isEqualTo(other: Self) -> Swift.Bool
+}
+extension LivingMapSDK._MessageImplementationBase {
+  public func isEqualTo(message: LivingMapSDK.Message) -> Swift.Bool
+  public static func == (lhs: Self, rhs: Self) -> Swift.Bool
+  public func _protobuf_generated_isEqualTo(other: Self) -> Swift.Bool
+}
 public func race<U>(_ thenables: U...) -> LivingMapSDK.Promise<U.T> where U : LivingMapSDK.Thenable
 public func race<U>(_ thenables: [U]) -> LivingMapSDK.Promise<U.T> where U : LivingMapSDK.Thenable
 public func race<T>(_ guarantees: LivingMapSDK.Guarantee<T>...) -> LivingMapSDK.Guarantee<T>
 public func race<U>(fulfilled thenables: [U]) -> LivingMapSDK.Promise<U.T> where U : LivingMapSDK.Thenable
+extension LivingMapSDK.Google_Protobuf_Struct : Swift.ExpressibleByDictionaryLiteral {
+  public typealias Key = Swift.String
+  public typealias Value = LivingMapSDK.Google_Protobuf_Value
+  public init(dictionaryLiteral: (Swift.String, LivingMapSDK.Google_Protobuf_Value)...)
+}
+extension LivingMapSDK.Google_Protobuf_Struct {
+  public init(fields: [Swift.String : LivingMapSDK.Google_Protobuf_Value])
+  public subscript(key: Swift.String) -> LivingMapSDK.Google_Protobuf_Value? {
+    get
+    set(newValue)
+  }
+}
+extension LivingMapSDK.Request.State : Swift.Equatable {}
+extension LivingMapSDK.Request.State : Swift.Hashable {}
+extension LivingMapSDK.LMLocation.CoordinateReferenceSystem : Swift.Equatable {}
+extension LivingMapSDK.LMLocation.CoordinateReferenceSystem : Swift.Hashable {}
+extension LivingMapSDK.LMLocation.CoordinateReferenceSystem : Swift.RawRepresentable {}
+extension LivingMapSDK.LMLocation.LocationSource : Swift.Equatable {}
+extension LivingMapSDK.LMLocation.LocationSource : Swift.Hashable {}
+extension LivingMapSDK.LMLocation.LocationSource : Swift.RawRepresentable {}
+extension LivingMapSDK.LMLocation.LocationError : Swift.Equatable {}
+extension LivingMapSDK.LMLocation.LocationError : Swift.Hashable {}
+extension LivingMapSDK.CatchPolicy : Swift.Equatable {}
+extension LivingMapSDK.CatchPolicy : Swift.Hashable {}
+extension LivingMapSDK.MapNotification.NotificationType : Swift.Equatable {}
+extension LivingMapSDK.MapNotification.NotificationType : Swift.Hashable {}
+extension LivingMapSDK.MapNotification.NotificationType : Swift.RawRepresentable {}
+extension LivingMapSDK.MapNotification.Icon : Swift.Equatable {}
+extension LivingMapSDK.MapNotification.Icon : Swift.Hashable {}
+extension LivingMapSDK.MapNotification.Icon : Swift.RawRepresentable {}
+extension LivingMapSDK.PositioningSystem : Swift.Equatable {}
+extension LivingMapSDK.PositioningSystem : Swift.Hashable {}
+extension LivingMapSDK.PositioningSystem : Swift.RawRepresentable {}
+extension LivingMapSDK.HeadingSystem : Swift.Equatable {}
+extension LivingMapSDK.HeadingSystem : Swift.Hashable {}
+extension LivingMapSDK.HeadingSystem : Swift.RawRepresentable {}
+extension LivingMapSDK.FloorEstimationSystem : Swift.Equatable {}
+extension LivingMapSDK.FloorEstimationSystem : Swift.Hashable {}
+extension LivingMapSDK.FloorEstimationSystem : Swift.RawRepresentable {}
+extension LivingMapSDK.BinaryEncodingError : Swift.Equatable {}
+extension LivingMapSDK.BinaryEncodingError : Swift.Hashable {}
+extension LivingMapSDK.AnyUnpackError : Swift.Equatable {}
+extension LivingMapSDK.AnyUnpackError : Swift.Hashable {}
+extension LivingMapSDK.Model : Swift.Equatable {}
+extension LivingMapSDK.Model : Swift.Hashable {}
+extension LivingMapSDK.Model : Swift.RawRepresentable {}
+extension LivingMapSDK.RoutingError : Swift.Equatable {}
+extension LivingMapSDK.RoutingError : Swift.Hashable {}
+extension LivingMapSDK.LMLogLevel : Swift.Equatable {}
+extension LivingMapSDK.LMLogLevel : Swift.Hashable {}
+extension LivingMapSDK.LMLogLevel : Swift.RawRepresentable {}
+extension LivingMapSDK.PMKNamespacer : Swift.Equatable {}
+extension LivingMapSDK.PMKNamespacer : Swift.Hashable {}
+extension LivingMapSDK.MapView : Swift.Equatable {}
+extension LivingMapSDK.MapView : Swift.Hashable {}
+extension LivingMapSDK.MapView : Swift.RawRepresentable {}
+extension LivingMapSDK.CacheProgress : Swift.Equatable {}
+extension LivingMapSDK.CacheProgress : Swift.Hashable {}
+extension LivingMapSDK.CacheProgress : Swift.RawRepresentable {}
+extension LivingMapSDK.LivingMapConstants.ConnectivityStatus : Swift.Equatable {}
+extension LivingMapSDK.LivingMapConstants.ConnectivityStatus : Swift.Hashable {}
+extension LivingMapSDK.LivingMapConstants.ConnectivityStatus : Swift.RawRepresentable {}
+extension LivingMapSDK.URLEncodedFormParameterEncoder.Destination : Swift.Equatable {}
+extension LivingMapSDK.URLEncodedFormParameterEncoder.Destination : Swift.Hashable {}
+extension LivingMapSDK.URLEncoding.Destination : Swift.Equatable {}
+extension LivingMapSDK.URLEncoding.Destination : Swift.Hashable {}
+extension LivingMapSDK.URLEncoding.ArrayEncoding : Swift.Equatable {}
+extension LivingMapSDK.URLEncoding.ArrayEncoding : Swift.Hashable {}
+extension LivingMapSDK.URLEncoding.BoolEncoding : Swift.Equatable {}
+extension LivingMapSDK.URLEncoding.BoolEncoding : Swift.Hashable {}
+extension LivingMapSDK.BinaryDecodingError : Swift.Equatable {}
+extension LivingMapSDK.BinaryDecodingError : Swift.Hashable {}
+extension LivingMapSDK.URLEncodedFormEncoder.ArrayEncoding : Swift.Equatable {}
+extension LivingMapSDK.URLEncodedFormEncoder.ArrayEncoding : Swift.Hashable {}
+extension LivingMapSDK.URLEncodedFormEncoder.BoolEncoding : Swift.Equatable {}
+extension LivingMapSDK.URLEncodedFormEncoder.BoolEncoding : Swift.Hashable {}
+extension LivingMapSDK.URLEncodedFormEncoder.SpaceEncoding : Swift.Equatable {}
+extension LivingMapSDK.URLEncodedFormEncoder.SpaceEncoding : Swift.Hashable {}
+extension LivingMapSDK.BinaryDelimited.Error : Swift.Equatable {}
+extension LivingMapSDK.BinaryDelimited.Error : Swift.Hashable {}
+extension LivingMapSDK.AuthenticationError : Swift.Equatable {}
+extension LivingMapSDK.AuthenticationError : Swift.Hashable {}
+extension LivingMapSDK.LivingMapErrorSeverity : Swift.Equatable {}
+extension LivingMapSDK.LivingMapErrorSeverity : Swift.Hashable {}
+extension LivingMapSDK.LivingMapErrorSeverity : Swift.RawRepresentable {}
+extension LivingMapSDK.LivingMapErrorCode : Swift.Equatable {}
+extension LivingMapSDK.LivingMapErrorCode : Swift.Hashable {}
+extension LivingMapSDK.LivingMapErrorCode : Swift.RawRepresentable {}
+extension LivingMapSDK.TextFormatDecodingError : Swift.Equatable {}
+extension LivingMapSDK.TextFormatDecodingError : Swift.Hashable {}
+extension LivingMapSDK.JSONEncodingError : Swift.Equatable {}
+extension LivingMapSDK.JSONEncodingError : Swift.Hashable {}
+extension LivingMapSDK.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType : Swift.Equatable {}
+extension LivingMapSDK.NetworkReachabilityManager.NetworkReachabilityStatus.ConnectionType : Swift.Hashable {}

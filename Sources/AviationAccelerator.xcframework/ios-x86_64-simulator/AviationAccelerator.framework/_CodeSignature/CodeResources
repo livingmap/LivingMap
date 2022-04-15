@@ -6,11 +6,11 @@
 	<dict>
 		<key>CPLRunConfig.json</key>
 		<data>
-		G3ulmfMEa3ZpR4rXwBAJl3gdJpQ=
+		OU6PvhydV646akmpKK38upS2k0M=
 		</data>
 		<key>Headers/AviationAccelerator-Swift.h</key>
 		<data>
-		TS9aaHfcVlHHs3OOAwCUY5/97Bc=
+		4ivtemczxa74QK3kh+krdP1ytNo=
 		</data>
 		<key>Headers/AviationAccelerator.h</key>
 		<data>
@@ -18,39 +18,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+ZT0UfexEC21mx5lvR3GAKAOgg4=
+		pTc8vOIkdTtuxONGu2rW61C5Xq8=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		MJXYLzK9hEDNIMnUoKuDfGiK8R0=
-		</data>
-		<key>Modules/AviationAccelerator.swiftmodule/Project/x86_64.swiftsourceinfo</key>
-		<data>
-		MJXYLzK9hEDNIMnUoKuDfGiK8R0=
+		+wC8mLbF+HClf4sHU3P/MIUPjAA=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		tTE2oneUxkPAuSJQb5DA9AJcPKU=
+		5Qa0+K3FKr7Leysm57WzQDs5FOY=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		vvWYmDPdKKGQuGglAwtj0tTLmFw=
+		UNDr/Mb5+eEbGOH0MOBnAQT3g00=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		W3SkMA1R6jpKGd4YjkTSq7j6WuY=
-		</data>
-		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		tTE2oneUxkPAuSJQb5DA9AJcPKU=
-		</data>
-		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		vvWYmDPdKKGQuGglAwtj0tTLmFw=
-		</data>
-		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		W3SkMA1R6jpKGd4YjkTSq7j6WuY=
+		VxpOCKouDPY+0ooYQMiuNFsDI2E=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,14 +47,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XiAirqNUWFo5dFrMAxqEFrIQImzX79tGO+VY6hUnzwM=
+			o004HpyGffQWUf6cJ/PmaoPbqw7uRB322/31mLMB628=
 			</data>
 		</dict>
 		<key>Headers/AviationAccelerator-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lTv/4V4SNY6TdBWhnOl6nqufaUSM7DWM80ln5a5DJs8=
+			0oTUZhERxpBiyNGV6cvllJILrDooAVrIO8xZHKAXmEc=
 			</data>
 		</dict>
 		<key>Headers/AviationAccelerator.h</key>
@@ -84,56 +68,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oUB/WzrFyL222BZ5MeOl+9LIuDiPaPqib0aYpoA9ZFg=
-			</data>
-		</dict>
-		<key>Modules/AviationAccelerator.swiftmodule/Project/x86_64.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			oUB/WzrFyL222BZ5MeOl+9LIuDiPaPqib0aYpoA9ZFg=
+			bneilMZtVuxjPUYbTji5JzbiU27TKO5t0cvIyq1lu7I=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JhKWJUOjLKQD7JTv5RvwSq3SAmxI7x3sX+bEfRiNMBc=
+			eEV0DbEiPTAEWQl/dsPJ3VIO4rLCffduanB0w/OHWiY=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dT/QBKjKZpLZQjs49wrIlbC5dM5q0dMt8wqaxQTDl+I=
+			1gpGccNCTsDwzsgsrWdjq1NG50M4YMVJ82WemGoYFpQ=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UDgmgoJ5IvDW+OCJrh8NsxzHuZ19sqOEdAg51bTN/KQ=
-			</data>
-		</dict>
-		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			JhKWJUOjLKQD7JTv5RvwSq3SAmxI7x3sX+bEfRiNMBc=
-			</data>
-		</dict>
-		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			dT/QBKjKZpLZQjs49wrIlbC5dM5q0dMt8wqaxQTDl+I=
-			</data>
-		</dict>
-		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			UDgmgoJ5IvDW+OCJrh8NsxzHuZ19sqOEdAg51bTN/KQ=
+			Bu1mZGduyTeY77jqPmRVEuxpHgR1exmheyXrsAXmA1k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
