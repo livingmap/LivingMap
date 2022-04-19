@@ -114,9 +114,9 @@
       "internal_nonlinearity_beta" : 1,
       "forget_bias" : 0,
       "weights" : {
-        "W_h" : 11,
-        "W_x" : 13,
-        "b" : 15
+        "W_h" : 5,
+        "W_x" : 7,
+        "b" : 9
       },
       "lstm_has_peepholes" : 0,
       "beta" : 1,
@@ -160,11 +160,11 @@
 
       },
       "nC" : 128,
-      "blob_weights" : 19,
+      "blob_weights" : 13,
       "type" : "inner_product",
       "has_relu" : 0,
       "bottom" : "lstm",
-      "blob_biases" : 17,
+      "blob_biases" : 11,
       "has_tanh" : 0,
       "debug_info" : "dense0",
       "name" : "dense0",
@@ -179,7 +179,7 @@
       "debug_info" : "bn",
       "top" : "bn",
       "C" : 128,
-      "blob_batchnorm_params" : 21,
+      "blob_batchnorm_params" : 15,
       "type" : "batchnorm"
     },
     {
@@ -201,7 +201,7 @@
 
       },
       "nC" : 2,
-      "blob_weights" : 23,
+      "blob_weights" : 17,
       "type" : "inner_product",
       "has_relu" : 0,
       "bottom" : "relu6",
