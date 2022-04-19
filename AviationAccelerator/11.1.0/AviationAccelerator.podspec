@@ -17,4 +17,6 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks        = 'AviationAccelerator.xcframework'
   spec.dependency                   'LivingMapSDK'
   spec.dependency                   'LivingMapLiveSDK'
+  spec.user_target_xcconfig       = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.pod_target_xcconfig        = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
