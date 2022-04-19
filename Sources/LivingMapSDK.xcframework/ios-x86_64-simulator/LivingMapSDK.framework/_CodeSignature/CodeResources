@@ -102,7 +102,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		zFOaaLlKMrrWKzNfzP+HorXe9lE=
+		QmDYjDG+62i7OomcwZeD/b+Bk7E=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -110,11 +110,11 @@
 		</data>
 		<key>LMActivityClassifier.mlmodelc/coremldata.bin</key>
 		<data>
-		XsenmbZ3ihBYEcGN5Z53Nb/5fgE=
+		sYG7RHRPYzHSR9EcSE905m2xB1M=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<data>
-		LzdRuv8xudLLOSszeM98oq6Q8UA=
+		AAhzQgjC8gGpJhLiavwM45HkFO4=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.net</key>
 		<data>
@@ -358,14 +358,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6eHnXmrgqEyalxR6iEyITEM9pfehXi0V2mKszqQclI4=
+			XDR9vNH9BE9TbKAch0ceH81EKeOLvt2HYzf5/YBjs6Q=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XQJKYQ3fLbfRyPiVYQC2CrPl9/Aq37S1enTKTcoLQVc=
+			qr2ZzpdncJRNv2C9rayQn0LQqEZ+dV6YToPw6mDrG8I=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.net</key>
