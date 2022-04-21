@@ -98,7 +98,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+VvK9BwDK+ukblLmmw09NZKJ6g0=
+		I7ooB7pn93b7RL2HP0g02gCefII=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>LMActivityClassifier.mlmodelc/coremldata.bin</key>
 		<data>
-		6HCZ2fsgq8VmFn7s2RmBPnogewE=
+		VVHFZI6kBAxO0BiK5CqBcTs/QCU=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<data>
@@ -140,10 +140,6 @@
 		<data>
 		C4FYGNKhGY69o6Fd3qDXyQSsl68=
 		</data>
-		<key>LzmaSDK-ObjC-Info.plist</key>
-		<data>
-		zyOsZipLkdQCetZaguXC8rvbQTw=
-		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
 		tNUTHo7IBUlkB3hxil0vrUgDKqg=
@@ -175,10 +171,6 @@
 		<key>floor_mapping.json</key>
 		<data>
 		1EYrjjMwLRU4vwspAQkVC7vdP3I=
-		</data>
-		<key>generate_grid_schema.sh</key>
-		<data>
-		hMfMjQSjwgA0n8TmQ2qr5wcrAK0=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -355,7 +347,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			V2tZbPvu1+v8JGhEWSi7ASQNJ3Ie0n59oY4qmmV4hpM=
+			bP0tnUIasY9Ws8Xq/TPBlFw2VvqtdU2bJXX5bWEk638=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
@@ -414,13 +406,6 @@
 			mRFmRehDRZdv/TXdLYciYudbbzg/PggroJRdmotdFe4=
 			</data>
 		</dict>
-		<key>LzmaSDK-ObjC-Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			jhDudY1xsBxJCtfWZWwBzQv5f9A3RLMk/6PFKp6jZMo=
-			</data>
-		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
@@ -475,13 +460,6 @@
 			<key>hash2</key>
 			<data>
 			9ctvp4WbBqJNm+g2GswDWn/lyJkCqEvUnmWMkG8KEog=
-			</data>
-		</dict>
-		<key>generate_grid_schema.sh</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Bq66yYCUoDycIb0oNnjR6zIK2qT7NVz+ZG82XeGBCQs=
 			</data>
 		</dict>
 	</dict>
