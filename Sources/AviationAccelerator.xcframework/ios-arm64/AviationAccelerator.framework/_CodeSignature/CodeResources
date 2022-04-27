@@ -22,27 +22,27 @@
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		ssF7eBGAEa6u/1qBxce3LJyu3rg=
+		5TUQA6OB4QXa/n1QfwbpyUx6Bko=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		zIivVLwLvbByM5JM8cGhjbUQBaY=
+		6xt2DldBk5ssDOi/2w3a6TZS65s=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		z7iWkEYrox+MkyBvAPqz4MgVntk=
+		TCg49hxsBO5iQi+w0IWqJGC4zqQ=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		ssF7eBGAEa6u/1qBxce3LJyu3rg=
+		5TUQA6OB4QXa/n1QfwbpyUx6Bko=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		zIivVLwLvbByM5JM8cGhjbUQBaY=
+		6xt2DldBk5ssDOi/2w3a6TZS65s=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		z7iWkEYrox+MkyBvAPqz4MgVntk=
+		TCg49hxsBO5iQi+w0IWqJGC4zqQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -76,42 +76,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aBqjELh3+u54nUOCyB1y8VznyuhVa89gBL5cm4AG9y0=
+			Frhdi3mLahwVokwa0nfD2XgKn5feVKapp7Y7WwEMAog=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W8RkAq2xwEPIO4rhvh+EpQpKANJ/+vPQlVfXhbvUj78=
+			r2E2fgFyIrEeZ6iMSDFZtSndAUNfohU3hIBHkkff9D8=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bIxx4Ku3e2Eiz8yYsRZuTQSzlMRo3CLC03bLk8hR6EY=
+			654GKA9q0cd77S1Mkep2Jz0loIjMg4tL1qmJ2OI5mNI=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aBqjELh3+u54nUOCyB1y8VznyuhVa89gBL5cm4AG9y0=
+			Frhdi3mLahwVokwa0nfD2XgKn5feVKapp7Y7WwEMAog=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			W8RkAq2xwEPIO4rhvh+EpQpKANJ/+vPQlVfXhbvUj78=
+			r2E2fgFyIrEeZ6iMSDFZtSndAUNfohU3hIBHkkff9D8=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bIxx4Ku3e2Eiz8yYsRZuTQSzlMRo3CLC03bLk8hR6EY=
+			654GKA9q0cd77S1Mkep2Jz0loIjMg4tL1qmJ2OI5mNI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
