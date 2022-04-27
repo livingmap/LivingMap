@@ -82,6 +82,8 @@ public class LMAAManager {
   public init()
   public func start(eventHandler: LivingMapSDK.LivingMapMappingEvents, lmaaConfig: AviationAccelerator.LMAAConfig) throws
   public func stop()
+  public func createOfflineCache(lmaaConfig: AviationAccelerator.LMAAConfig, manifestCallbacks: LivingMapSDK.ManifestCallbacks)
+  public func clearOfflineCache(lmaaConfig: AviationAccelerator.LMAAConfig, cacheProgressHandler: LivingMapSDK.OfflineCacheCallback)
   public static func getVersion() -> Swift.String
   @objc deinit
 }
