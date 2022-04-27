@@ -22,27 +22,27 @@
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		OtFtlxqQHmPawUsI3NAA2M/owEc=
+		kxdMQcjfrwHwxCA1KeTahiMOHzk=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		1QPg9QRr0XC8Z64k239alO43Sj8=
+		93MGZHWFEeq3YDToVHyNv7UgZvo=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		B5uSzuKUNkHcbx1bQm34rDdQx30=
+		AGEiQJ/pAoflcl9oevXwMkpyaus=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		OtFtlxqQHmPawUsI3NAA2M/owEc=
+		kxdMQcjfrwHwxCA1KeTahiMOHzk=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		1QPg9QRr0XC8Z64k239alO43Sj8=
+		93MGZHWFEeq3YDToVHyNv7UgZvo=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		B5uSzuKUNkHcbx1bQm34rDdQx30=
+		AGEiQJ/pAoflcl9oevXwMkpyaus=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -76,42 +76,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZP9VnTYikxA8mLFUdEsU55uXk6CHMyiXzplxp6fmD5w=
+			nxJizHExubLtBXYz1k8kbkQDJpadvFS3qs/PxVUJoSY=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t4M1anlBeEQAzQGb9ODaci2g7a+kMf6s2dFVqKF7EnU=
+			uj3TJfiaQKsU8lad1itQ+7uxz1Q3RJd3lUapc4b3qOQ=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GZhJGUx96+nRE/kWLqHHOU2p8+s92r9YWoE3D3E/1xo=
+			pgiXbYHqvoiei3nLXlOHZEaiX8sX79VkCr3nBsBWWTU=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZP9VnTYikxA8mLFUdEsU55uXk6CHMyiXzplxp6fmD5w=
+			nxJizHExubLtBXYz1k8kbkQDJpadvFS3qs/PxVUJoSY=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			t4M1anlBeEQAzQGb9ODaci2g7a+kMf6s2dFVqKF7EnU=
+			uj3TJfiaQKsU8lad1itQ+7uxz1Q3RJd3lUapc4b3qOQ=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GZhJGUx96+nRE/kWLqHHOU2p8+s92r9YWoE3D3E/1xo=
+			pgiXbYHqvoiei3nLXlOHZEaiX8sX79VkCr3nBsBWWTU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

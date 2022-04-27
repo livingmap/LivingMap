@@ -2355,7 +2355,7 @@ open class RoutingController {
   @objc deinit
 }
 public protocol OfflineCacheCallback {
-  func onProgressUpdate(progress: Swift.Int)
+  func onProgressUpdate(progress: LivingMapSDK.CacheProgress)
   func onCachePrepareCompletion()
   func onCachePrepareFailure(error: LivingMapSDK.LivingMapError)
 }

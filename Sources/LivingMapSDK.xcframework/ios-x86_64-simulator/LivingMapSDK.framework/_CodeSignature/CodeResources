@@ -106,7 +106,7 @@
 		</data>
 		<key>LMActivityClassifier.mlmodelc/coremldata.bin</key>
 		<data>
-		vIPHeAzLFG+BAI2RcuoAU9J19kM=
+		e5o3OIWbvyxJZ/oGciO29t6Ruj0=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<data>
@@ -146,11 +146,11 @@
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		aFj4qsTcPwJuOz4K5y1OXF7lwLU=
+		56UyYcjf9VDxnpSZ6maNg7jcxU4=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		oMQLy0F99+ErRLTLOzxEm7VSBcI=
+		TiANdaHtKQ1yMNQPVjrCS9sIXdo=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -158,11 +158,11 @@
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		aFj4qsTcPwJuOz4K5y1OXF7lwLU=
+		56UyYcjf9VDxnpSZ6maNg7jcxU4=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		oMQLy0F99+ErRLTLOzxEm7VSBcI=
+		TiANdaHtKQ1yMNQPVjrCS9sIXdo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -347,7 +347,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w0mUQws1C+QCvm51WBG5TwUEQ7VnK+XFB2+uJE2MYQw=
+			lUdsXuojTkHmaOWV3a4r3o0J3E3G26Qc5R7/dr6AoQ4=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
@@ -417,14 +417,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TVFWXuguAzmJGG2IEXEoRAk6M0RlegPf5C4MGwJQ+U8=
+			/aNZGeyXrDwIxbSP/4POpI3vEWGFB6iMubDuLXdP7LY=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KjV61ucAx0mGwigKATrwbS/73L1tRW31NUUbkRv2N5g=
+			IQc2YnrU5bWWwmjWmkVSeJc3hGVEaXxa8AuyjDiwJWg=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -438,14 +438,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TVFWXuguAzmJGG2IEXEoRAk6M0RlegPf5C4MGwJQ+U8=
+			/aNZGeyXrDwIxbSP/4POpI3vEWGFB6iMubDuLXdP7LY=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KjV61ucAx0mGwigKATrwbS/73L1tRW31NUUbkRv2N5g=
+			IQc2YnrU5bWWwmjWmkVSeJc3hGVEaXxa8AuyjDiwJWg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
