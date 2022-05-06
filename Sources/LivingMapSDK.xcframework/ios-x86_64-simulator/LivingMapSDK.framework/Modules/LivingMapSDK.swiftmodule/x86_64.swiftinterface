@@ -4099,6 +4099,8 @@ public func when(guarantees: [LivingMapSDK.Guarantee<Swift.Void>]) -> LivingMapS
   @_Concurrency.MainActor(unsafe) public func customEvent(eventId: Swift.String, eventParameters: Foundation.NSArray)
   @_Concurrency.MainActor(unsafe) public func onConnectivityStatusChanged(connectivityStatus: LivingMapSDK.LivingMapConstants.ConnectivityStatus)
   @_Concurrency.MainActor(unsafe) public func destinationReached()
+  @_Concurrency.MainActor(unsafe) public func disableClickableAssets()
+  @_Concurrency.MainActor(unsafe) public func enableClickableAssets()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
