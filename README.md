@@ -5,7 +5,7 @@ Technology solutions for complex spaces. Digital mapping, wayfinding and positio
 Visit [livingmap.com](https://www.livingmap.com/) to learn more.
 
 ![](https://img.shields.io/badge/Swift:-5.3_5.4_5.5-ff5900.svg)
-![](https://img.shields.io/badge/Platform:-_iOS-ff5900.svg)
+![](https://img.shields.io/badge/Platform:-_iOS_Android-ff5900.svg)
 ![](https://img.shields.io/badge/Pod:-_v5.5.0-ff5900.svg)
 ![](https://img.shields.io/badge/Carthage:-_compatible-ff5900.svg)
 ![](https://img.shields.io/badge/Swift_Package_Manager:-compatible-ff5900.svg)
@@ -14,7 +14,7 @@ Visit [livingmap.com](https://www.livingmap.com/) to learn more.
 LivingMapSDK is a Swift binaries that provides mapping, routing, positioning and tracking in a multitude of indoor and outdoor environments.
 
 - [Features](#features)
-- [Requirements](#requirements)
+- [System](#System)
 - [Versions](#versions)
 - [Installation](#installation)
 - [Requirements](#requirements)
@@ -53,7 +53,7 @@ LivingMapSDK is a Swift binaries that provides mapping, routing, positioning and
     • Real-time notifications based on customer parameters
     • GDPR compliant
 
-## Requirements
+## System
 
 | Platform  | Minimum Swift Version | Installation                                                                                                         | Status       |
 | --------- | --------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------ |
@@ -61,7 +61,9 @@ LivingMapSDK is a Swift binaries that provides mapping, routing, positioning and
 
 ## Installation
 
-### CocoaPods
+### - iOS
+
+#### CocoaPods
 
 ---
 
@@ -97,7 +99,7 @@ To install or update your new dependencies, from terminal run:
     pod [install|update]
 ```
 
-### Carthage
+#### Carthage
 
 ---
 
@@ -135,7 +137,7 @@ to the project through one of the following approaches:
 
 Ensure the frameworks/xcFrameworks are embedded and signed.
 
-### Swift Package Manager
+#### Swift Package Manager
 
 ---
 
@@ -148,16 +150,64 @@ Adding LivingMapSDKs and its dependencies can be done through Xcode in the follo
 - Search using `https://github.com/livingmap/LivingMap` to find the LivingMap Package
 - Select the LivingMap package, set the version to v11.2.0 and click Add Project
 
+### - Android
+
+#### Maven Based Dependencies
+
+---
+
+Add a reference to the Living Map Maven repository
+
+```ogdl
+
+maven {
+            url "https://maven.livingmap.com/artifactory/gradle-release"
+        }
+
+Include the Airline Accelerator library as a dependency:
+
+dependencies {
+    implementation 'livingmap.com:LivingMapAirlineAccelerator:10.2.1'
+}
+```
+
+#### Local AAR Library Modules
+
+---
+
+Warning: Using AARs locally does not provide dynamic dependency tracking or updates. We do NOT recommend this approach.
+
+This integration and download MUST be repeated with each new SDK release however Maven handles this automatically.
+
+Download AAR and optional POM Files
+
+Both AAR and the optional POM files (for dependency management in 3rd party build tools) can be found at the following urls. Navigate into the newest version and download the resources as required.
+
+https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapAirlineAccelerator/<latest version (10.2.1)>
+https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapLiveSDK/<latest version (10.1.2)>
+https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapSDK/<latest version (10.2.0)>
+
 ### Permissions
 
 ---
 
+### - iOS
+
 Ensure your app implements `Location Updates` capability and prompts the user for `Location Permissions`.
 
-.. attention:: **Screen Orientation and Mapping** – Only portrait-mode is supported by _LivingMapSDK_ when Mapping is used. Applications which integrate the SDK and use Mapping must ensure it is locked to Portrait-mode through its configuration.
+Attention: **Screen Orientation and Mapping** – Only portrait-mode is supported by _LivingMapSDK_ when Mapping is used. Applications which integrate the SDK and use Mapping must ensure it is locked to Portrait-mode through its configuration.
 
 ### Architectures Flags
 
 ---
 
 Ensure your app avoided duplicated architecture through updateing the excluded archeitecture to include `arm64` for `Any ios simulator SDK`.
+
+### - Android
+
+In order to support Android APi 28 and above the SDKs have been compiled with the AndroidX support library flags. Enable the following in your gradle.properties file
+
+```ogdl
+android.useAndroidX=true
+android.enableJetifier=true
+```
