@@ -76,7 +76,11 @@ You must explicitly state that this repo is a source for the Cocopods integratio
 ```
 source 'git@github.com:livingmap/LivingMap.git'
 ```
+or 
 
+```
+source 'https://github.com/livingmap/LivingMap.git'
+```
 Point to the latest version:-
 
 ```ruby
