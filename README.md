@@ -82,7 +82,7 @@ Point to the latest version:-
 ```ruby
     pod 'LivingMapSDK'
     pod 'LivingMapLiveSDK'
-    pod 'AirlineAccelerator'
+    pod 'AviationAccelerator'
 ```
 
 Point to the specific version (recommended):-
@@ -90,7 +90,7 @@ Point to the specific version (recommended):-
 ```ruby
     pod 'LivingMapSDK', '11.2.0'
     pod 'LivingMapLiveSDK', '11.2.0'
-    pod 'AirlineAccelerator', '11.2.0'
+    pod 'AviationAccelerator', '11.2.0'
 ```
 
 To install or update your new dependencies, from terminal run:
