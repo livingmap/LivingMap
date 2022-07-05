@@ -10,15 +10,12 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "LivingMap",
-            targets: ["LivingMapSDK", "LivingMapLiveSDK", "AviationAccelerator", "LivingMap"]),
+            targets: ["LivingMapSDK", "AviationAccelerator", "LivingMap"]),
     ],
     dependencies: [],
     targets: [
         .binaryTarget(name: "LivingMapSDK",
                       path: "Sources/LivingMapSDK.xcframework"
-                     ),
-        .binaryTarget(name: "LivingMapLiveSDK",
-                      path: "Sources/LivingMapLiveSDK.xcframework"
                      ),
         .binaryTarget(name: "AviationAccelerator",
                       path: "Sources/AviationAccelerator.xcframework"

@@ -22,8 +22,9 @@
  * @param timeInterval: ...
  */
 - (instancetype) initWithConfig:(NSString*) configFilePath
-                     andContext:(CPLDataContext*) context
-            andDateTimeInterval:(double) timeInterval;
+                     andContext:(CPLDataContext*) context;
+
+- (void) reset;
 
 /**
  * Uses the data contained with in the data context, passed to this object upon instantiation, to estimate the current
