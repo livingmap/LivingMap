@@ -37,7 +37,8 @@
         "syncTimeInterval": 0.02,
         "injectLikelihood": 20,
         "assistingLocationMaxAge": 10.0,
-        "cplRunConfigFilePath": "..."
+        "cplRunConfigFilePath": "...",
+        "resetInitializationRange": 5.0
     },
     "activityClassificationConfig": {
         "predictionWindowSize": 10,
