@@ -11,6 +11,8 @@ typedef enum {
     PM_GPS,
     PM_BEACON,
     PM_PDR,
-    PM_CORE_LOCATION
+    PM_CORE_LOCATION,
+    PM_WIFI,
+    PM_FUSED_LOCATION
     
 } CPLPositioningMethod;

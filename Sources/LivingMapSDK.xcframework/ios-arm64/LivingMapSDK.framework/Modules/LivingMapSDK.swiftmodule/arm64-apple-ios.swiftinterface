@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LivingMapSDK
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LivingMapSDK
 import Accelerate
 import Combine
 import CoreBluetooth
@@ -764,6 +764,7 @@ public struct TextFormatEncodingOptions {
   public var x: Swift.Double
   public var y: Swift.Double
   public var floor: Swift.Int32
+  public var uuidFloor: Swift.String?
   public var heading: Swift.Double
   public var accuracy: Swift.Double
   @objc public var timestamp: Swift.Double
@@ -773,7 +774,7 @@ public struct TextFormatEncodingOptions {
   public var gyroHeading: Swift.Double?
   public var deviceId: Swift.String?
   public var journeyId: Swift.Int?
-  public init(x: Swift.Double, y: Swift.Double, floor: Swift.Int32 = -1, heading: Swift.Double = -1, accuracy: Swift.Double = 10, timestamp: Swift.Double, coordRefSystem: LivingMapSDK.LMLocation.CoordinateReferenceSystem = LMLocation.CoordinateReferenceSystem.UNDEFINED, locationSource: LivingMapSDK.LMLocation.LocationSource? = nil)
+  public init(x: Swift.Double, y: Swift.Double, floor: Swift.Int32 = -1, uuidFloor: Swift.String? = nil, heading: Swift.Double = -1, accuracy: Swift.Double = 10, timestamp: Swift.Double, coordRefSystem: LivingMapSDK.LMLocation.CoordinateReferenceSystem = LMLocation.CoordinateReferenceSystem.UNDEFINED, locationSource: LivingMapSDK.LMLocation.LocationSource? = nil)
   public func toString() -> Swift.String
   @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
   @objc deinit
@@ -1658,6 +1659,98 @@ extension LivingMapSDK.ExtensibleMessage {
   public mutating func setExtensionValue<M>(ext: LivingMapSDK.MessageExtension<LivingMapSDK.RepeatedMessageExtensionField<M>, Self>, value: [M]) where M : LivingMapSDK.Message, M : Swift.Equatable
   public mutating func setExtensionValue<M>(ext: LivingMapSDK.MessageExtension<LivingMapSDK.RepeatedGroupExtensionField<M>, Self>, value: [M]) where M : LivingMapSDK.Message, M : Swift.Hashable
 }
+public struct RequestData : Swift.Codable {
+  public var status: LivingMapSDK.LiveData?
+  public var asset: LivingMapSDK.DeviceData
+  public var journey: LivingMapSDK.JourneyData?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct LiveData : Swift.Codable, Swift.Equatable {
+  public var position: LivingMapSDK.Position
+  public var journey: LivingMapSDK.JourneyStatus?
+  public static func == (lhs: LivingMapSDK.LiveData, rhs: LivingMapSDK.LiveData) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Position : Swift.Codable, Swift.Equatable {
+  public var accuracy: Swift.Double
+  public var coordinates: LivingMapSDK.Coordinates
+  public var floor_level: Swift.String
+  public var heading: Swift.Double
+  public static func == (lhs: LivingMapSDK.Position, rhs: LivingMapSDK.Position) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct JourneyStatus : Swift.Codable, Swift.Equatable {
+  public var remaining_time: Swift.Int
+  public var remaining_distance: Swift.Int
+  public var percentage_complete: Swift.Int?
+  public init(remainingTime: Swift.Int, remainingDistance: Swift.Int, percentageComplete: Swift.Int? = nil)
+  public static func == (lhs: LivingMapSDK.JourneyStatus, rhs: LivingMapSDK.JourneyStatus) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Coordinates : Swift.Codable, Swift.Equatable {
+  public var latitude: Swift.Double
+  public var longitude: Swift.Double
+  public static func == (lhs: LivingMapSDK.Coordinates, rhs: LivingMapSDK.Coordinates) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct DeviceData : Swift.Codable, Swift.Equatable {
+  public var uuid: Swift.String
+  public var category: Swift.String
+  public var manufacturer: Swift.String
+  public var meta_data: LivingMapSDK.DeviceMetaData
+  public var model: Swift.String
+  public var parameter_1: Swift.String?
+  public var parameter_2: Swift.String?
+  public var parameter_3: Swift.String?
+  public var sdk_version: Swift.String
+  public var tags: Swift.String?
+  public static func == (lhs: LivingMapSDK.DeviceData, rhs: LivingMapSDK.DeviceData) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct DeviceMetaData : Swift.Codable, Swift.Equatable {
+  public var app_name: Swift.String
+  public var os_version: Swift.String
+  public static func == (lhs: LivingMapSDK.DeviceMetaData, rhs: LivingMapSDK.DeviceMetaData) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct JourneyData : Swift.Codable, Swift.Equatable {
+  public var uuid: Swift.String
+  public var calculated_time: Swift.Int
+  public var calculated_distance: Swift.Int
+  public var coordinates_start: LivingMapSDK.Coordinates
+  public var coordinates_end: LivingMapSDK.Coordinates
+  public var floor_level_start: Swift.String
+  public var floor_level_end: Swift.String
+  public var meta_data: LivingMapSDK.JourneyMetaData
+  public var parameter_1: Swift.String?
+  public var parameter_2: Swift.String?
+  public var parameter_3: Swift.String?
+  public static func == (lhs: LivingMapSDK.JourneyData, rhs: LivingMapSDK.JourneyData) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct JourneyMetaData : Swift.Codable, Swift.Equatable {
+  public var accessible_route: Swift.Bool
+  public var via_points_on_route: Swift.Bool
+  public var critical_journey: Swift.Bool
+  public var show_ecc_card: Swift.Bool
+  public init(accessibleRoute: Swift.Bool, viaPointsOnRoute: Swift.Bool, criticalJourney: Swift.Bool, showEccCard: Swift.Bool)
+  public static func == (lhs: LivingMapSDK.JourneyMetaData, rhs: LivingMapSDK.JourneyMetaData) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct JourneyInfo {
+  public var time: Swift.Int
+  public var distance: Swift.Int
+  public init(time: Swift.Int, distance: Swift.Int)
+}
 public class AFSession {
   public var sessionWithAuth: LivingMapSDK.Session!
   public var sessionNoAuth: LivingMapSDK.Session!
@@ -2068,6 +2161,14 @@ extension LivingMapSDK.Google_Protobuf_Option : LivingMapSDK.Message, LivingMapS
   }
 }
 public typealias CustomEventAPICallback = (Foundation.NSDictionary?) -> Swift.Void
+public class LiveDataController {
+  public init(id: Swift.String, secret: Swift.String, environment: Swift.String)
+  public func startDataUpload(frequency: Foundation.TimeInterval = LiveDataConstants.upperBoundUploadFrequency, timeout: Foundation.TimeInterval = LiveDataConstants.lowerBoundTimeout) -> Swift.Bool
+  public func stopDataUpload() -> Swift.Bool
+  public func update(journeyStart start: LivingMapSDK.LMLocation, journeyEnd end: LivingMapSDK.LMLocation, journeyInfo info: LivingMapSDK.JourneyInfo, meta: LivingMapSDK.JourneyMetaData) -> Swift.String
+  public func update(location: LivingMapSDK.LMLocation, status: LivingMapSDK.JourneyStatus? = nil)
+  @objc deinit
+}
 public protocol LivingMapMappingEvents : LivingMapSDK.LivingMapPositioningEvents {
   func mapReady()
   func mapClosed()
@@ -2324,7 +2425,7 @@ extension Foundation.Notification {
 }
 public typealias AFResult<Success> = Swift.Result<Success, LivingMapSDK.AFError>
 public enum Model : Swift.String {
-  case simulator, iPhone5, iPhone5S, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, unrecognized
+  case simulator, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, iPhone13Mini, iPhone13, iPhone13Pro, iPhone13ProMax, iPhoneSE3, unrecognized
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -2505,7 +2606,8 @@ public struct CPLLocationConfig : Swift.Codable {
   public var injectLikelihood: Swift.Int
   public var assistingLocationMaxAge: Swift.Double
   public var cplRunConfigFilePath: Swift.String
-  public init(lowerBoundWaitingToUploadData: Swift.Double = 0.3, timeIntervalBufferSensorData: Swift.Double = 1.0, syncTimeInterval: Swift.Double = 0.02, injectLikelihood: Swift.Int = 20, assistingLocationMaxAge: Swift.Double = 10.0, cplRunConfigFilePath: Swift.String)
+  public var resetInitializationRange: Swift.Double
+  public init(lowerBoundWaitingToUploadData: Swift.Double = 0.3, timeIntervalBufferSensorData: Swift.Double = 1.0, syncTimeInterval: Swift.Double = 0.02, injectLikelihood: Swift.Int = 20, assistingLocationMaxAge: Swift.Double = 10.0, cplRunConfigFilePath: Swift.String, resetInitializationRange: Swift.Double = 5.0)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -2647,6 +2749,11 @@ public struct _NameMap : Swift.ExpressibleByDictionaryLiteral {
   public init(dictionaryLiteral elements: (Swift.Int, LivingMapSDK._NameMap.NameDescription)...)
   public typealias Key = Swift.Int
   public typealias Value = LivingMapSDK._NameMap.NameDescription
+}
+@_hasMissingDesignatedInitializers public class LiveDataConstants {
+  public static let lowerBoundTimeout: Swift.Double
+  public static let upperBoundUploadFrequency: Swift.Double
+  @objc deinit
 }
 public func download(fileURL: Foundation.URL, fallbackRequest: Foundation.URLRequest, handler: @escaping ((Foundation.HTTPURLResponse?, Foundation.Data?) -> Swift.Void)) -> LivingMapSDK.Request?
 public func download(request: Foundation.URLRequest, handler: @escaping ((Foundation.HTTPURLResponse?, Foundation.Data?) -> Swift.Void)) -> LivingMapSDK.Request?
@@ -3227,6 +3334,19 @@ public struct CacheManifest {
   public var key: LivingMapSDK.StringMap?
   public var manifestUrl: Swift.String?
   public var outOfDate: Swift.Bool?
+  public var manifestSettings: LivingMapSDK.ManifestSettings?
+}
+public struct ManifestSettings : Swift.Codable {
+  public var project: Swift.String?
+  public var environment: Swift.String?
+  public var positioning_system: LivingMapSDK.SettingsPositioningSystem?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SettingsPositioningSystem : Swift.Codable {
+  public var Apple: LivingMapSDK.PositioningSystem
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension LivingMapSDK.CacheManifest : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
@@ -3911,7 +4031,6 @@ public enum LivingMapErrorCode : Swift.Int {
   case GeneralFileDownloadError
   case ChecksumsDoNotMatch
   case NoSensorData
-  case LiveReportingRegistrationError
   case NoViewControllerInConfig
   case RoutingErrorNoDepartureGate
   case RoutingErrorNoResponse
@@ -4078,8 +4197,6 @@ public func when(guarantees: [LivingMapSDK.Guarantee<Swift.Void>]) -> LivingMapS
   @_Concurrency.MainActor(unsafe) public func setSDKManager(sdkManager: LivingMapSDK.LivingMapSDKManager)
   @_Concurrency.MainActor(unsafe) public func connectivityStatusChanged(connectivityStatus: LivingMapSDK.LivingMapConstants.ConnectivityStatus)
   @_Concurrency.MainActor(unsafe) public func changeView(mapView: LivingMapSDK.MapView)
-  @_Concurrency.MainActor(unsafe) public func setGroupedView(deviceId: Swift.String, groupId: Swift.Int, username: Swift.String, password: Swift.String)
-  @_Concurrency.MainActor(unsafe) public func setUngroupedView()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func getWebView() -> WebKit.WKWebView?
   @_Concurrency.MainActor(unsafe) public func isMapReady() -> Swift.Bool
@@ -4099,6 +4216,8 @@ public func when(guarantees: [LivingMapSDK.Guarantee<Swift.Void>]) -> LivingMapS
   @_Concurrency.MainActor(unsafe) public func customEvent(eventId: Swift.String, eventParameters: Foundation.NSArray)
   @_Concurrency.MainActor(unsafe) public func onConnectivityStatusChanged(connectivityStatus: LivingMapSDK.LivingMapConstants.ConnectivityStatus)
   @_Concurrency.MainActor(unsafe) public func destinationReached()
+  @_Concurrency.MainActor(unsafe) public func disableClickableAssets()
+  @_Concurrency.MainActor(unsafe) public func enableClickableAssets()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit

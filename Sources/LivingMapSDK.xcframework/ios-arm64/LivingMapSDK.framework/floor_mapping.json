@@ -1,28 +1,12 @@
-{
-   "floor_mapping":[
-      {
-         "lm_floor":3,
-         "apple_floor":1
-      },
-      {
-         "lm_floor":4,
-         "apple_floor":2
-      },
-      {
-         "lm_floor":1,
-         "apple_floor":-1
-      },
-      {
-         "lm_floor":2,
-         "apple_floor":0
-      },
-      {
-         "lm_floor":5,
-         "apple_floor":3
-      },
-      {
-         "lm_floor":6,
-         "apple_floor":4
-      }
-   ]
+{"floor_mappings":
+    [{"lm_floor": 4,
+        "apple_floor": 1,
+        "lm_uuid": "f861445e40bd37427b03e1c9a6fb62b5"},
+        {"lm_floor": 5,
+            "apple_floor": 2,
+            "lm_uuid": "cfc9318cc5211d63a311dae1a4469765"},
+        {"lm_floor": 6,
+            "apple_floor": 3,
+            "lm_uuid": "8fe6e2b58d088bbd4d0056f378f16b57"}
+    ]
 }
