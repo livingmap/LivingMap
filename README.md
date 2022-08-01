@@ -186,6 +186,43 @@ Both AAR and the optional POM files (for dependency management in 3rd party buil
 https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapAirlineAccelerator/<latest version (10.2.1)>
 https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapSDK/<latest version (10.2.0)>
 
+### - Android
+
+#### Maven Based Dependencies
+
+---
+
+Add a reference to the Living Map Maven repository
+
+```ogdl
+
+maven {
+            url "https://maven.livingmap.com/artifactory/gradle-release"
+        }
+
+Include the Airline Accelerator library as a dependency:
+
+dependencies {
+    implementation 'livingmap.com:LivingMapAirlineAccelerator:10.2.1'
+}
+```
+
+#### Local AAR Library Modules
+
+---
+
+Warning: Using AARs locally does not provide dynamic dependency tracking or updates. We do NOT recommend this approach.
+
+This integration and download MUST be repeated with each new SDK release however Maven handles this automatically.
+
+Download AAR and optional POM Files
+
+Both AAR and the optional POM files (for dependency management in 3rd party build tools) can be found at the following urls. Navigate into the newest version and download the resources as required.
+
+https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapAirlineAccelerator/<latest version (10.2.1)>
+https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapLiveSDK/<latest version (10.1.2)>
+https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapSDK/<latest version (10.2.0)>
+
 ### Permissions
 
 ---
