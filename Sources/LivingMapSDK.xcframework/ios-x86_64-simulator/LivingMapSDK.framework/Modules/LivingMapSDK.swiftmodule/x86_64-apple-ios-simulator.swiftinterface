@@ -2606,7 +2606,8 @@ public struct CPLLocationConfig : Swift.Codable {
   public var injectLikelihood: Swift.Int
   public var assistingLocationMaxAge: Swift.Double
   public var cplRunConfigFilePath: Swift.String
-  public init(lowerBoundWaitingToUploadData: Swift.Double = 0.3, timeIntervalBufferSensorData: Swift.Double = 1.0, syncTimeInterval: Swift.Double = 0.02, injectLikelihood: Swift.Int = 20, assistingLocationMaxAge: Swift.Double = 10.0, cplRunConfigFilePath: Swift.String)
+  public var resetInitializationRange: Swift.Double
+  public init(lowerBoundWaitingToUploadData: Swift.Double = 0.3, timeIntervalBufferSensorData: Swift.Double = 1.0, syncTimeInterval: Swift.Double = 0.02, injectLikelihood: Swift.Int = 20, assistingLocationMaxAge: Swift.Double = 10.0, cplRunConfigFilePath: Swift.String, resetInitializationRange: Swift.Double = 5.0)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
