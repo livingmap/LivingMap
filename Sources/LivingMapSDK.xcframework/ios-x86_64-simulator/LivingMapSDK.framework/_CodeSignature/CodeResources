@@ -98,7 +98,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4gTcxLuuErsCAi1M9tr9QSQPYds=
+		N3DCimC6lq38a15X3Wx70Sppyng=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -106,11 +106,11 @@
 		</data>
 		<key>LMActivityClassifier.mlmodelc/coremldata.bin</key>
 		<data>
-		vjNoSd/dncAX3Bcf6G2pP2C3b00=
+		YeSr6eCfQrQqn6gWoIcrakOUZP0=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<data>
-		LzdRuv8xudLLOSszeM98oq6Q8UA=
+		AAhzQgjC8gGpJhLiavwM45HkFO4=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.net</key>
 		<data>
@@ -150,7 +150,7 @@
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		WNX0u7AkuP4v6qMN6OSN1GNLhO8=
+		KdVOmlWVesKl4H4ZjSDHXEKFdnc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -335,14 +335,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/y+lBpqhK9XUWt55YQsuurLLLIgq+CuzYyfhqycJcog=
+			pFW8fH8EzxbYvtextK2kLjYt5fyoDsIm+z0EbBB9nZA=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XQJKYQ3fLbfRyPiVYQC2CrPl9/Aq37S1enTKTcoLQVc=
+			qr2ZzpdncJRNv2C9rayQn0LQqEZ+dV6YToPw6mDrG8I=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.net</key>
@@ -412,7 +412,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			15v4fASeBoRLPYr0ylq2AZlBRKe8ug+WINUYP+FiGfc=
+			YcCYUNjShYa26jhKxVeAaSAGQVcssCqUtljWSbFGj4o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
