@@ -85,14 +85,14 @@ Point to the latest version:-
 
 ```ruby
     pod 'LivingMapSDK'
-    pod 'AirlineAccelerator'
+    pod 'AviationAccelerator'
 ```
 
 Point to the specific version (recommended):-
 
 ```ruby
-    pod 'LivingMapSDK', '11.2.1'
-    pod 'AirlineAccelerator', '11.2.1'
+    pod 'LivingMapSDK', '11.2.2'
+    pod 'AviationAccelerator', '11.2.2'
 ```
 
 To install or update your new dependencies, from terminal run:
@@ -117,8 +117,8 @@ binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccel
 Point to the specific version (recommended):-
 
 ```ogdl
-binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapSDK.json" == 11.2.1
-binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccelerator.json" == 11.2.1
+binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapSDK.json" == 11.2.2
+binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccelerator.json" == 11.2.2
 ```
 
 To download the dependencies use the following command in the project directory:
@@ -148,7 +148,7 @@ Adding LivingMapSDKs and its dependencies can be done through Xcode in the follo
 
 - In Xcode, navigate to `File -> Add Packages`
 - Search using `https://github.com/livingmap/LivingMap` to find the LivingMap Package
-- Select the LivingMap package, set the version to v11.2.1 and click Add Project
+- Select the LivingMap package, set the version to v11.2.2 and click Add Project
 
 ### - Android
 
@@ -167,7 +167,7 @@ maven {
 Include the Airline Accelerator library as a dependency:
 
 dependencies {
-    implementation 'livingmap.com:LivingMapAirlineAccelerator:10.2.1'
+    implementation 'livingmap.com:LivingMapAviationAccelerator:11.2.0'
 }
 ```
 
@@ -183,8 +183,7 @@ Download AAR and optional POM Files
 
 Both AAR and the optional POM files (for dependency management in 3rd party build tools) can be found at the following urls. Navigate into the newest version and download the resources as required.
 
-https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapAirlineAccelerator/<latest version (10.2.1)>
-https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapSDK/<latest version (10.2.0)>
+https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapAviationAccelerator/<latest version (11.2.0)>
 
 ### - Android
 
@@ -203,7 +202,7 @@ maven {
 Include the Airline Accelerator library as a dependency:
 
 dependencies {
-    implementation 'livingmap.com:LivingMapAirlineAccelerator:10.2.1'
+    implementation 'livingmap.com:LivingMapAviationAccelerator:11.2.0'
 }
 ```
 
@@ -219,9 +218,7 @@ Download AAR and optional POM Files
 
 Both AAR and the optional POM files (for dependency management in 3rd party build tools) can be found at the following urls. Navigate into the newest version and download the resources as required.
 
-https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapAirlineAccelerator/<latest version (10.2.1)>
-https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapLiveSDK/<latest version (10.1.2)>
-https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapSDK/<latest version (10.2.0)>
+https://maven.livingmap.com/artifactory/gradle-release/livingmap/com/LivingMapAviationAccelerator/<latest version (11.2.0)>
 
 ### Permissions
 

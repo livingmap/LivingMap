@@ -98,7 +98,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4gTcxLuuErsCAi1M9tr9QSQPYds=
+		UA4iwLGM5hoK3teQgD2Wif1kZF0=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>LMActivityClassifier.mlmodelc/coremldata.bin</key>
 		<data>
-		vjNoSd/dncAX3Bcf6G2pP2C3b00=
+		82vZICE4B8nmAvGFnCHfi/lbxK4=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>LMLivePositioningConfig.json</key>
 		<data>
-		2UTARS/XkAioFvKf0O9w24E9/O8=
+		1H4+QSmxWddYWfuKcQhPQW3dOrM=
 		</data>
 		<key>LMWebViewController.nib</key>
 		<data>
@@ -150,7 +150,7 @@
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		WNX0u7AkuP4v6qMN6OSN1GNLhO8=
+		4NcTXJkvDub5fVLdD6rLLOHtcLs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -335,7 +335,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/y+lBpqhK9XUWt55YQsuurLLLIgq+CuzYyfhqycJcog=
+			m3p9LFYefQREbgVIxOqb3+36QX5G0A9gvSf0keGnn3M=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
@@ -384,7 +384,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cdSBlOk2xxPdjg1zZmlp0LWr89iBkbSK6OfMNcnt/VA=
+			LSedCP62FOD7BbdiaFlHxgsbdLpVW+vXM0z4oPW6qYM=
 			</data>
 		</dict>
 		<key>LMWebViewController.nib</key>
@@ -412,7 +412,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			15v4fASeBoRLPYr0ylq2AZlBRKe8ug+WINUYP+FiGfc=
+			8x/1KPhF6pi4w5tNl0C6nkLxwQiOjQpx2drG6JOXARc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
