@@ -1782,6 +1782,7 @@ public struct LMLivePositioningConfig : Swift.Codable {
   public var showMultipleLocations: Swift.Bool
   public var sensorUpdateFrequencies: LivingMapSDK.LMSensorUpdateFrequencies
   public var backgroundGathering: Swift.Bool
+  public var clickableAssetsEnabled: Swift.Bool?
   public var lmLocationConfig: LivingMapSDK.LMLocationConfig
   public var cplLocationConfig: LivingMapSDK.CPLLocationConfig
   public var activityClassificationConfig: LivingMapSDK.LMActivityClassificationConfig
@@ -1789,7 +1790,7 @@ public struct LMLivePositioningConfig : Swift.Codable {
   public var calibrationConfig: LivingMapSDK.LMCalibrationConfig
   public var stepLength: Swift.Double
   public var gatewayAccuracy: Swift.Double
-  public init(project: Swift.String, environment: Swift.String, positioningSystem: LivingMapSDK.PositioningSystem, headingSystem: LivingMapSDK.HeadingSystem = HeadingSystem.CoreLocationHeading, floorEstimationSystem: LivingMapSDK.FloorEstimationSystem = FloorEstimationSystem.CPLFloorEstimator, diagnosticLoggingEnabled: Swift.Bool = false, simulationFilePath: Foundation.URL? = nil, showMultipleLocations: Swift.Bool = false, sensorUpdateFrequencies: LivingMapSDK.LMSensorUpdateFrequencies = LMSensorUpdateFrequencies(), backgroundGathering: Swift.Bool = false, lmLocationConfig: LivingMapSDK.LMLocationConfig, cplLocationConfig: LivingMapSDK.CPLLocationConfig, activityClassificationConfig: LivingMapSDK.LMActivityClassificationConfig, stepConfig: LivingMapSDK.LMStepConfig = LMStepConfig(), calibrationConfig: LivingMapSDK.LMCalibrationConfig = LMCalibrationConfig(), stepLength: Swift.Double = 0.78, gatewayAccuracy: Swift.Double = 5.0)
+  public init(project: Swift.String, environment: Swift.String, positioningSystem: LivingMapSDK.PositioningSystem, headingSystem: LivingMapSDK.HeadingSystem = HeadingSystem.CoreLocationHeading, floorEstimationSystem: LivingMapSDK.FloorEstimationSystem = FloorEstimationSystem.CPLFloorEstimator, diagnosticLoggingEnabled: Swift.Bool = false, simulationFilePath: Foundation.URL? = nil, showMultipleLocations: Swift.Bool = false, sensorUpdateFrequencies: LivingMapSDK.LMSensorUpdateFrequencies = LMSensorUpdateFrequencies(), backgroundGathering: Swift.Bool = false, lmLocationConfig: LivingMapSDK.LMLocationConfig, cplLocationConfig: LivingMapSDK.CPLLocationConfig, activityClassificationConfig: LivingMapSDK.LMActivityClassificationConfig, stepConfig: LivingMapSDK.LMStepConfig = LMStepConfig(), calibrationConfig: LivingMapSDK.LMCalibrationConfig = LMCalibrationConfig(), stepLength: Swift.Double = 0.78, gatewayAccuracy: Swift.Double = 5.0, clickableAssetsEnabled: Swift.Bool? = false)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -2805,6 +2806,16 @@ public struct JSONEncodingOptions {
   public static let EXTRAS_POSITIONING_AVAILABLE_KEY: Swift.String
   public static let KEYCLOAK_URL: Swift.String
   public static let KEYCLOAK_LOGIN: Swift.String
+  public static let API_ENDPOINT: Swift.String
+  public static let CONFIG_ENDPOINT: Swift.String
+  public static let SDK_CONFIG_FILE: Swift.String
+  public static let CPL_CONFIG_FILE: Swift.String
+  public static let SDK_CONFIG_FILE_AND_SUFFIX: Swift.String
+  public static let CPL_CONFIG_FILE_AND_SUFFIX: Swift.String
+  public static let CONFIG_STORAGE_DIRECTORY: Swift.String
+  public static let JSON: Swift.String
+  public static let CONFIG_IDENTIFIER_SDK: Swift.String
+  public static let CONFIG_IDENTIFIER_CPL: Swift.String
   @objc deinit
 }
 public protocol ParameterEncoder {
@@ -3334,19 +3345,6 @@ public struct CacheManifest {
   public var key: LivingMapSDK.StringMap?
   public var manifestUrl: Swift.String?
   public var outOfDate: Swift.Bool?
-  public var manifestSettings: LivingMapSDK.ManifestSettings?
-}
-public struct ManifestSettings : Swift.Codable {
-  public var project: Swift.String?
-  public var environment: Swift.String?
-  public var positioning_system: LivingMapSDK.SettingsPositioningSystem?
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public struct SettingsPositioningSystem : Swift.Codable {
-  public var Apple: LivingMapSDK.PositioningSystem
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
 }
 extension LivingMapSDK.CacheManifest : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
@@ -3375,8 +3373,8 @@ public class LivingMapSDKManager {
   public var mapVC: LivingMapSDK.LMWebViewController?
   public init()
   @discardableResult
-  public func createMapComponent(mapConfig: LivingMapSDK.LivingMapConfig, cacheManifest: LivingMapSDK.CacheManifest) -> WebKit.WKWebView?
-  public func initPositioningSystem(livePositioningConfig: LivingMapSDK.LMLivePositioningConfig, mapConfig: LivingMapSDK.LivingMapConfig, eventHandler: LivingMapSDK.LivingMapPositioningEvents, cacheManifest: LivingMapSDK.CacheManifest)
+  public func createMapComponent(mapConfig: LivingMapSDK.LivingMapConfig, lmLivePositioningConfig: LivingMapSDK.LMLivePositioningConfig?, cacheManifest: LivingMapSDK.CacheManifest) -> WebKit.WKWebView?
+  public func initPositioningSystem(livePositioningConfig: LivingMapSDK.LMLivePositioningConfig?, mapConfig: LivingMapSDK.LivingMapConfig, eventHandler: LivingMapSDK.LivingMapPositioningEvents, cacheManifest: LivingMapSDK.CacheManifest)
   public func deinitPositioningSystem()
   public func deinitMapComponent()
   public func startScanning()
@@ -4031,6 +4029,8 @@ public enum LivingMapErrorCode : Swift.Int {
   case GeneralFileDownloadError
   case ChecksumsDoNotMatch
   case NoSensorData
+  case ErrorDownloadingConfig
+  case ErrorSavingConfig
   case NoViewControllerInConfig
   case RoutingErrorNoDepartureGate
   case RoutingErrorNoResponse

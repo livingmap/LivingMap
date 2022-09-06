@@ -137,6 +137,13 @@
             "score_for_reset": 3,
             "reset_to_alternative_threshold": 15,
             "switch_to_alternative_threshold": 21
+        },
+        "checkpoint_pdr_recovery": {
+            "enabled": true,
+            "distance_threshold": 10,
+            "heading_threshold": 0.5,
+            "distance_from_current_location_threshold": 15,
+            "steps_limit": 150
         }
     },
     "position_recovery": {
