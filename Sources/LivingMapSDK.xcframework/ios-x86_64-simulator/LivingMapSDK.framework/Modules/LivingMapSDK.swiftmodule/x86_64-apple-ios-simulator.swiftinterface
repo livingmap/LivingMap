@@ -3905,7 +3905,7 @@ extension LivingMapSDK.LMSensorUpdateFrequencies {
     public var altimeter: Foundation.TimeInterval
     public var locationAccuracy: CoreLocation.CLLocationAccuracy
     public var distanceFilter: CoreLocation.CLLocationDistance
-    public init(accelerometer: Foundation.TimeInterval = 0.1, gyro: Foundation.TimeInterval = 0.1, mag: Foundation.TimeInterval = 0.1, device: Foundation.TimeInterval = 0.1, altimeter: Foundation.TimeInterval = 0.1, locationAccuracy: CoreLocation.CLLocationAccuracy = kCLLocationAccuracyBest, distanceFilter: CoreLocation.CLLocationDistance = kCLDistanceFilterNone)
+    public init(accelerometer: Foundation.TimeInterval = 0.02, gyro: Foundation.TimeInterval = 0.1, mag: Foundation.TimeInterval = 0.1, device: Foundation.TimeInterval = 0.1, altimeter: Foundation.TimeInterval = 0.1, locationAccuracy: CoreLocation.CLLocationAccuracy = kCLLocationAccuracyBest, distanceFilter: CoreLocation.CLLocationDistance = kCLDistanceFilterNone)
     public func encode(to encoder: Swift.Encoder) throws
     public init(from decoder: Swift.Decoder) throws
   }

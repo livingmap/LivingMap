@@ -1,6 +1,6 @@
 {
-    "project": "heathrow",
-    "environment": "dev",
+    "project": "dev",
+    "environment": "heathrow",
     "headingSystem": "CoreLocationHeading",
     "positioningSystem": "CoreCPLLocation",
     "floorEstimationSystem": "CPLFloorEstimator",
