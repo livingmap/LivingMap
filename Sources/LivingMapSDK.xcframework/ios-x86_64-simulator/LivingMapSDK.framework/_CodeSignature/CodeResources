@@ -32,9 +32,17 @@
 		<data>
 		FMHI77AIH7zusFelK+30/NSxzdY=
 		</data>
+		<key>Headers/CPLHeadingEstimate.h</key>
+		<data>
+		alpxP16ZiX4u9rxrGy3T2JH/ZGc=
+		</data>
+		<key>Headers/CPLHeadingEstimateType.h</key>
+		<data>
+		4Rz4d/N1A3ajEC57/HHZBoWf/kU=
+		</data>
 		<key>Headers/CPLHeadingEstimation.h</key>
 		<data>
-		SBHDE3NtErW17JnN3esT/5J4VlQ=
+		uzyaxKzIuXg6Q/ftxM3JFYnxQEU=
 		</data>
 		<key>Headers/CPLLocation.h</key>
 		<data>
@@ -70,7 +78,7 @@
 		</data>
 		<key>Headers/LivingMapSDK.h</key>
 		<data>
-		CA3/rSBsfenWv9+vsLGr4cBGMdU=
+		5B4dNh3VJYhxxyBMUpznfnaBIpA=
 		</data>
 		<key>Headers/LzmaSDKObjC.h</key>
 		<data>
@@ -98,7 +106,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4gTcxLuuErsCAi1M9tr9QSQPYds=
+		cvH7r2J7llckxm4RfnRNJPRWk4A=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -106,11 +114,11 @@
 		</data>
 		<key>LMActivityClassifier.mlmodelc/coremldata.bin</key>
 		<data>
-		vjNoSd/dncAX3Bcf6G2pP2C3b00=
+		F/PCBl/uNcFfMktdBXY4wy0HzS8=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<data>
-		LzdRuv8xudLLOSszeM98oq6Q8UA=
+		3Zsb8vwsHYpghW+WKrycJAfnU7o=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.net</key>
 		<data>
@@ -132,25 +140,21 @@
 		<data>
 		uA3l0Th1hUHF8FJlrRRKufqG0ds=
 		</data>
-		<key>LMLivePositioningConfig.json</key>
-		<data>
-		2UTARS/XkAioFvKf0O9w24E9/O8=
-		</data>
 		<key>LMWebViewController.nib</key>
 		<data>
 		S/ehmtifq9bUnlvcSVza23Xv+SI=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		idaDLLEUFjZdbVqKm6Fdq+8hTB4=
+		yw0wZ6txjqCMq9WtOSmrNX6mSd0=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		7zdrwUeImIvYkqFfy99KHcccYoY=
+		aBA0peKIScS/9vcpVJ56RQJp4wo=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		WNX0u7AkuP4v6qMN6OSN1GNLhO8=
+		+MRuTOsN8mgTwgp1yuT9NbcgVLo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -212,11 +216,25 @@
 			Qr+f27YD2WAvxq7thHPJeADRyvWe/I/hbS+PG3eCxoQ=
 			</data>
 		</dict>
+		<key>Headers/CPLHeadingEstimate.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9H0MFhAM4KZjiGdkJ/XgEBKVNEDgp+JVwVFrjX8CqJ0=
+			</data>
+		</dict>
+		<key>Headers/CPLHeadingEstimateType.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dA0WZ0Q64A2GQ7pzSrFeFtng5WC4Pu0Qf/8jh2MQcwI=
+			</data>
+		</dict>
 		<key>Headers/CPLHeadingEstimation.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LttotIiowS9ahe9rFV7f6EAzfJWRbK8CEc2nPrUaLcQ=
+			2R+vq6glDV+XFlRVPmmqnBdhnNs7DcLW44yhV0baZkg=
 			</data>
 		</dict>
 		<key>Headers/CPLLocation.h</key>
@@ -279,7 +297,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PeiwN7YKm4FXwj/K8ngHIL3dHP9F4lUXHD8nYp51dSc=
+			upeBrHhiT54KV4vG7F0BHXgW5ay43HlvH1F5P8jrl7Y=
 			</data>
 		</dict>
 		<key>Headers/LzmaSDKObjC.h</key>
@@ -335,14 +353,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/y+lBpqhK9XUWt55YQsuurLLLIgq+CuzYyfhqycJcog=
+			UWc926fY3zPRvu09JvkVx1bcuBg7LG2jNC3yvogPHI4=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XQJKYQ3fLbfRyPiVYQC2CrPl9/Aq37S1enTKTcoLQVc=
+			QPg+KR3i1QbjmeOtwSPB0LEBO9UfLHbianmqn3JTgxM=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.net</key>
@@ -380,13 +398,6 @@
 			LDTOHfI7g4xavyp/ZDfMo9MGftUJ/yXxHfaxG1grUes=
 			</data>
 		</dict>
-		<key>LMLivePositioningConfig.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			cdSBlOk2xxPdjg1zZmlp0LWr89iBkbSK6OfMNcnt/VA=
-			</data>
-		</dict>
 		<key>LMWebViewController.nib</key>
 		<dict>
 			<key>hash2</key>
@@ -398,21 +409,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OwHOOXS7QofVzdAWbxOv/X4gyXZfr4fJOL9xxc2zShY=
+			g9YSjgTYAaUQzWno+73q5E5cbERpSaynO+D7JZGF6/0=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CBNXfQUrJlAvUMH8bpXdPBHEROvAPHKIneLwlt/TeKs=
+			dREkjiQs3aBwvAfuoI9cdj7+ebVPGnMK3MEroWS1HuM=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			15v4fASeBoRLPYr0ylq2AZlBRKe8ug+WINUYP+FiGfc=
+			8VD5jYc1PphV6iv1UHL9Wvt2OfCFsV+x5pTnrRWJ7Fg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
