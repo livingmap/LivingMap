@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AviationAccelerator
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 @_exported import AviationAccelerator
 import Foundation
 import LivingMapSDK
@@ -8,6 +9,7 @@ import Swift
 import UIKit
 import WebKit
 import _Concurrency
+import _StringProcessing
 public class MapDesignator {
   public init(airportIataCode: Swift.String, terminalCode: Swift.String)
   @objc deinit
@@ -57,12 +59,12 @@ public protocol FlightRegistrationHandler {
   required public init(from decoder: Swift.Decoder) throws
 }
 public class LMAAConfig {
-  public init(mapDesignator: AviationAccelerator.MapDesignator, mapSize: CoreGraphics.CGRect? = nil, viewController: UIKit.UIViewController? = nil, authenticationParameters: LivingMapSDK.AuthenticationParameters, friendlySessionName: Swift.String, flightRegistrationData: AviationAccelerator.FlightRegistrationData, customParameters: Foundation.NSDictionary, gateInitialisedLocation: Swift.Bool? = false, loggingEnabled: Swift.Bool? = false)
+  public init(mapDesignator: AviationAccelerator.MapDesignator, mapSize: CoreFoundation.CGRect? = nil, viewController: UIKit.UIViewController? = nil, authenticationParameters: LivingMapSDK.AuthenticationParameters, friendlySessionName: Swift.String, flightRegistrationData: AviationAccelerator.FlightRegistrationData, customParameters: Foundation.NSDictionary, gateInitialisedLocation: Swift.Bool? = false, loggingEnabled: Swift.Bool? = false)
   public class Builder {
     public init()
     public init(_ lmaaConfig: AviationAccelerator.LMAAConfig?)
     public func mapDesignator(_ mapDesignator: AviationAccelerator.MapDesignator) -> AviationAccelerator.LMAAConfig.Builder
-    public func mapSize(_ mapSize: CoreGraphics.CGRect) -> AviationAccelerator.LMAAConfig.Builder
+    public func mapSize(_ mapSize: CoreFoundation.CGRect) -> AviationAccelerator.LMAAConfig.Builder
     public func viewController(_ viewController: UIKit.UIViewController) -> AviationAccelerator.LMAAConfig.Builder
     public func authenticationParameters(_ authenticationParameters: LivingMapSDK.AuthenticationParameters) -> AviationAccelerator.LMAAConfig.Builder
     public func friendlySessionName(_ friendlySessionName: Swift.String) -> AviationAccelerator.LMAAConfig.Builder
