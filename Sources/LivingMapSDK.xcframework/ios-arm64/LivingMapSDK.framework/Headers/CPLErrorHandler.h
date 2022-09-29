@@ -22,7 +22,8 @@ static CplException const _Nonnull CplExceptionFloorEstimatorException = @"Floor
 static CplException const _Nonnull CplExceptionNoStepLengthEstimatorException = @"NoStepLengthEstimatorException";
 static CplException const _Nonnull CplExceptionStepLengthEstimatorException = @"StepLengthEstimatorException";
 static CplException const _Nonnull CplExceptionNonRecoverableException = @"NonRecoverableException";
-
+static CplException const _Nonnull CplExceptionNoMagCalibratorException = @"NoMagCalibratorException";
+static CplException const _Nonnull CplExceptionMagCalibratorException = @"MagCalibratorException";
 /**
  * Implemented to catch thrown errors from the C++ based Common Positioning Library.
  * @brief Checks if the call to the Objective-C++ code block resulted in an exception.

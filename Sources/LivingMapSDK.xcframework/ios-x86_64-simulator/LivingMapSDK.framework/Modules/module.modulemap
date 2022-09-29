@@ -6,6 +6,6 @@ framework module LivingMapSDK {
 }
 
 module LivingMapSDK.Swift {
-    header "LivingMapSDK-Swift.h"
-    requires objc
+  header "LivingMapSDK-Swift.h"
+  requires objc
 }
