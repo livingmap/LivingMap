@@ -17,6 +17,7 @@
 
 #ifdef __cplusplus
 @property (unsafe_unretained,assign,atomic) std::shared_ptr<cpl::DataContext> dataContext;
+@property (unsafe_unretained,assign,atomic) cpl::CalibrationMatrices matrices;
 #endif
 
 /**

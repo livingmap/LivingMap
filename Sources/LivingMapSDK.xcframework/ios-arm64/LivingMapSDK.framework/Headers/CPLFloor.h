@@ -16,18 +16,21 @@
 
 @property (nonatomic, readwrite) CPLFloorStatus status;
 @property (nonatomic, readwrite) int estimatedFloorId;
+@property (nonatomic, readwrite) double heightChange;
 @property (nonatomic, readwrite) CPLLocation* nextFloorLocation;
 @property (nonatomic, readwrite) CPLLocation* startLocation;
 
 /**
  * @brief Creates an instance of a CPLFloor.
  * @param CPLFloorStatus: define current floor change status
- * @param estimatedFloorId: The .
+ * @param estimatedFloorId: The estimated FloorId after ascending ot descending.
+ * @param heightChange: Height difference since last level status.
  * @param nextFloorLocation: new floor location.
  * @param startLocation: start location on the new floor.
  */
 - (instancetype) initWithStatus:(CPLFloorStatus) status
                estimatedFloorId:(int) estimatedFloorId
+                   heightChange:(double) heightChange
                nextFloorLocation:(CPLLocation*) nextFloorLocation
                   startLocation:(CPLLocation*) startLocation;
 

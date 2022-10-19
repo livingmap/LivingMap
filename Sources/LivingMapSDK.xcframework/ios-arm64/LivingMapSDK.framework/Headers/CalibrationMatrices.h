@@ -15,7 +15,6 @@
  */
 @interface CalibrationMatrices: NSObject
 
-@property (nonatomic, readwrite) MagCalibrationMethod magCalibrationMethod;
 @property (nonatomic, readwrite) NSArray *magBias;
 @property (nonatomic, readwrite) NSArray *accBias;
 @property (nonatomic, readwrite) NSArray *gyrBias;
@@ -34,12 +33,11 @@
  * @param gyrMatrix : Non-linear bias associated with gyroscope readings.
  * @param accuracy : Double represent CPL calibration accuracy.
  */
-- (instancetype) initWithMagCalibrationMethod:(MagCalibrationMethod) magCalibrationMethod
-                                      magBias:(NSArray*) magBias
-                                      accBias:(NSArray*) accBias
-                                      gyrBias:(NSArray*) gyrBias
-                                    magMatrix:(NSArray*) magMatrix
-                                    accMatrix:(NSArray*) accMatrix
-                                    gyrMatrix:(NSArray*) gyrMatrix
-                                     accuracy:(double) accuracy;
+- (instancetype) initWithMagBias:(NSArray*) magBias
+                         accBias:(NSArray*) accBias
+                         gyrBias:(NSArray*) gyrBias
+                       magMatrix:(NSArray*) magMatrix
+                       accMatrix:(NSArray*) accMatrix
+                       gyrMatrix:(NSArray*) gyrMatrix
+                        accuracy:(double) accuracy;
 @end

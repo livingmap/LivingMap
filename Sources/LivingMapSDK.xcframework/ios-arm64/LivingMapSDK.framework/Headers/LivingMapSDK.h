@@ -15,6 +15,7 @@ FOUNDATION_EXPORT const unsigned char LivingMapSDKVersionString[];
 #import "CalibrationMatrices.h"
 #import "CPLFloorStatus.h"
 #import "CPLFloor.h"
+#import "CPLResetFlag.h"
 
 #import "CPLVersionInfo.h"
 #import "CPLDataContext.h"

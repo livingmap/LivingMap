@@ -1791,7 +1791,8 @@ public struct LMLivePositioningConfig : Swift.Codable {
   public var gatewayAccuracy: Swift.Double
   public var headingCalculationCadence: Swift.Double
   public var headingCalculationTrigger: LivingMapSDK.HeadingCalculationTrigger
-  public init(headingSystem: LivingMapSDK.HeadingSystem = HeadingSystem.CoreLocationHeading, positioningSystem: LivingMapSDK.PositioningSystem, floorEstimationSystem: LivingMapSDK.FloorEstimationSystem = FloorEstimationSystem.CPLFloorEstimator, diagnosticLoggingEnabled: Swift.Bool = false, showMultipleLocations: Swift.Bool = false, sensorUpdateFrequencies: LivingMapSDK.LMSensorUpdateFrequencies = LMSensorUpdateFrequencies(), backgroundGathering: Swift.Bool = false, lmLocationConfig: LivingMapSDK.LMLocationConfig, cplLocationConfig: LivingMapSDK.CPLLocationConfig, activityClassificationConfig: LivingMapSDK.LMActivityClassificationConfig, stepConfig: LivingMapSDK.LMStepConfig = LMStepConfig(), calibrationConfig: LivingMapSDK.LMCalibrationConfig = LMCalibrationConfig(), stepLength: Swift.Double = 0.78, gatewayAccuracy: Swift.Double = 5.0, clickableAssetsEnabled: Swift.Bool? = false, headingCalculationCadence: Swift.Double = 0.5, headingCalculationTrigger: LivingMapSDK.HeadingCalculationTrigger = HeadingCalculationTrigger.TimerBased)
+  public var floorChangeStatusActivationHeight: Swift.Double
+  public init(headingSystem: LivingMapSDK.HeadingSystem = HeadingSystem.CommonPositioningLibraryHeading, positioningSystem: LivingMapSDK.PositioningSystem, floorEstimationSystem: LivingMapSDK.FloorEstimationSystem = FloorEstimationSystem.CPLFloorEstimator, diagnosticLoggingEnabled: Swift.Bool = false, showMultipleLocations: Swift.Bool = false, sensorUpdateFrequencies: LivingMapSDK.LMSensorUpdateFrequencies = LMSensorUpdateFrequencies(), backgroundGathering: Swift.Bool = false, lmLocationConfig: LivingMapSDK.LMLocationConfig, cplLocationConfig: LivingMapSDK.CPLLocationConfig, activityClassificationConfig: LivingMapSDK.LMActivityClassificationConfig, stepConfig: LivingMapSDK.LMStepConfig = LMStepConfig(), calibrationConfig: LivingMapSDK.LMCalibrationConfig = LMCalibrationConfig(), stepLength: Swift.Double = 0.78, gatewayAccuracy: Swift.Double = 5.0, clickableAssetsEnabled: Swift.Bool? = false, headingCalculationCadence: Swift.Double = 0.5, headingCalculationTrigger: LivingMapSDK.HeadingCalculationTrigger = HeadingCalculationTrigger.TimerBased, floorChangeStatusActivationHeight: Swift.Double = 2.9)
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -1930,14 +1931,7 @@ public struct LMLocationConfig : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers public class DebugInfo {
-  public func setDeviceHeading(_ heading: Swift.Double)
-  public func setEstimatedHeading(_ heading: Swift.Double)
-  public func setCPLHeading(_ heading: Swift.Double, _ headingType: Swift.String)
-  public func setMeticsData(_ offset: Swift.Double, _ depletion: Swift.Double)
-  public func setWalkingSpeedStatus(_ status: Swift.Bool)
-  public func setPressureStatus(_ status: Swift.String)
-  public func setAltitude(_ altitude: Swift.Double)
-  public func setPressure(_ pressure: Swift.Double)
+  public func setMetricsData(_ offset: Swift.Double, _ depletion: Swift.Double)
   public func setStepAttributes(_ step: LivingMapSDK.LMStep)
   public func setLocationAttributes(_ location: LivingMapSDK.LMLocation)
   public func getDebugInfoAsString() -> Swift.String
@@ -2418,9 +2412,9 @@ extension LivingMapSDK.AlamofireExtension where ExtendedType : Foundation.URLSes
   }
 }
 public protocol LivingMapInterface : LivingMapSDK.LivingMapPositioningEvents {
-  func pressureUpdated(pressure: Swift.String)
+  func elevationStatusUpdated(status: Swift.String)
   func deviceHeadingReceived(heading: LivingMapSDK.LMHeading, sendToFrontend: Swift.Bool)
-  func cplHeadingReceived(heading: LivingMapSDK.LMHeading, type: LivingMapSDK.CPLHeadingEstimateType)
+  func cplHeadingReceived(heading: LivingMapSDK.LMHeading, sendToFrontend: Swift.Bool)
   func adjustedDeviceHeadingReceived(heading: LivingMapSDK.LMHeading, sendToFrontend: Swift.Bool)
   func stepInfoUpdated(_ step: LivingMapSDK.LMStep)
 }
@@ -2580,6 +2574,7 @@ extension LivingMapSDK.DownloadRequest {
   public func validate() -> Self
 }
 @_hasMissingDesignatedInitializers public class LivePositioningManager {
+  public var liveDataController: LivingMapSDK.LiveDataController?
   public func startUpdating()
   public func stopUpdating()
   public func add(LivingMapInterface interface: LivingMapSDK.LivingMapInterface)
@@ -3325,7 +3320,6 @@ public protocol LivingMapPositioningEvents : LivingMapSDK.LivingMapLocationListe
   func customEvent(eventId: Swift.String, eventParameters: Foundation.NSArray)
   func errorReceived(error: LivingMapSDK.LivingMapError)
   func onConnectivityStatusChanged(connectivityStatus: LivingMapSDK.LivingMapConstants.ConnectivityStatus)
-  func onLowCalibrationStatus(calibrationAlert: UIKit.UIAlertController)
 }
 open class Session {
   public static let `default`: LivingMapSDK.Session
@@ -3417,10 +3411,11 @@ public struct Urls : Swift.Codable, Swift.Equatable {
 }
 public class LivingMapSDKManager {
   public var mapVC: LivingMapSDK.LMWebViewController?
+  public var livePositioningManager: LivingMapSDK.LivePositioningManager?
   public init()
   @discardableResult
   public func createMapComponent(mapConfig: LivingMapSDK.LivingMapConfig, lmLivePositioningConfig: LivingMapSDK.LMLivePositioningConfig?, cacheManifest: LivingMapSDK.CacheManifest) -> WebKit.WKWebView?
-  public func initPositioningSystem(livePositioningConfig: LivingMapSDK.LMLivePositioningConfig?, mapConfig: LivingMapSDK.LivingMapConfig, eventHandler: LivingMapSDK.LivingMapPositioningEvents, cacheManifest: LivingMapSDK.CacheManifest, simulationFilePath: Foundation.URL?)
+  public func initPositioningSystem(withLiveDataUploads: Swift.Bool, livePositioningConfig: LivingMapSDK.LMLivePositioningConfig?, mapConfig: LivingMapSDK.LivingMapConfig, eventHandler: LivingMapSDK.LivingMapPositioningEvents, cacheManifest: LivingMapSDK.CacheManifest, simulationFilePath: Foundation.URL?)
   public func deinitPositioningSystem()
   public func deinitMapComponent()
   public func startScanning()
@@ -3490,6 +3485,7 @@ public protocol LivingMapLocationListener : AnyObject {
 public protocol DebugModeListener : AnyObject {
   func locationReceived(associatedLocations: [LivingMapSDK.LMLocation])
   func onCPLMetricsUpdate(offset: Swift.Double, depletion: Swift.Double)
+  func onCalibrationMatricesUpdate(calibrationMatrices: LivingMapSDK.CalibrationMatrices?, calibrationMethod: LivingMapSDK.MagnetometerCalibrationMethod)
   func onAltitudeUpdate(altitude: Swift.Double, pressure: Swift.Double)
 }
 public struct SimpleExtensionMap : LivingMapSDK.ExtensionMap, Swift.ExpressibleByArrayLiteral, Swift.CustomDebugStringConvertible {
@@ -4253,13 +4249,13 @@ public func when(guarantees: [LivingMapSDK.Guarantee<Swift.Void>]) -> LivingMapS
   @_Concurrency.MainActor(unsafe) public func setMapStyle(mapStyle: Swift.String)
   @_Concurrency.MainActor(unsafe) public func sendCommandToFrontEnd(command: Swift.String, completionHandler: @escaping (Any?, Swift.Error?) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func sendCommandToFrontEnd(command: Swift.String, returnCallback: @escaping (Any?, Swift.Error?) -> Swift.Void, eventKeyCallbackListener: Swift.String, asyncCallback: @escaping (Foundation.NSArray) -> Swift.Void)
-  @_Concurrency.MainActor(unsafe) public func onLowCalibrationStatus(calibrationAlert: UIKit.UIAlertController)
+  @_Concurrency.MainActor(unsafe) public func onCalibrationMatricesUpdate(calibrationMatrices: LivingMapSDK.CalibrationMatrices?, calibrationMethod: LivingMapSDK.MagnetometerCalibrationMethod)
   @_Concurrency.MainActor(unsafe) public func onAltitudeUpdate(altitude: Swift.Double, pressure: Swift.Double)
   @_Concurrency.MainActor(unsafe) public func stepInfoUpdated(_ step: LivingMapSDK.LMStep)
-  @_Concurrency.MainActor(unsafe) public func pressureUpdated(pressure: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func elevationStatusUpdated(status: Swift.String)
   @_Concurrency.MainActor(unsafe) public func headingUpdated(heading: Swift.Double)
   @_Concurrency.MainActor(unsafe) public func deviceHeadingReceived(heading: LivingMapSDK.LMHeading, sendToFrontend: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func cplHeadingReceived(heading: LivingMapSDK.LMHeading, type: LivingMapSDK.CPLHeadingEstimateType)
+  @_Concurrency.MainActor(unsafe) public func cplHeadingReceived(heading: LivingMapSDK.LMHeading, sendToFrontend: Swift.Bool)
   @_Concurrency.MainActor(unsafe) public func adjustedDeviceHeadingReceived(heading: LivingMapSDK.LMHeading, sendToFrontend: Swift.Bool)
   @_Concurrency.MainActor(unsafe) public func locationReceived(location: LivingMapSDK.LMLocation)
   @_Concurrency.MainActor(unsafe) public func locationReceived(associatedLocations: [LivingMapSDK.LMLocation])

@@ -11,6 +11,8 @@
 #import "CPLDataContext.h"
 #import "CPLMetrics.h"
 #import "CPLPositioningAction.h"
+#import "CPLResetFlag.h"
+#import "CPLHeadingEstimate.h"
 
 /**
  * @class CPLPositioning
@@ -19,6 +21,9 @@
  */
 @interface CPLPositioning: NSObject
 
+#ifdef __cplusplus
+@property (unsafe_unretained,assign,atomic) cpl::HeadingEstimate headingEstimate;
+#endif
 /**
  * @brief Creates an instance of Positioning.
  * @param configFilePath: File path for the main run config.
@@ -52,14 +57,12 @@
 /**
  * Complete step - called after each step or set of new data is collected. Updates particle positions, calculates
  * new weights and resamples.
- * @param pdr_heading - best available heading from the device
- * @param gyro_rotation  - optional rotation (GRV) of phone relative to an unknown starting orientation, used for LTM
+ * @param CPLHeadingEstimate - heading estimate fed back from SDK
  * @param step_length - optional the step length in meters, if set to 0 then the step length as specified in the run config is used
  * @return True if successful and a location determined; False otherwise (e.g. for LTM if not enough steps made)
  * @throws DataNotUploadedException, PositioningException, NonRecoverableException
  */
-- (bool) completeStep:(double) pdrHeading
-         gyroRotation:(double) gyroRotation
+- (bool) completeStep:(CPLHeadingEstimate*) SDKHeadingEstimate
            stepLength:(double) stepLength;
 
 /**
@@ -112,11 +115,9 @@
  * @return true if the location was reset successfully, false otherwise
  */
 - (bool) resetLocation:(CPLLocation*) initLocation
-   allowFullGridInitialization: (bool) allowFullGridInitialization
-           initializationRange:(int) initializationRange
-          useNearestEntryPoint:(bool) useNearestEntryPoint
-           reachablePointsOnly:(bool) reachablePointsOnly
-                     sigmaRule:(int) sigmaRule;
+             resetFlag: (CPLResetFlag) resetFlag
+   initializationRange:(int) initializationRange
+             sigmaRule:(int) sigmaRule;
 
 /**
  * @brief Performance metrics for the positioning system.

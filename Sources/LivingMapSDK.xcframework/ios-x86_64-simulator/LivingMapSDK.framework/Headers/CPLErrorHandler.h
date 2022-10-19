@@ -24,6 +24,10 @@ static CplException const _Nonnull CplExceptionStepLengthEstimatorException = @"
 static CplException const _Nonnull CplExceptionNonRecoverableException = @"NonRecoverableException";
 static CplException const _Nonnull CplExceptionNoMagCalibratorException = @"NoMagCalibratorException";
 static CplException const _Nonnull CplExceptionMagCalibratorException = @"MagCalibratorException";
+static CplException const _Nonnull MagnetometerCalibratorInsufficientDataException = @"MagnetometerCalibratorInsufficientDataException";
+static CplException const _Nonnull MagnetometerCalibratorNotInitializedException = @"MagnetometerCalibratorNotInitializedException";
+static CplException const _Nonnull MagnetometerCalibratorFailureException = @"MagnetometerCalibratorFailureException";
+
 /**
  * Implemented to catch thrown errors from the C++ based Common Positioning Library.
  * @brief Checks if the call to the Objective-C++ code block resulted in an exception.
