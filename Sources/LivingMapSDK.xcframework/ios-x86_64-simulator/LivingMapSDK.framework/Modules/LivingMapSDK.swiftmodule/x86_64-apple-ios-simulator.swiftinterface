@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
 // swift-module-flags: -target x86_64-apple-ios13.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LivingMapSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Accelerate
@@ -1761,12 +1761,6 @@ public class AFSession {
   public func generateRequest(url: Foundation.URL, method: Swift.String, contentType: Swift.String?, body: Foundation.Data?) -> Foundation.URLRequest
   @objc deinit
 }
-public class RoutingRequestMetadataOptions : Swift.Codable {
-  public init(destinationAreaName: Swift.String?, destinationName: Swift.String?)
-  @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
-}
 public struct Version {
   public static let major: Swift.Int
   public static let minor: Swift.Int
@@ -2200,6 +2194,10 @@ public enum AnyUnpackError : Swift.Error {
     get
   }
 }
+public protocol RoutingCompletionHandler {
+  func onRoutingError(error: Foundation.NSError)
+  func onRoutingUpdate(request: LivingMapSDK.RoutingRequest, response: Foundation.NSDictionary)
+}
 public protocol FieldType {
   associatedtype BaseType : Swift.Hashable
   static var proto3DefaultValue: Self.BaseType { get }
@@ -2473,7 +2471,7 @@ open class RoutingController {
   public func from(location: LivingMapSDK.RouteLocation) -> Self
   public func to(location: LivingMapSDK.RouteLocation) -> Self
   public func via(location: LivingMapSDK.RouteLocation) -> Self
-  public func route(options: LivingMapSDK.RoutingRequestMetadataOptions, callback: LivingMapSDK.CustomEventAPICallback? = nil) throws
+  public func route(options: LivingMapSDK.RoutingRequestOptions, callback: LivingMapSDK.CustomEventAPICallback? = nil) throws
   @objc deinit
 }
 public protocol OfflineCacheCallback {
@@ -2849,6 +2847,7 @@ public struct JSONEncodingOptions {
   public static let KEYCLOAK_LOGIN: Swift.String
   public static let API_ENDPOINT: Swift.String
   public static let CONFIG_ENDPOINT: Swift.String
+  public static let CONFIG_DESIGNATOR: Swift.String
   public static let SDK_CONFIG_FILE: Swift.String
   public static let CPL_CONFIG_FILE: Swift.String
   public static let SDK_CONFIG_FILE_AND_SUFFIX: Swift.String
@@ -2857,6 +2856,8 @@ public struct JSONEncodingOptions {
   public static let JSON: Swift.String
   public static let CONFIG_IDENTIFIER_SDK: Swift.String
   public static let CONFIG_IDENTIFIER_CPL: Swift.String
+  public static let CONFIG_CPL_REVISION: Swift.String
+  public static let CONFIG_SDK_REVISION: Swift.String
   @objc deinit
 }
 public protocol ParameterEncoder {
@@ -3667,12 +3668,17 @@ public protocol KalmanFilterType {
   func update(measurement: Self.Input, observationModel: Self.Input, covarienceOfObservationNoise: Self.Input) -> Self
 }
 public class Coordinate : Swift.Codable {
-  public init(lat: Swift.Double, lon: Swift.Double, floorId: Swift.Int)
+  final public let lat: Swift.Double
+  final public let lon: Swift.Double
+  final public let floorId: Swift.Int
+  final public let lmId: Swift.String?
+  public init(lat: Swift.Double, lon: Swift.Double, floorId: Swift.Int, lmId: Swift.String?)
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
 public class RouteLocation : Swift.Codable {
+  final public let coordinate: LivingMapSDK.Coordinate?
   public init(coordinate: LivingMapSDK.Coordinate?, gid: Swift.Int? = nil, type: Swift.String? = nil)
   public init(name: Swift.String)
   @objc deinit
@@ -3900,6 +3906,12 @@ extension LivingMapSDK.Thenable where Self.T : Swift.Sequence, Self.T.Element : 
   public func sorted(on: Dispatch.DispatchQueue? = conf.Q.map) -> LivingMapSDK.Promise<[Self.T.Iterator.Element]>
 }
 public let AF: LivingMapSDK.Session
+public class RoutingService {
+  public init(ppsSDKManager: LivingMapSDK.LivingMapSDKManager, maxRetries: Swift.Int, connectivityStatus: LivingMapSDK.LivingMapConstants.ConnectivityStatus)
+  public func addRoutingRequest(routingRequest: LivingMapSDK.RoutingRequest)
+  public func onConnectivityStatusChanged(connectivityStatus: LivingMapSDK.LivingMapConstants.ConnectivityStatus)
+  @objc deinit
+}
 public struct MimeType {
   public var value: Swift.String {
     get
@@ -5086,6 +5098,21 @@ extension LivingMapSDK._MessageImplementationBase {
   public func isEqualTo(message: LivingMapSDK.Message) -> Swift.Bool
   public static func == (lhs: Self, rhs: Self) -> Swift.Bool
   public func _protobuf_generated_isEqualTo(other: Self) -> Swift.Bool
+}
+public class RoutingRequest : Swift.Codable {
+  final public let destination: LivingMapSDK.RouteLocation
+  final public let origin: LivingMapSDK.RouteLocation
+  final public let options: LivingMapSDK.RoutingRequestOptions
+  public init(origin: LivingMapSDK.RouteLocation, destination: LivingMapSDK.RouteLocation, options: LivingMapSDK.RoutingRequestOptions)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class RoutingRequestOptions : Swift.Codable {
+  public init(via: [LivingMapSDK.RouteLocation]?, destinationAreaName: Swift.String?, destinationName: Swift.String?)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
 }
 public func race<U>(_ thenables: U...) -> LivingMapSDK.Promise<U.T> where U : LivingMapSDK.Thenable
 public func race<U>(_ thenables: [U]) -> LivingMapSDK.Promise<U.T> where U : LivingMapSDK.Thenable
