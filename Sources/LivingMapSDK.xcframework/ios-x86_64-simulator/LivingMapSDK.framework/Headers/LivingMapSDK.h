@@ -11,8 +11,12 @@ FOUNDATION_EXPORT const unsigned char LivingMapSDKVersionString[];
 #import "CPLErrorHandler.h"
 #import "CPLDeviceReading.h"
 #import "CPLLocation.h"
+#import "CPLHeadingEstimate.h"
+#import "CalibrationMatrices.h"
 #import "CPLFloorStatus.h"
 #import "CPLFloor.h"
+#import "CPLResetFlag.h"
+#import "CalibrationType.h"
 
 #import "CPLVersionInfo.h"
 #import "CPLDataContext.h"
@@ -20,6 +24,7 @@ FOUNDATION_EXPORT const unsigned char LivingMapSDKVersionString[];
 #import "CPLHeadingEstimation.h"
 #import "CPLPedometer.h"
 #import "CPLPositioning.h"
+#import "CPLSensorCalibration.h"
 
 #import "LzmaSDKObjCReader.h"
 #import "LzmaSDKObjCItem.h"

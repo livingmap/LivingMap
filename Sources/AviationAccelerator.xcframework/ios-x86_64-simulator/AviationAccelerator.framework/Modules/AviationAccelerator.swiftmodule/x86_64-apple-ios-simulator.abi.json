@@ -1,0 +1,2951 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MapDesignator",
+        "printedName": "MapDesignator",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(airportIataCode:terminalCode:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MapDesignator",
+                "printedName": "AviationAccelerator.MapDesignator",
+                "usr": "s:19AviationAccelerator13MapDesignatorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator13MapDesignatorC15airportIataCode08terminalG0ACSS_SStcfc",
+            "mangledName": "$s19AviationAccelerator13MapDesignatorC15airportIataCode08terminalG0ACSS_SStcfc",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19AviationAccelerator13MapDesignatorC",
+        "mangledName": "$s19AviationAccelerator13MapDesignatorC",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Parameters",
+        "printedName": "Parameters",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(callingAirline:callingApplication:inboundFlightDate:inboundFlightNumber:outboundFlightDate:outboundFlightNumber:project:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Parameters",
+                "printedName": "AviationAccelerator.Parameters",
+                "usr": "s:19AviationAccelerator10ParametersV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator10ParametersV14callingAirline0D11Application17inboundFlightDate0gH6Number08outboundhI00khJ07projectACSS_S6Stcfc",
+            "mangledName": "$s19AviationAccelerator10ParametersV14callingAirline0D11Application17inboundFlightDate0gH6Number08outboundhI00khJ07projectACSS_S6Stcfc",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Parameters",
+                "printedName": "AviationAccelerator.Parameters",
+                "usr": "s:19AviationAccelerator10ParametersV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator10ParametersV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s19AviationAccelerator10ParametersV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator10ParametersV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s19AviationAccelerator10ParametersV6encode2toys7Encoder_p_tKF",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19AviationAccelerator10ParametersV",
+        "mangledName": "$s19AviationAccelerator10ParametersV",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AviationAcceleratorState",
+        "printedName": "AviationAcceleratorState",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "online",
+            "printedName": "online",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AviationAccelerator.AviationAcceleratorState.Type) -> AviationAccelerator.AviationAcceleratorState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AviationAcceleratorState",
+                    "printedName": "AviationAccelerator.AviationAcceleratorState",
+                    "usr": "s:19AviationAccelerator0aB5StateO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AviationAccelerator.AviationAcceleratorState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AviationAcceleratorState",
+                        "printedName": "AviationAccelerator.AviationAcceleratorState",
+                        "usr": "s:19AviationAccelerator0aB5StateO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AviationAccelerator0aB5StateO6onlineyA2CmF",
+            "mangledName": "$s19AviationAccelerator0aB5StateO6onlineyA2CmF",
+            "moduleName": "AviationAccelerator"
+          },
+          {
+            "kind": "Var",
+            "name": "flightUpdatesOnly",
+            "printedName": "flightUpdatesOnly",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AviationAccelerator.AviationAcceleratorState.Type) -> AviationAccelerator.AviationAcceleratorState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AviationAcceleratorState",
+                    "printedName": "AviationAccelerator.AviationAcceleratorState",
+                    "usr": "s:19AviationAccelerator0aB5StateO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AviationAccelerator.AviationAcceleratorState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AviationAcceleratorState",
+                        "printedName": "AviationAccelerator.AviationAcceleratorState",
+                        "usr": "s:19AviationAccelerator0aB5StateO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AviationAccelerator0aB5StateO17flightUpdatesOnlyyA2CmF",
+            "mangledName": "$s19AviationAccelerator0aB5StateO17flightUpdatesOnlyyA2CmF",
+            "moduleName": "AviationAccelerator"
+          },
+          {
+            "kind": "Var",
+            "name": "manualGateSelection",
+            "printedName": "manualGateSelection",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AviationAccelerator.AviationAcceleratorState.Type) -> AviationAccelerator.AviationAcceleratorState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AviationAcceleratorState",
+                    "printedName": "AviationAccelerator.AviationAcceleratorState",
+                    "usr": "s:19AviationAccelerator0aB5StateO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AviationAccelerator.AviationAcceleratorState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AviationAcceleratorState",
+                        "printedName": "AviationAccelerator.AviationAcceleratorState",
+                        "usr": "s:19AviationAccelerator0aB5StateO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:19AviationAccelerator0aB5StateO19manualGateSelectionyA2CmF",
+            "mangledName": "$s19AviationAccelerator0aB5StateO19manualGateSelectionyA2CmF",
+            "moduleName": "AviationAccelerator"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AviationAccelerator.AviationAcceleratorState?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AviationAcceleratorState",
+                    "printedName": "AviationAccelerator.AviationAcceleratorState",
+                    "usr": "s:19AviationAccelerator0aB5StateO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator0aB5StateO8rawValueACSgSS_tcfc",
+            "mangledName": "$s19AviationAccelerator0aB5StateO8rawValueACSgSS_tcfc",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19AviationAccelerator0aB5StateO8rawValueSSvp",
+            "mangledName": "$s19AviationAccelerator0aB5StateO8rawValueSSvp",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AviationAccelerator0aB5StateO8rawValueSSvg",
+                "mangledName": "$s19AviationAccelerator0aB5StateO8rawValueSSvg",
+                "moduleName": "AviationAccelerator",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "allCases",
+            "printedName": "allCases",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[AviationAccelerator.AviationAcceleratorState]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AviationAcceleratorState",
+                    "printedName": "AviationAccelerator.AviationAcceleratorState",
+                    "usr": "s:19AviationAccelerator0aB5StateO"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19AviationAccelerator0aB5StateO8allCasesSayACGvpZ",
+            "mangledName": "$s19AviationAccelerator0aB5StateO8allCasesSayACGvpZ",
+            "moduleName": "AviationAccelerator",
+            "static": true,
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[AviationAccelerator.AviationAcceleratorState]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AviationAcceleratorState",
+                        "printedName": "AviationAccelerator.AviationAcceleratorState",
+                        "usr": "s:19AviationAccelerator0aB5StateO"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AviationAccelerator0aB5StateO8allCasesSayACGvgZ",
+                "mangledName": "$s19AviationAccelerator0aB5StateO8allCasesSayACGvgZ",
+                "moduleName": "AviationAccelerator",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:19AviationAccelerator0aB5StateO",
+        "mangledName": "$s19AviationAccelerator0aB5StateO",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CaseIterable",
+            "printedName": "CaseIterable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "AllCases",
+                "printedName": "AllCases",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[AviationAccelerator.AviationAcceleratorState]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AviationAcceleratorState",
+                        "printedName": "AviationAccelerator.AviationAcceleratorState",
+                        "usr": "s:19AviationAccelerator0aB5StateO"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s12CaseIterableP",
+            "mangledName": "$ss12CaseIterableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AAConstants",
+        "printedName": "AAConstants",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "EXTRAS_DCI_AVAILABLE_KEY",
+            "printedName": "EXTRAS_DCI_AVAILABLE_KEY",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19AviationAccelerator11AAConstantsV24EXTRAS_DCI_AVAILABLE_KEYSSvpZ",
+            "mangledName": "$s19AviationAccelerator11AAConstantsV24EXTRAS_DCI_AVAILABLE_KEYSSvpZ",
+            "moduleName": "AviationAccelerator",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AviationAccelerator11AAConstantsV24EXTRAS_DCI_AVAILABLE_KEYSSvgZ",
+                "mangledName": "$s19AviationAccelerator11AAConstantsV24EXTRAS_DCI_AVAILABLE_KEYSSvgZ",
+                "moduleName": "AviationAccelerator",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "EXTRAS_JOURNEY_KEY",
+            "printedName": "EXTRAS_JOURNEY_KEY",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19AviationAccelerator11AAConstantsV18EXTRAS_JOURNEY_KEYSSvpZ",
+            "mangledName": "$s19AviationAccelerator11AAConstantsV18EXTRAS_JOURNEY_KEYSSvpZ",
+            "moduleName": "AviationAccelerator",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AviationAccelerator11AAConstantsV18EXTRAS_JOURNEY_KEYSSvgZ",
+                "mangledName": "$s19AviationAccelerator11AAConstantsV18EXTRAS_JOURNEY_KEYSSvgZ",
+                "moduleName": "AviationAccelerator",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "EXTRAS_ECCENABLED_KEY",
+            "printedName": "EXTRAS_ECCENABLED_KEY",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:19AviationAccelerator11AAConstantsV21EXTRAS_ECCENABLED_KEYSSvpZ",
+            "mangledName": "$s19AviationAccelerator11AAConstantsV21EXTRAS_ECCENABLED_KEYSSvpZ",
+            "moduleName": "AviationAccelerator",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:19AviationAccelerator11AAConstantsV21EXTRAS_ECCENABLED_KEYSSvgZ",
+                "mangledName": "$s19AviationAccelerator11AAConstantsV21EXTRAS_ECCENABLED_KEYSSvgZ",
+                "moduleName": "AviationAccelerator",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19AviationAccelerator11AAConstantsV",
+        "mangledName": "$s19AviationAccelerator11AAConstantsV",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FlightRegistrationData",
+        "printedName": "FlightRegistrationData",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(callingAirline:callingApplication:inboundFlightDate:inboundFlightNumber:outboundFlightDate:outboundFlightNumber:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlightRegistrationData",
+                "printedName": "AviationAccelerator.FlightRegistrationData",
+                "usr": "s:19AviationAccelerator22FlightRegistrationDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator22FlightRegistrationDataV14callingAirline0F11Application07inboundC4Date0iC6Number08outboundcJ00lcK0ACSS_SS10Foundation0J0VSSALSStcfc",
+            "mangledName": "$s19AviationAccelerator22FlightRegistrationDataV14callingAirline0F11Application07inboundC4Date0iC6Number08outboundcJ00lcK0ACSS_SS10Foundation0J0VSSALSStcfc",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlightRegistrationData",
+                "printedName": "AviationAccelerator.FlightRegistrationData",
+                "usr": "s:19AviationAccelerator22FlightRegistrationDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator22FlightRegistrationDataV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s19AviationAccelerator22FlightRegistrationDataV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator22FlightRegistrationDataV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s19AviationAccelerator22FlightRegistrationDataV6encode2toys7Encoder_p_tKF",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19AviationAccelerator22FlightRegistrationDataV",
+        "mangledName": "$s19AviationAccelerator22FlightRegistrationDataV",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FlightRegistrationDataV2",
+        "printedName": "FlightRegistrationDataV2",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(project:registrationConfig:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlightRegistrationDataV2",
+                "printedName": "AviationAccelerator.FlightRegistrationDataV2",
+                "usr": "s:19AviationAccelerator24FlightRegistrationDataV2V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[AviationAccelerator.FlightParameters]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlightParameters",
+                    "printedName": "AviationAccelerator.FlightParameters",
+                    "usr": "s:19AviationAccelerator16FlightParametersV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator24FlightRegistrationDataV2V7project18registrationConfigACSS_SayAA0C10ParametersVGtcfc",
+            "mangledName": "$s19AviationAccelerator24FlightRegistrationDataV2V7project18registrationConfigACSS_SayAA0C10ParametersVGtcfc",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlightRegistrationDataV2",
+                "printedName": "AviationAccelerator.FlightRegistrationDataV2",
+                "usr": "s:19AviationAccelerator24FlightRegistrationDataV2V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator24FlightRegistrationDataV2V4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s19AviationAccelerator24FlightRegistrationDataV2V4fromACs7Decoder_p_tKcfc",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator24FlightRegistrationDataV2V6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s19AviationAccelerator24FlightRegistrationDataV2V6encode2toys7Encoder_p_tKF",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19AviationAccelerator24FlightRegistrationDataV2V",
+        "mangledName": "$s19AviationAccelerator24FlightRegistrationDataV2V",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FlightRegistrationHandler",
+        "printedName": "FlightRegistrationHandler",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "flightRegistered",
+            "printedName": "flightRegistered(registration:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RegistrationResponse",
+                "printedName": "AviationAccelerator.RegistrationResponse",
+                "usr": "s:19AviationAccelerator20RegistrationResponseC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator25FlightRegistrationHandlerP16flightRegistered12registrationyAA0D8ResponseC_tF",
+            "mangledName": "$s19AviationAccelerator25FlightRegistrationHandlerP16flightRegistered12registrationyAA0D8ResponseC_tF",
+            "moduleName": "AviationAccelerator",
+            "genericSig": "<τ_0_0 where τ_0_0 : AviationAccelerator.FlightRegistrationHandler>",
+            "sugared_genericSig": "<Self where Self : AviationAccelerator.FlightRegistrationHandler>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "flightRegistrationError",
+            "printedName": "flightRegistrationError(error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LivingMapError",
+                "printedName": "LivingMapSDK.LivingMapError",
+                "usr": "s:12LivingMapSDK0aB5ErrorC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator25FlightRegistrationHandlerP06flightD5Error5errory12LivingMapSDK0ijG0C_tF",
+            "mangledName": "$s19AviationAccelerator25FlightRegistrationHandlerP06flightD5Error5errory12LivingMapSDK0ijG0C_tF",
+            "moduleName": "AviationAccelerator",
+            "genericSig": "<τ_0_0 where τ_0_0 : AviationAccelerator.FlightRegistrationHandler>",
+            "sugared_genericSig": "<Self where Self : AviationAccelerator.FlightRegistrationHandler>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:19AviationAccelerator25FlightRegistrationHandlerP",
+        "mangledName": "$s19AviationAccelerator25FlightRegistrationHandlerP",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RegistrationResponse",
+        "printedName": "RegistrationResponse",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RegistrationResponse",
+                "printedName": "AviationAccelerator.RegistrationResponse",
+                "usr": "s:19AviationAccelerator20RegistrationResponseC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator20RegistrationResponseC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s19AviationAccelerator20RegistrationResponseC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "declAttributes": [
+              "Required"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator20RegistrationResponseC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s19AviationAccelerator20RegistrationResponseC6encode2toys7Encoder_p_tKF",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19AviationAccelerator20RegistrationResponseC",
+        "mangledName": "$s19AviationAccelerator20RegistrationResponseC",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LMAAConfig",
+        "printedName": "LMAAConfig",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(mapDesignator:mapSize:viewController:authenticationParameters:flightRegistrationData:customParameters:gateInitialisedLocation:loggingEnabled:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LMAAConfig",
+                "printedName": "AviationAccelerator.LMAAConfig",
+                "usr": "s:19AviationAccelerator10LMAAConfigC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MapDesignator",
+                "printedName": "AviationAccelerator.MapDesignator",
+                "usr": "s:19AviationAccelerator13MapDesignatorC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreFoundation.CGRect?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGRect",
+                    "printedName": "CoreFoundation.CGRect",
+                    "usr": "c:@S@CGRect"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AuthenticationParameters",
+                "printedName": "LivingMapSDK.AuthenticationParameters",
+                "usr": "s:12LivingMapSDK24AuthenticationParametersC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FlightRegistrationData",
+                "printedName": "AviationAccelerator.FlightRegistrationData",
+                "usr": "s:19AviationAccelerator22FlightRegistrationDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSDictionary",
+                "printedName": "Foundation.NSDictionary",
+                "usr": "c:objc(cs)NSDictionary"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator10LMAAConfigC13mapDesignator0D4Size14viewController24authenticationParameters22flightRegistrationData06customJ023gateInitialisedLocation14loggingEnabledAcA03MapE0C_So6CGRectVSgSo06UIViewH0CSg06LivingT3SDK014AuthenticationJ0CAA06FlightlM0VSo12NSDictionaryCSbSgA_tcfc",
+            "mangledName": "$s19AviationAccelerator10LMAAConfigC13mapDesignator0D4Size14viewController24authenticationParameters22flightRegistrationData06customJ023gateInitialisedLocation14loggingEnabledAcA03MapE0C_So6CGRectVSgSo06UIViewH0CSg06LivingT3SDK014AuthenticationJ0CAA06FlightlM0VSo12NSDictionaryCSbSgA_tcfc",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "Builder",
+            "printedName": "Builder",
+            "children": [
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "AviationAccelerator.LMAAConfig.Builder",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderCAEycfc",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderCAEycfc",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "AviationAccelerator.LMAAConfig.Builder",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AviationAccelerator.LMAAConfig?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LMAAConfig",
+                        "printedName": "AviationAccelerator.LMAAConfig",
+                        "usr": "s:19AviationAccelerator10LMAAConfigC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderCyAeCSgcfc",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderCyAeCSgcfc",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Function",
+                "name": "mapDesignator",
+                "printedName": "mapDesignator(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "AviationAccelerator.LMAAConfig.Builder",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MapDesignator",
+                    "printedName": "AviationAccelerator.MapDesignator",
+                    "usr": "s:19AviationAccelerator13MapDesignatorC"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC13mapDesignatoryAeA03MapF0CF",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderC13mapDesignatoryAeA03MapF0CF",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "mapSize",
+                "printedName": "mapSize(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "AviationAccelerator.LMAAConfig.Builder",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGRect",
+                    "printedName": "CoreFoundation.CGRect",
+                    "usr": "c:@S@CGRect"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC7mapSizeyAESo6CGRectVF",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderC7mapSizeyAESo6CGRectVF",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "viewController",
+                "printedName": "viewController(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "AviationAccelerator.LMAAConfig.Builder",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC14viewControlleryAESo06UIViewF0CF",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderC14viewControlleryAESo06UIViewF0CF",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "authenticationParameters",
+                "printedName": "authenticationParameters(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "AviationAccelerator.LMAAConfig.Builder",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AuthenticationParameters",
+                    "printedName": "LivingMapSDK.AuthenticationParameters",
+                    "usr": "s:12LivingMapSDK24AuthenticationParametersC"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC24authenticationParametersyAE12LivingMapSDK014AuthenticationF0CF",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderC24authenticationParametersyAE12LivingMapSDK014AuthenticationF0CF",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "flightRegistrationData",
+                "printedName": "flightRegistrationData(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "AviationAccelerator.LMAAConfig.Builder",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlightRegistrationData",
+                    "printedName": "AviationAccelerator.FlightRegistrationData",
+                    "usr": "s:19AviationAccelerator22FlightRegistrationDataV"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC22flightRegistrationDatayAeA06FlightfG0VF",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderC22flightRegistrationDatayAeA06FlightfG0VF",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "customParameters",
+                "printedName": "customParameters(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "AviationAccelerator.LMAAConfig.Builder",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDictionary",
+                    "printedName": "Foundation.NSDictionary",
+                    "usr": "c:objc(cs)NSDictionary"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC16customParametersyAESo12NSDictionaryCF",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderC16customParametersyAESo12NSDictionaryCF",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "gateInitialisedLocation",
+                "printedName": "gateInitialisedLocation(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "AviationAccelerator.LMAAConfig.Builder",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC23gateInitialisedLocationyAESbF",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderC23gateInitialisedLocationyAESbF",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "loggingEnabled",
+                "printedName": "loggingEnabled(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "AviationAccelerator.LMAAConfig.Builder",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC14loggingEnabledyAESbF",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderC14loggingEnabledyAESbF",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "build",
+                "printedName": "build()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LMAAConfig",
+                    "printedName": "AviationAccelerator.LMAAConfig",
+                    "usr": "s:19AviationAccelerator10LMAAConfigC"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC5buildACyKF",
+                "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderC5buildACyKF",
+                "moduleName": "AviationAccelerator",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "throwing": true,
+                "funcSelfKind": "NonMutating"
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:19AviationAccelerator10LMAAConfigC7BuilderC",
+            "mangledName": "$s19AviationAccelerator10LMAAConfigC7BuilderC",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19AviationAccelerator10LMAAConfigC",
+        "mangledName": "$s19AviationAccelerator10LMAAConfigC",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FlightParameters",
+        "printedName": "FlightParameters",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(callingAirline:callingApplication:inboundFlightDate:inboundFlightNumber:outboundFlightDate:outboundFlightNumber:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlightParameters",
+                "printedName": "AviationAccelerator.FlightParameters",
+                "usr": "s:19AviationAccelerator16FlightParametersV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator16FlightParametersV14callingAirline0E11Application07inboundC4Date0hC6Number08outboundcI00kcJ0ACSS_S5Stcfc",
+            "mangledName": "$s19AviationAccelerator16FlightParametersV14callingAirline0E11Application07inboundC4Date0hC6Number08outboundcI00kcJ0ACSS_S5Stcfc",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FlightParameters",
+                "printedName": "AviationAccelerator.FlightParameters",
+                "usr": "s:19AviationAccelerator16FlightParametersV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator16FlightParametersV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s19AviationAccelerator16FlightParametersV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator16FlightParametersV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s19AviationAccelerator16FlightParametersV6encode2toys7Encoder_p_tKF",
+            "moduleName": "AviationAccelerator",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:19AviationAccelerator16FlightParametersV",
+        "mangledName": "$s19AviationAccelerator16FlightParametersV",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "LivingMapSDK",
+        "printedName": "LivingMapSDK",
+        "declKind": "Import",
+        "moduleName": "AviationAccelerator"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LMAAManager",
+        "printedName": "LMAAManager",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LMAAManager",
+                "printedName": "AviationAccelerator.LMAAManager",
+                "usr": "s:19AviationAccelerator11LMAAManagerC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19AviationAccelerator11LMAAManagerCACycfc",
+            "mangledName": "$s19AviationAccelerator11LMAAManagerCACycfc",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "start",
+            "printedName": "start(eventHandler:lmaaConfig:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LivingMapMappingEvents",
+                "printedName": "LivingMapSDK.LivingMapMappingEvents",
+                "usr": "s:12LivingMapSDK0aB13MappingEventsP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LMAAConfig",
+                "printedName": "AviationAccelerator.LMAAConfig",
+                "usr": "s:19AviationAccelerator10LMAAConfigC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator11LMAAManagerC5start12eventHandler10lmaaConfigy12LivingMapSDK0iJ13MappingEvents_p_AA10LMAAConfigCtKF",
+            "mangledName": "$s19AviationAccelerator11LMAAManagerC5start12eventHandler10lmaaConfigy12LivingMapSDK0iJ13MappingEvents_p_AA10LMAAConfigCtKF",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stop",
+            "printedName": "stop()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator11LMAAManagerC4stopyyF",
+            "mangledName": "$s19AviationAccelerator11LMAAManagerC4stopyyF",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createOfflineCache",
+            "printedName": "createOfflineCache(lmaaConfig:cacheProgressHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LMAAConfig",
+                "printedName": "AviationAccelerator.LMAAConfig",
+                "usr": "s:19AviationAccelerator10LMAAConfigC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineCacheCallback",
+                "printedName": "LivingMapSDK.OfflineCacheCallback",
+                "usr": "s:12LivingMapSDK20OfflineCacheCallbackP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator11LMAAManagerC18createOfflineCache10lmaaConfig20cacheProgressHandleryAA10LMAAConfigC_12LivingMapSDK0eF8Callback_ptF",
+            "mangledName": "$s19AviationAccelerator11LMAAManagerC18createOfflineCache10lmaaConfig20cacheProgressHandleryAA10LMAAConfigC_12LivingMapSDK0eF8Callback_ptF",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearOfflineCache",
+            "printedName": "clearOfflineCache(lmaaConfig:cacheProgressHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LMAAConfig",
+                "printedName": "AviationAccelerator.LMAAConfig",
+                "usr": "s:19AviationAccelerator10LMAAConfigC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OfflineCacheCallback",
+                "printedName": "LivingMapSDK.OfflineCacheCallback",
+                "usr": "s:12LivingMapSDK20OfflineCacheCallbackP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator11LMAAManagerC17clearOfflineCache10lmaaConfig20cacheProgressHandleryAA10LMAAConfigC_12LivingMapSDK0eF8Callback_ptF",
+            "mangledName": "$s19AviationAccelerator11LMAAManagerC17clearOfflineCache10lmaaConfig20cacheProgressHandleryAA10LMAAConfigC_12LivingMapSDK0eF8Callback_ptF",
+            "moduleName": "AviationAccelerator",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getVersion",
+            "printedName": "getVersion()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19AviationAccelerator11LMAAManagerC10getVersionSSyFZ",
+            "mangledName": "$s19AviationAccelerator11LMAAManagerC10getVersionSSyFZ",
+            "moduleName": "AviationAccelerator",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:19AviationAccelerator11LMAAManagerC",
+        "mangledName": "$s19AviationAccelerator11LMAAManagerC",
+        "moduleName": "AviationAccelerator",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
+      "kind": "StringLiteral",
+      "offset": 318,
+      "length": 16,
+      "value": "\"LMAAMapManager\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 496,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 98,
+      "length": 10,
+      "value": "\"floor_id\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 137,
+      "length": 15,
+      "value": "\"location_name\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 173,
+      "length": 7,
+      "value": "\"lm_id\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 98,
+      "length": 10,
+      "value": "\"floor_id\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 137,
+      "length": 15,
+      "value": "\"location_name\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 173,
+      "length": 7,
+      "value": "\"lm_id\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 839,
+      "length": 2,
+      "value": "32"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "kind": "FloatLiteral",
+      "offset": 968,
+      "length": 4,
+      "value": "72.0"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "kind": "StringLiteral",
+      "offset": 1030,
+      "length": 8,
+      "value": "\"E53C00\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "kind": "StringLiteral",
+      "offset": 1097,
+      "length": 8,
+      "value": "\"393939\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "kind": "FloatLiteral",
+      "offset": 1179,
+      "length": 4,
+      "value": "0.33"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "kind": "FloatLiteral",
+      "offset": 1228,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "kind": "FloatLiteral",
+      "offset": 1276,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "kind": "StringLiteral",
+      "offset": 1372,
+      "length": 923,
+      "value": "\"<html>\n    <!-- WKWebView-specific metadata -->\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <head>\n        <style>\n            \/* Remove any default padding *\/\n            * {\n                margin:    0px;\n                padding:   0px;\n            }\n            \/* Aspect-fit the ECC card to the width of its container *\/\n            img {\n                max-width: 100%%;\n                width:     100%%;\n                height:    auto;\n            }\n        <\/style>\n    <\/head>\n    <body>\n        <center>\n            <!-- The id is used to locate the element once the image has loaded -->\n            <img id=\"card\" src=\"%@\">\n        <\/center>\n    <\/body>\n<\/html>\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2418,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "kind": "FloatLiteral",
+      "offset": 2627,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "kind": "StringLiteral",
+      "offset": 213,
+      "length": 8,
+      "value": "\"Online\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "kind": "StringLiteral",
+      "offset": 251,
+      "length": 21,
+      "value": "\"Flight Updates Only\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "kind": "StringLiteral",
+      "offset": 304,
+      "length": 23,
+      "value": "\"Manual Gate Selection\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "kind": "StringLiteral",
+      "offset": 213,
+      "length": 8,
+      "value": "\"Online\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "kind": "StringLiteral",
+      "offset": 251,
+      "length": 21,
+      "value": "\"Flight Updates Only\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "kind": "StringLiteral",
+      "offset": 304,
+      "length": 23,
+      "value": "\"Manual Gate Selection\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
+      "kind": "BooleanLiteral",
+      "offset": 337,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
+      "kind": "StringLiteral",
+      "offset": 373,
+      "length": 34,
+      "value": "\"window.api.fireEvent(\"%@\", %@)\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
+      "kind": "StringLiteral",
+      "offset": 448,
+      "length": 44,
+      "value": "\"{body: '%@', header: '%@', variable: '%@'}\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
+      "kind": "StringLiteral",
+      "offset": 531,
+      "length": 27,
+      "value": "\"SET_MAP_DOWNLOAD_PROGRESS\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
+      "kind": "IntegerLiteral",
+      "offset": 965,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 159,
+      "length": 3,
+      "value": "\"A\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 182,
+      "length": 3,
+      "value": "\"R\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 204,
+      "length": 3,
+      "value": "\"U\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 159,
+      "length": 3,
+      "value": "\"A\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 182,
+      "length": 3,
+      "value": "\"R\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 204,
+      "length": 3,
+      "value": "\"U\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 473,
+      "length": 10,
+      "value": "\"https:\/\/\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 527,
+      "length": 21,
+      "value": "\"X-Living-Map-Origin\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 592,
+      "length": 31,
+      "value": "\"AviationAccelerator\/%@;iOS\/%@\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 667,
+      "length": 6,
+      "value": "5000.0"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 717,
+      "length": 26,
+      "value": "\"yyyy-MM-dd'T'HH:mm:ss'Z'\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 787,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 859,
+      "length": 19,
+      "value": "\"STATUS_BAR_UPDATE\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 922,
+      "length": 29,
+      "value": "\"SHOW_BIG_CONFIRMATION_ALERT\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 995,
+      "length": 21,
+      "value": "\"SHOW_GATE_SELECTION\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1060,
+      "length": 24,
+      "value": "\"SHOW_BIG_LOADING_ALERT\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1150,
+      "length": 25,
+      "value": "\"vector.%@.livingmap.com\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1219,
+      "length": 11,
+      "value": "\"\/data\/url\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1305,
+      "length": 28,
+      "value": "\"livedata2.%@.livingmap.com\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1377,
+      "length": 11,
+      "value": "\"\/register\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1432,
+      "length": 7,
+      "value": "\"\/data\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1505,
+      "length": 32,
+      "value": "\"window.api.fireEvent('%@', %@)\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1581,
+      "length": 28,
+      "value": "\"window.api.fireEvent('%@')\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1637,
+      "length": 160,
+      "value": "\"{\n    exitCallback: api.getCallbackFunction(\"FATAL_ERROR_EXIT_CALLBACK\"),\n    retryCallback: api.getCallbackFunction(\"FATAL_ERROR_RETRY_CALLBACK\")\n}\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1842,
+      "length": 24,
+      "value": "\"SHOW_FATAL_ERROR_ALERT\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1910,
+      "length": 18,
+      "value": "\"GET_ROUTE_STATUS\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1996,
+      "length": 28,
+      "value": "\"FATAL_FAILURE_REGISTRATION\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2068,
+      "length": 23,
+      "value": "\"FATAL_FAILURE_POLLING\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2154,
+      "length": 31,
+      "value": "\"No flight data items returned\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2229,
+      "length": 32,
+      "value": "\"No poll response data received\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2305,
+      "length": 24,
+      "value": "\"No token data received\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2373,
+      "length": 41,
+      "value": "\"Invalid connection status data returned\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2458,
+      "length": 32,
+      "value": "\"Unable to set initial location\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2534,
+      "length": 110,
+      "value": "\"Unable to create route. A user location and departure gate, or arrival gate and departure gate are required!\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2723,
+      "length": 22,
+      "value": "\"BROADCAST_SHOW_POPUP\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2789,
+      "length": 22,
+      "value": "\"BROADCAST_HIDE_POPUP\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2855,
+      "length": 28,
+      "value": "\"FATAL_ERROR_RETRY_CALLBACK\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2927,
+      "length": 27,
+      "value": "\"FATAL_ERROR_EXIT_CALLBACK\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 3035,
+      "length": 27,
+      "value": "\"MAP_DOWNLOAD_FAILED_RETRY\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3139,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 3222,
+      "length": 61,
+      "value": "\"Your departure gate has changed. The new departure gate is:\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 3327,
+      "length": 54,
+      "value": "\"Your gate closure time has changed. The new time is:\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 3460,
+      "length": 14,
+      "value": "\"dciAvailable\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 3524,
+      "length": 9,
+      "value": "\"journey\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 3583,
+      "length": 12,
+      "value": "\"eccEnabled\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/AAPoller.swift",
+      "kind": "IntegerLiteral",
+      "offset": 224,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Extensions\/UIColor+AirlineAccelerator.swift",
+      "kind": "FloatLiteral",
+      "offset": 773,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/ExpressConnectionManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 393,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/ExpressConnectionManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 556,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/ExpressConnectionManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 611,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 196,
+      "length": 12,
+      "value": "\"properties\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 252,
+      "length": 18,
+      "value": "\"connectionStatus\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 317,
+      "length": 20,
+      "value": "\"outboundFlightInfo\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 383,
+      "length": 19,
+      "value": "\"inboundFlightInfo\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 433,
+      "length": 6,
+      "value": "\"gate\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 483,
+      "length": 17,
+      "value": "\"gateClosureTime\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 541,
+      "length": 6,
+      "value": "\"time\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 585,
+      "length": 13,
+      "value": "\"pollingRate\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 628,
+      "length": 5,
+      "value": "\"ecc\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 663,
+      "length": 5,
+      "value": "\"url\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 705,
+      "length": 11,
+      "value": "\"validFrom\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 751,
+      "length": 9,
+      "value": "\"validTo\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 807,
+      "length": 36,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 821,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 842,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 896,
+      "length": 47,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 910,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 934,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 942,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 995,
+      "length": 46,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1009,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1032,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1040,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1097,
+      "length": 60,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1111,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1135,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1156,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1198,
+      "length": 30,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1212,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1227,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1265,
+      "length": 29,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1279,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1286,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1293,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1338,
+      "length": 36,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1352,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1359,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1373,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1416,
+      "length": 34,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1430,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1437,
+      "length": 1,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1449,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAConfig.swift",
+      "kind": "BooleanLiteral",
+      "offset": 854,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAConfig.swift",
+      "kind": "BooleanLiteral",
+      "offset": 901,
+      "length": 5,
+      "value": "false"
+    }
+  ]
+}
