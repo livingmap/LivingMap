@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CPLDataContext.h"
+#import "CPLHeadingEstimate.h"
 
 /**
  * @class CPLHeadingEstimation
@@ -34,6 +35,6 @@
  *         HeadingEstimationException, NonRecoverableException
  * @return Heading estimate in radians.
  */
-- (double) calculateHeadingEstimate;
+- (CPLHeadingEstimate*) calculateHeadingEstimate;
 
 @end

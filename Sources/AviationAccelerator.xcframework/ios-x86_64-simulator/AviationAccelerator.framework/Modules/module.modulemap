@@ -6,6 +6,6 @@ framework module AviationAccelerator {
 }
 
 module AviationAccelerator.Swift {
-    header "AviationAccelerator-Swift.h"
-    requires objc
+  header "AviationAccelerator-Swift.h"
+  requires objc
 }
