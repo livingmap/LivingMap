@@ -122,7 +122,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Jdbyrfu/JCyhAVQ+Q9jeH1JWRFA=
+		yu83BdVX8iysmdOril6KaH2Vl8g=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>LMActivityClassifier.mlmodelc/coremldata.bin</key>
 		<data>
-		6HCZ2fsgq8VmFn7s2RmBPnogewE=
+		Elqb10efynvCZ/T2o0+X2mdb9IM=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<data>
@@ -166,19 +166,19 @@
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		3IkK2HhaDNpExvrW+K8ksYCaS6Y=
+		9JXfJJ1vucz4LU5PbXpdjKxrHOw=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		0isMSelL/Mo38TS9WMV1o9e7LWI=
+		5kuNvCoLLKG8ep8VxiqJaC9ernI=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		3IkK2HhaDNpExvrW+K8ksYCaS6Y=
+		9JXfJJ1vucz4LU5PbXpdjKxrHOw=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		app11y2/7QkC+Aay+qeIaG9ergk=
+		3bre25n/FJw8lak2b/p3LU/YC+w=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -405,7 +405,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			V2tZbPvu1+v8JGhEWSi7ASQNJ3Ie0n59oY4qmmV4hpM=
+			B1zzXv45/V7+vo3rHsXMamsBScxufxEE+DFwI56aTwQ=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
@@ -468,28 +468,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eTQtpxB8gEI+yIPNaAJUXJAXHLtKN+AybKQGIprFi1I=
+			4gSFlJyyeNAsvDTNltD4X3zfWk00JRskx9VFLM4Yvd0=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sZ/eEi5zoppjlySF6octADeJtsbCRJzVt5u3rA1TkLM=
+			3kLYwuQyKyXnT26O/OhuqI+/pBVyV8K+GNsLpLlUgZ8=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eTQtpxB8gEI+yIPNaAJUXJAXHLtKN+AybKQGIprFi1I=
+			4gSFlJyyeNAsvDTNltD4X3zfWk00JRskx9VFLM4Yvd0=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dk4sGdW2eb9eU1bLXx5Vidzj9to7sO7BFS5mmxgJdBw=
+			pcpXLMlVxppqPXehK+1NVISbuPlWi6Nlwm3x6szAmW0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
