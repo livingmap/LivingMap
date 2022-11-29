@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CalibrationMatrices.h"
 
 /**
  * @class CPLDataContext
@@ -16,6 +17,7 @@
 
 #ifdef __cplusplus
 @property (unsafe_unretained,assign,atomic) std::shared_ptr<cpl::DataContext> dataContext;
+@property (unsafe_unretained,assign,atomic) cpl::CalibrationMatrices matrices;
 #endif
 
 /**
@@ -28,13 +30,22 @@
  * Once extracted, the configuration data contain with in the `Calibration` json object is used to configure how this class calibrates
  * data provided to it.
  * @brief Configures how data calibration operates.
- * @param configFilePath: File path of the main run config.
+ * @param configFilePath : File path of the main run config.
  */
 - (void) setCalibrationConfig:(NSString*) configFilePath;
 
 /**
+ * Given a file path pointing to the main cpl run config, this function deserialises and extracts the appropriate information stored.
+ * Once extracted, the configuration data contain with in the `Calibration` json object is used to configure how this class calibrates
+ * data provided to it.
+ * @brief Configures how data calibration operates.
+ * @param configFilePath : File path of the main run config.
+ */
+- (void) setCalibrationMatrices:(CalibrationMatrices*) calibrationMatrices;
+
+/**
  * @brief Stores the provided data.
- * @param calibratedMagData: An array of CPLDeviceReading objects that contain mag data.
+ * @param calibratedMagData : An array of CPLDeviceReading objects that contain mag data.
  * @throws DataAlreadyUploadedException
  * @return A reference to this object.
  */
@@ -42,7 +53,7 @@
 
 /**
  * @brief Stores the provided data.
- * @param accelerometerData: An array of CPLDeviceReading objects that contain acceleration data.
+ * @param accelerometerData : An array of CPLDeviceReading objects that contain acceleration data.
  * @throws DataAlreadyUploadedException
  * @return A reference to this object.
  */
@@ -50,7 +61,7 @@
 
 /**
  * @brief Stores the provided data.
- * @param gravityData: An array of CPLDeviceReading objects that contain gravity data.
+ * @param gravityData : An array of CPLDeviceReading objects that contain gravity data.
  * @throws DataAlreadyUploadedException
  * @return A reference to this object.
  */
@@ -58,7 +69,7 @@
 
 /**
  * @brief Stores the provided data.
- * @param gyroscopeData: An array of CPLDeviceReading objects that contain gyroscope data.
+ * @param gyroscopeData : An array of CPLDeviceReading objects that contain gyroscope data.
  * @throws DataAlreadyUploadedException
  * @return A reference to this object.
  */
@@ -66,7 +77,7 @@
 
 /**
  * @brief Stores the provided data.
- * @param pressureData: An array of CPLDeviceReading objects that contain pressure data.
+ * @param pressureData : An array of CPLDeviceReading objects that contain pressure data.
  * @throws DataAlreadyUploadedException
  * @return A reference to this object.
  */
@@ -80,9 +91,9 @@
 
 /**
  * @brief Synchronises the data currently stored in this object.
- * @param stepStartTime: start time (seconds)
- * @param stepEndTime: end time (seconds)
- * @param syncTimeInterval: required time between readings (seconds)
+ * @param stepStartTime : start time (seconds)
+ * @param stepEndTime : end time (seconds)
+ * @param syncTimeInterval : required time between readings (seconds)
  * @throws SynchronizationException
  * @return A reference to this object.
  */

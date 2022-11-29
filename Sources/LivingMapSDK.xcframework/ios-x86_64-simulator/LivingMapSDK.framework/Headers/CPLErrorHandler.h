@@ -22,6 +22,11 @@ static CplException const _Nonnull CplExceptionFloorEstimatorException = @"Floor
 static CplException const _Nonnull CplExceptionNoStepLengthEstimatorException = @"NoStepLengthEstimatorException";
 static CplException const _Nonnull CplExceptionStepLengthEstimatorException = @"StepLengthEstimatorException";
 static CplException const _Nonnull CplExceptionNonRecoverableException = @"NonRecoverableException";
+static CplException const _Nonnull CplExceptionNoMagCalibratorException = @"NoMagCalibratorException";
+static CplException const _Nonnull CplExceptionMagCalibratorException = @"MagCalibratorException";
+static CplException const _Nonnull MagnetometerCalibratorInsufficientDataException = @"MagnetometerCalibratorInsufficientDataException";
+static CplException const _Nonnull MagnetometerCalibratorNotInitializedException = @"MagnetometerCalibratorNotInitializedException";
+static CplException const _Nonnull MagnetometerCalibratorFailureException = @"MagnetometerCalibratorFailureException";
 
 /**
  * Implemented to catch thrown errors from the C++ based Common Positioning Library.

@@ -1,0 +1,16 @@
+//
+//  CPLResetFlag.h
+//  LivingMapSDK
+//
+//  Copyright © 2022 LivingMap. All rights reserved.
+//
+
+typedef enum {
+    RF_NONE,
+    RF_DEFAULT,
+    RF_ALLOW_FULL_GRID_INITIALIZATION,
+    RF_USE_NEAREST_ENTRY_POINT,
+    RF_REACHABLE_FROM_RESET_LOCATION,
+    RF_REACHABLE_FROM_CURRENT_LOCATION,
+    RF_REACHABLE_FROM_CHECKPOINT_LOCATION
+}CPLResetFlag;
