@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios13.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LivingMapSDK
+// swift-module-flags: -target arm64-apple-ios13.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LivingMapSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Accelerate
 import Combine
@@ -3416,11 +3416,12 @@ public class LivingMapSDKManager {
   public init()
   @discardableResult
   public func createMapComponent(mapConfig: LivingMapSDK.LivingMapConfig, lmLivePositioningConfig: LivingMapSDK.LMLivePositioningConfig?, cacheManifest: LivingMapSDK.CacheManifest) -> WebKit.WKWebView?
-  public func initPositioningSystem(withLiveDataUploads: Swift.Bool, livePositioningConfig: LivingMapSDK.LMLivePositioningConfig?, mapConfig: LivingMapSDK.LivingMapConfig, eventHandler: LivingMapSDK.LivingMapPositioningEvents, cacheManifest: LivingMapSDK.CacheManifest, simulationFilePath: Foundation.URL?)
+  public func initPositioningSystem(withLiveDataUploads: Swift.Bool, livePositioningConfig: LivingMapSDK.LMLivePositioningConfig?, mapConfig: LivingMapSDK.LivingMapConfig, eventHandler: LivingMapSDK.LivingMapPositioningEvents, cacheManifest: LivingMapSDK.CacheManifest)
   public func deinitPositioningSystem()
   public func deinitMapComponent()
   public func startScanning()
   public func stopScanning()
+  public func setSimulationFilePath(_ simulationFilePath: Foundation.URL?)
   public func addLivingMapInterface(interface: LivingMapSDK.LivingMapInterface)
   public func removeLivingMapInterface(interface: LivingMapSDK.LivingMapInterface)
   public func requestLocationSubscription(listener: LivingMapSDK.LivingMapLocationListener)
@@ -3960,7 +3961,7 @@ extension LivingMapSDK.LMSensorUpdateFrequencies {
     public var altimeter: Foundation.TimeInterval
     public var locationAccuracy: CoreLocation.CLLocationAccuracy
     public var distanceFilter: CoreLocation.CLLocationDistance
-    public init(accelerometer: Foundation.TimeInterval = 0.02, gyro: Foundation.TimeInterval = 0.02, mag: Foundation.TimeInterval = 0.02, device: Foundation.TimeInterval = 0.02, altimeter: Foundation.TimeInterval = 0.02, locationAccuracy: CoreLocation.CLLocationAccuracy = kCLLocationAccuracyBest, distanceFilter: CoreLocation.CLLocationDistance = kCLDistanceFilterNone)
+    public init(accelerometer: Foundation.TimeInterval = 0.02, gyro: Foundation.TimeInterval = 0.02, mag: Foundation.TimeInterval = 0.02, device: Foundation.TimeInterval = 0.02, altimeter: Foundation.TimeInterval = 0.01, locationAccuracy: CoreLocation.CLLocationAccuracy = kCLLocationAccuracyBest, distanceFilter: CoreLocation.CLLocationDistance = kCLDistanceFilterNone)
     public func encode(to encoder: Swift.Encoder) throws
     public init(from decoder: Swift.Decoder) throws
   }
