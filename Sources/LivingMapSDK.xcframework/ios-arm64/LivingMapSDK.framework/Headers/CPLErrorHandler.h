@@ -26,7 +26,7 @@ static CplException const _Nonnull CplExceptionNoMagCalibratorException = @"NoMa
 static CplException const _Nonnull CplExceptionMagCalibratorException = @"MagCalibratorException";
 static CplException const _Nonnull CplExceptionMagnetometerCalibratorInsufficientDataException = @"MagnetometerCalibratorInsufficientDataException";
 static CplException const _Nonnull CplExceptionMagnetometerCalibratorNotInitializedException = @"MagnetometerCalibratorNotInitializedException";
-static CplException const _Nonnull CplExceptionMagnetometerCalibratorFailureException = @"MagnetometerCalibratorFailureException";
+static CplException const _Nonnull CplExceptionMagnetometerCalibratorFailureException = @"terCalibrator38MagnetometerCalibratorFailureException";
 
 /**
  * Implemented to catch thrown errors from the C++ based Common Positioning Library.
