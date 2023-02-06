@@ -247,3 +247,7 @@ In order to support Android APi 28 and above the SDKs have been compiled with th
 android.useAndroidX=true
 android.enableJetifier=true
 ```
+
+### - Instantiation and Use
+
+Please refer to this document for [iOS](https://github.com/livingmap/LivingMap/tree/main/Documentation/iOSInstantiation.md)
