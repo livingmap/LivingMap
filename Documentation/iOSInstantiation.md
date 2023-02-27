@@ -1,6 +1,6 @@
 # Instantiating the Living Map Aviation Accelerator
 
-## AviationAccelerator v11.3.2
+## AviationAccelerator v11.3.3
 
 ## iOS SDK
 Airline / Airport specific journeys
@@ -38,7 +38,7 @@ The AviationAccelerator is targeted to run on iOS v13.0.0+. The following are th
 
 ## Dependencies
 
-- LivingMapSDK 11.3.2
+- LivingMapSDK 11.3.3
 
 It is possible to integrate the AviationAccelerator and associated dependencies via Carthage, Swift Package Manager, CocoaPods, or manually. For further details please refer to the [LivingMap distribution repo](https://github.com/livingmap/LivingMap) or use the below integration guides. Please note the defined dependency versions are required.
 
@@ -50,8 +50,8 @@ Carthage is a decentralized dependency manager that builds your dependencies and
 
 An example Cartfile is as follows:
 
-	binary "https://raw.githubusercontent.com/livingmap/distribution-iOS/main/LivingMapSDK.json" == 11.3.2
-	binary "https://raw.githubusercontent.com/livingmap/distribution-iOS/main/AviationAccelerator.json" == 11.3.2
+	binary "https://raw.githubusercontent.com/livingmap/distribution-iOS/main/LivingMapSDK.json" == 11.3.3
+	binary "https://raw.githubusercontent.com/livingmap/distribution-iOS/main/AviationAccelerator.json" == 11.3.3
 
 
 Due to the LivingMapSDK being a dependency of the AviationAccelerator, it is required to be loaded in via the cartfile the same way the AviationAccelerator is.
@@ -88,8 +88,8 @@ Use the following as an example:
 
 	target 'testApp' do
     	use_frameworks!
-    	pod 'LivingMapSDK', '11.3.2'
-    	pod 'AviationAccelerator', '11.3.2'
+    	pod 'LivingMapSDK', '11.3.3'
+    	pod 'AviationAccelerator', '11.3.3'
 	end
 
 
@@ -109,7 +109,7 @@ Adding the AviationAccelerator and its dependencies can be done through Xcode in
 
 - In Xcode, navigate to `File -> Add Packages`
 - Search using `https://github.com/livingmap/LivingMap` to find the LivingMap Package
-- Select the LivingMap package, set the version to v11.3.2 or branch to  main and click Add Package
+- Select the LivingMap package, set the version to v11.3.3 or branch to  main and click Add Package
 
 ---
 
@@ -354,3 +354,11 @@ Warnings are raised for information only and don’t require the SDK to be stopp
 Due to the sensory requirements of the AviationAccelerator, it is required that device calibration is completed when prompted. Calibration of a device is handled by the AviationAccelerator and a popup will be shown over the map when calibration is detected to be required.
 
 If the cancel button is selected, then the SDK will rely on the device's calibrated sensor values, whose quality varies by device and whether the phone has been online long enough to self-calibrate successfully. It is recommended that the user is encouraged to perform calibration at this stage.
+
+# Known Issues 
+
+1- map won't load on (ios < 13.4 and iOS 14.x.x ) due to a safari issue with the tiles loading (emulator tested only).
+
+<B><i> detalis </i></B>: 
+LivingMapSDKs map webview uses third party dependency mapbox.
+[mapbox](https://www.mapbox.com) faces some issues with safai application in certain versions of xcode emulators, [problem report](https://github.com/mapbox/mapbox-gl-js/issues/10260). the problem been fixed in iOS 15 emulators.
