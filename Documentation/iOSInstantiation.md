@@ -357,8 +357,8 @@ If the cancel button is selected, then the SDK will rely on the device's calibra
 
 # Known Issues 
 
-1- map won't load on (ios < 13.4 and iOS 14.x.x ) due to a Safari issue with the tiles loading (emulator tested only).
+1- map won't load on (iOS < 13.4 and iOS 14.x.x ) due to a Safari issue with the tiles loading (emulator tested only).
 
-<B><i> Detalis </i></B>: 
+<B><i> Details </i></B>: 
 LivingMapSDKs map webview uses third party dependency mapbox.
 [mapbox](https://www.mapbox.com) faces some issues with Safari application in certain versions of xcode emulators, [problem report](https://github.com/mapbox/mapbox-gl-js/issues/10260). The problem been fixed in iOS 15 emulators.
