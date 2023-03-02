@@ -2087,861 +2087,861 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "StringLiteral",
       "offset": 318,
       "length": 16,
       "value": "\"LMAAMapManager\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "BooleanLiteral",
       "offset": 496,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
       "kind": "StringLiteral",
       "offset": 98,
       "length": 10,
       "value": "\"floor_id\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
       "kind": "StringLiteral",
       "offset": 137,
       "length": 15,
       "value": "\"location_name\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
       "kind": "StringLiteral",
       "offset": 173,
       "length": 7,
       "value": "\"lm_id\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
       "kind": "StringLiteral",
       "offset": 98,
       "length": 10,
       "value": "\"floor_id\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
       "kind": "StringLiteral",
       "offset": 137,
       "length": 15,
       "value": "\"location_name\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/dto\/GateProperties.swift",
       "kind": "StringLiteral",
       "offset": 173,
       "length": 7,
       "value": "\"lm_id\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
       "kind": "IntegerLiteral",
       "offset": 839,
       "length": 2,
       "value": "32"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
       "kind": "FloatLiteral",
       "offset": 968,
       "length": 4,
       "value": "72.0"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
       "kind": "StringLiteral",
       "offset": 1030,
       "length": 8,
       "value": "\"E53C00\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
       "kind": "StringLiteral",
       "offset": 1097,
       "length": 8,
       "value": "\"393939\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
       "kind": "FloatLiteral",
       "offset": 1179,
       "length": 4,
       "value": "0.33"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
       "kind": "FloatLiteral",
       "offset": 1228,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
       "kind": "FloatLiteral",
       "offset": 1276,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
       "kind": "StringLiteral",
       "offset": 1372,
       "length": 923,
       "value": "\"<html>\n    <!-- WKWebView-specific metadata -->\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <head>\n        <style>\n            \/* Remove any default padding *\/\n            * {\n                margin:    0px;\n                padding:   0px;\n            }\n            \/* Aspect-fit the ECC card to the width of its container *\/\n            img {\n                max-width: 100%%;\n                width:     100%%;\n                height:    auto;\n            }\n        <\/style>\n    <\/head>\n    <body>\n        <center>\n            <!-- The id is used to locate the element once the image has loaded -->\n            <img id=\"card\" src=\"%@\">\n        <\/center>\n    <\/body>\n<\/html>\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
       "kind": "BooleanLiteral",
       "offset": 2418,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Views\/ECCPopupView.swift",
       "kind": "FloatLiteral",
       "offset": 2627,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
       "kind": "StringLiteral",
       "offset": 213,
       "length": 8,
       "value": "\"Online\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
       "kind": "StringLiteral",
       "offset": 251,
       "length": 21,
       "value": "\"Flight Updates Only\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
       "kind": "StringLiteral",
       "offset": 304,
       "length": 23,
       "value": "\"Manual Gate Selection\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
       "kind": "StringLiteral",
       "offset": 213,
       "length": 8,
       "value": "\"Online\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
       "kind": "StringLiteral",
       "offset": 251,
       "length": 21,
       "value": "\"Flight Updates Only\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/AviationAcceleratorState.swift",
       "kind": "StringLiteral",
       "offset": 304,
       "length": 23,
       "value": "\"Manual Gate Selection\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
       "kind": "BooleanLiteral",
       "offset": 337,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
       "kind": "StringLiteral",
       "offset": 373,
       "length": 34,
       "value": "\"window.api.fireEvent(\"%@\", %@)\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
       "kind": "StringLiteral",
       "offset": 448,
       "length": 44,
       "value": "\"{body: '%@', header: '%@', variable: '%@'}\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
       "kind": "StringLiteral",
       "offset": 531,
       "length": 27,
       "value": "\"SET_MAP_DOWNLOAD_PROGRESS\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAFrontEndUpdater.swift",
       "kind": "IntegerLiteral",
       "offset": 965,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 159,
       "length": 3,
       "value": "\"A\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 182,
       "length": 3,
       "value": "\"R\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 204,
       "length": 3,
       "value": "\"U\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 159,
       "length": 3,
       "value": "\"A\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 182,
       "length": 3,
       "value": "\"R\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 204,
       "length": 3,
       "value": "\"U\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 473,
       "length": 10,
       "value": "\"https:\/\/\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 527,
       "length": 21,
       "value": "\"X-Living-Map-Origin\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 592,
       "length": 31,
       "value": "\"AviationAccelerator\/%@;iOS\/%@\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "FloatLiteral",
       "offset": 667,
       "length": 6,
       "value": "5000.0"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 717,
       "length": 26,
       "value": "\"yyyy-MM-dd'T'HH:mm:ss'Z'\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 787,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 859,
       "length": 19,
       "value": "\"STATUS_BAR_UPDATE\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 922,
       "length": 29,
       "value": "\"SHOW_BIG_CONFIRMATION_ALERT\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 995,
       "length": 21,
       "value": "\"SHOW_GATE_SELECTION\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1060,
       "length": 24,
       "value": "\"SHOW_BIG_LOADING_ALERT\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1150,
       "length": 25,
       "value": "\"vector.%@.livingmap.com\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1219,
       "length": 11,
       "value": "\"\/data\/url\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1305,
       "length": 28,
       "value": "\"livedata2.%@.livingmap.com\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1377,
       "length": 11,
       "value": "\"\/register\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1432,
       "length": 7,
       "value": "\"\/data\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1505,
       "length": 32,
       "value": "\"window.api.fireEvent('%@', %@)\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1581,
       "length": 28,
       "value": "\"window.api.fireEvent('%@')\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1637,
       "length": 160,
       "value": "\"{\n    exitCallback: api.getCallbackFunction(\"FATAL_ERROR_EXIT_CALLBACK\"),\n    retryCallback: api.getCallbackFunction(\"FATAL_ERROR_RETRY_CALLBACK\")\n}\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1842,
       "length": 24,
       "value": "\"SHOW_FATAL_ERROR_ALERT\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1910,
       "length": 18,
       "value": "\"GET_ROUTE_STATUS\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 1996,
       "length": 28,
       "value": "\"FATAL_FAILURE_REGISTRATION\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2068,
       "length": 23,
       "value": "\"FATAL_FAILURE_POLLING\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2154,
       "length": 31,
       "value": "\"No flight data items returned\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2229,
       "length": 32,
       "value": "\"No poll response data received\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2305,
       "length": 24,
       "value": "\"No token data received\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2373,
       "length": 41,
       "value": "\"Invalid connection status data returned\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2458,
       "length": 32,
       "value": "\"Unable to set initial location\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2534,
       "length": 110,
       "value": "\"Unable to create route. A user location and departure gate, or arrival gate and departure gate are required!\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2723,
       "length": 22,
       "value": "\"BROADCAST_SHOW_POPUP\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2789,
       "length": 22,
       "value": "\"BROADCAST_HIDE_POPUP\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2855,
       "length": 28,
       "value": "\"FATAL_ERROR_RETRY_CALLBACK\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 2927,
       "length": 27,
       "value": "\"FATAL_ERROR_EXIT_CALLBACK\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3035,
       "length": 27,
       "value": "\"MAP_DOWNLOAD_FAILED_RETRY\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "IntegerLiteral",
       "offset": 3139,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3222,
       "length": 61,
       "value": "\"Your departure gate has changed. The new departure gate is:\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3327,
       "length": 54,
       "value": "\"Your gate closure time has changed. The new time is:\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3460,
       "length": 14,
       "value": "\"dciAvailable\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3524,
       "length": 9,
       "value": "\"journey\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Constants.swift",
       "kind": "StringLiteral",
       "offset": 3583,
       "length": 12,
       "value": "\"eccEnabled\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/AAPoller.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/AAPoller.swift",
       "kind": "IntegerLiteral",
       "offset": 224,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Extensions\/UIColor+AirlineAccelerator.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Extensions\/UIColor+AirlineAccelerator.swift",
       "kind": "FloatLiteral",
       "offset": 773,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/ExpressConnectionManager.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/ExpressConnectionManager.swift",
       "kind": "BooleanLiteral",
       "offset": 393,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/ExpressConnectionManager.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/ExpressConnectionManager.swift",
       "kind": "BooleanLiteral",
       "offset": 556,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/ExpressConnectionManager.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/ExpressConnectionManager.swift",
       "kind": "BooleanLiteral",
       "offset": 611,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 196,
       "length": 12,
       "value": "\"properties\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 252,
       "length": 18,
       "value": "\"connectionStatus\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 317,
       "length": 20,
       "value": "\"outboundFlightInfo\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 383,
       "length": 19,
       "value": "\"inboundFlightInfo\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 433,
       "length": 6,
       "value": "\"gate\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 483,
       "length": 17,
       "value": "\"gateClosureTime\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 541,
       "length": 6,
       "value": "\"time\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 585,
       "length": 13,
       "value": "\"pollingRate\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 628,
       "length": 5,
       "value": "\"ecc\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 663,
       "length": 5,
       "value": "\"url\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 705,
       "length": 11,
       "value": "\"validFrom\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 751,
       "length": 9,
       "value": "\"validTo\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 807,
       "length": 36,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 821,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 842,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 896,
       "length": 47,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 910,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 934,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 942,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 995,
       "length": 46,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1009,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1032,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1040,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1097,
       "length": 60,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1111,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1135,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1156,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1198,
       "length": 30,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1212,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1227,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1265,
       "length": 29,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1279,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1286,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1293,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1338,
       "length": 36,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1352,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1359,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1373,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1416,
       "length": 34,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1430,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1437,
       "length": 1,
       "value": "\".\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/Polling\/PollResponseUpdateOptions.swift",
       "kind": "StringLiteral",
       "offset": 1449,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAConfig.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 854,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sohaahmed\/LM\/research\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAConfig.swift",
+      "filePath": "\/Users\/sohaahmed\/LM\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 901,
       "length": 5,

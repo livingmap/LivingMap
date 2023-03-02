@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		MzRjUlgYjgQ+VvLOKKKt8aZgam0=
+		EApx+iZnUy/9a/cz28qG6/Zkn50=
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		SSTZGWQdwNR7ttygCTRuDeUTsH8=
+		+8xuVVnG9CQlwY8BntLsCb1hFEM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,7 +61,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZtOn7GL0vb7AD8eq4ybmy/ZUPK6IF5YL8rjI4MvnQjc=
+			ZlVQ/ChyySqhIUkJArNN6oBII3wdNFMCvvvB/bme+CA=
 			</data>
 		</dict>
 		<key>Modules/AviationAccelerator.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -89,7 +89,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IJR0ZY/ZEElWzO005BMH2mMmdomL3JAzltCaL15Sups=
+			tgQoUFscDL8mmN4X+ZQaz4jHTKSp+evFIKH7FusnGl4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
