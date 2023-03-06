@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-  spec.ios.deployment_target      = '13.4'
+  spec.ios.deployment_target      = '13.0'
   spec.name                       = 'LivingMapSDK'
   spec.version                    = '11.3.3'
   spec.license                    = { 
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.authors                    = { 
     'Living Map' => 'tech@livingmap.com' 
   }
-  spec.summary                    = 'LivingMapSDK 11.3.3 for iOS 13.4 and above'
+  spec.summary                    = 'LivingMapSDK 11.3.3 for iOS 13.0 and above'
   spec.source                     = { :http => 'https://github.com/livingmap/LivingMap/releases/download/11.3.3/LivingMapSDK.xcframework.zip'}
   spec.swift_version              = '5.0'
   spec.frameworks                 = 'WebKit', 'Foundation'
