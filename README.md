@@ -91,8 +91,8 @@ Point to the latest version:-
 Point to the specific version (recommended):-
 
 ```ruby
-    pod 'LivingMapSDK', '11.3.2'
-    pod 'AirlineAccelerator', '11.3.2'
+    pod 'LivingMapSDK', '11.3.3'
+    pod 'AirlineAccelerator', '11.3.3'
 ```
 
 To install or update your new dependencies, from terminal run:
@@ -117,8 +117,8 @@ binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccel
 Point to the specific version (recommended):-
 
 ```ogdl
-binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapSDK.json" == 11.3.2
-binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccelerator.json" == 11.3.2
+binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/LivingMapSDK.json" == 11.3.3
+binary "https://raw.githubusercontent.com/livingmap/LivingMap/main/AviationAccelerator.json" == 11.3.3
 ```
 
 To download the dependencies use the following command in the project directory:
@@ -148,7 +148,7 @@ Adding LivingMapSDKs and its dependencies can be done through Xcode in the follo
 
 - In Xcode, navigate to `File -> Add Packages`
 - Search using `https://github.com/livingmap/LivingMap` to find the LivingMap Package
-- Select the LivingMap package, set the version to v11.3.2 and click Add Project
+- Select the LivingMap package, set the version to v11.3.3 and click Add Project
 
 ### - Android
 
