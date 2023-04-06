@@ -122,7 +122,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		yr5mWiOFCwpX0qphKAD81i9qVWw=
+		lLt65CQLeOUAyNoXzYMz9tbQxW8=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/analytics/coremldata.bin</key>
 		<data>
@@ -130,11 +130,11 @@
 		</data>
 		<key>LMActivityClassifier.mlmodelc/coremldata.bin</key>
 		<data>
-		Elqb10efynvCZ/T2o0+X2mdb9IM=
+		82vZICE4B8nmAvGFnCHfi/lbxK4=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<data>
-		AAhzQgjC8gGpJhLiavwM45HkFO4=
+		LzdRuv8xudLLOSszeM98oq6Q8UA=
 		</data>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.net</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		oc7gFG+L55yx/K2cqLA1niUwA9g=
+		XBLOwJPq38gwOfGDB9lq3AHLLYQ=
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -178,7 +178,7 @@
 		</data>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		aFBfUnTPf+UNxc/Bz6wAQOOKNMQ=
+		ijJ40lSmgn6IwQWuisfkHd2bdtI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -405,14 +405,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			B1zzXv45/V7+vo3rHsXMamsBScxufxEE+DFwI56aTwQ=
+			m3p9LFYefQREbgVIxOqb3+36QX5G0A9gvSf0keGnn3M=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qr2ZzpdncJRNv2C9rayQn0LQqEZ+dV6YToPw6mDrG8I=
+			XQJKYQ3fLbfRyPiVYQC2CrPl9/Aq37S1enTKTcoLQVc=
 			</data>
 		</dict>
 		<key>LMActivityClassifier.mlmodelc/model.espresso.net</key>
@@ -461,7 +461,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7goSlIFusEoEB3+nMrnnDj5PfpjMDSV6HqVpYCw6C1g=
+			VnhTHMqvy1P4AQT/ct4pUXSK6u3inW2LNus/I1ni0gI=
 			</data>
 		</dict>
 		<key>Modules/LivingMapSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -489,7 +489,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8S0qF7uetqexPkA9zzWrR4cml4ciR7hBF4FavG7WeKw=
+			5Sa1ci9+SRFqFgGom2o8/S9Zk7eBWsBt9P1oigy1je0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
