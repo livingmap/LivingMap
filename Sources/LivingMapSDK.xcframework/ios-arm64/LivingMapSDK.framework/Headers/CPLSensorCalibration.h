@@ -8,12 +8,18 @@
 #import <Foundation/Foundation.h>
 #import "CPLDataContext.h"
 #import "CalibrationMatrices.h"
+#import "CalibrationType.h"
+
 /**
  * @class CPLSensorCalibration
  * @brief The CPLSensorCalibration class
  * @discussion Class that interfaces the calibration mechanism provided by the Common Positioning Library.
  */
 @interface CPLSensorCalibration: NSObject
+
+#ifdef __cplusplus
+@property (unsafe_unretained,assign,atomic) cpl::mag_calibration_method_enum calibrationType;
+#endif
 
 /**
  * @brief Creates an instance of a SensorCalibration.
@@ -28,6 +34,6 @@
  */
 - (void) updateMagCalibrationConfig;
 - (CalibrationMatrices*) getMagCalibrationConfig;
-
+- (CalibrationType) getCalibrationType;
 
 @end

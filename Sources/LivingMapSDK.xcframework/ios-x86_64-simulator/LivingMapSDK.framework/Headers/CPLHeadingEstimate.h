@@ -17,6 +17,7 @@
 
 @property (nonatomic, readwrite) double heading;
 @property (nonatomic, readwrite) double accuracy;
+@property (nonatomic, readwrite) double gyro_rotation;
 @property (nonatomic, readwrite) CPLHeadingEstimateType estimateType;
 
 /**
@@ -27,6 +28,7 @@
  */
 - (instancetype) initWithHeading:(double) heading
                         accuracy:(double) accuracy
+                   gyro_rotation:(double) gyro_rotation
                     estimateType:(CPLHeadingEstimateType) estimateType;
 
 @end
