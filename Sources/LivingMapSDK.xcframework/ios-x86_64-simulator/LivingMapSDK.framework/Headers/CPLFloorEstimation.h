@@ -39,9 +39,9 @@
 
 /**
  * @brief Resets the floor estimation system to the provided floor.
- * @param floorId: The current location of the device.
+ * @param location: The current location of the device.
  * @throws DataNotUploadedException, FloorEstimationException, NonRecoverableException
  */
-- (void) resetFloorChangeStatus:(int) floorId;
+- (void) resetFloorChangeStatus:(CPLLocation*) location;
 
 @end
