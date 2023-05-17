@@ -20,6 +20,7 @@
 @property (nonatomic, readwrite) double x;
 @property (nonatomic, readwrite) double y;
 @property (nonatomic, readwrite) int floor;
+@property (nonatomic, readwrite) float subFloor;
 @property (nonatomic, readwrite) double headingDegrees;
 @property (nonatomic, readwrite) double headingRadians;
 @property (nonatomic, readwrite) double accuracy;
@@ -44,6 +45,7 @@
                                          x:(double) x
                                          y:(double) y
                                      floor:(int) floor
+                                  subFloor:(float) subFloor
                             headingDegrees:(double) headingDegrees
                             headingRadians:(double) headingRadians
                                   accuracy:(double) accuracy
