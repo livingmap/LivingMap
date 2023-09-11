@@ -13,9 +13,10 @@ FOUNDATION_EXPORT const unsigned char LivingMapSDKVersionString[];
 #import "CPLLocation.h"
 #import "CPLHeadingEstimate.h"
 #import "CalibrationMatrices.h"
-#import "CPLFloorStatus.h"
+#import "AltitudeStatus.h"
 #import "CPLFloor.h"
 #import "CPLResetFlag.h"
+#import "CalibrationType.h"
 
 #import "CPLVersionInfo.h"
 #import "CPLDataContext.h"

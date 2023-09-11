@@ -13,6 +13,7 @@
 #import "CPLPositioningAction.h"
 #import "CPLResetFlag.h"
 #import "CPLHeadingEstimate.h"
+#import "CPLFloor.h"
 
 /**
  * @class CPLPositioning
@@ -29,6 +30,7 @@
  * @param configFilePath: File path for the main run config.
  * @param gridFilePath: File path for the grid.
  * @param gatewaysFilePath: File path for the gateways.
+ * @param floorHeightsFilePath: File path for the floor heights.
  * @param dataContext: A shared pointer a CPLDataContext object.
  * @param initLocation: Starting location.
  * @throws GridFileException, NoGridFoundException, InitializationException
@@ -36,8 +38,9 @@
 - (instancetype) initWithConfig:(NSString*) configFilePath
                            grid:(NSString*) gridFilePath
                        gateways:(NSString*) gatewaysFilePath
+                   floorHeights:(NSString*) floorHeightsFilePath
                     dataContext:(CPLDataContext*) dataContext
-                  initLocation:(CPLLocation*) initLocation;
+                   initLocation:(CPLLocation*) initLocation;
 
 /**
  * Use this constructor if you don't need or want to initialize the starting grid or location, for example if
@@ -46,12 +49,14 @@
  * @param configFilePath: File path for the main run config.
  * @param gridFilePath: File path for the grid.
  * @param gatewaysFilePath: File path for the gateways.
+ * @param floorHeightsFilePath: File path for the floor heights.
  * @param dataContext: A shared pointer a CPLDataContext object.
  * @throws GridFileException, NoGridFoundException, InitializationException
  */
 - (instancetype) initWithConfig:(NSString*) configFilePath
                            grid:(NSString*) gridFilePath
                        gateways:(NSString*) gatewaysFilePath
+                   floorHeights:(NSString*) floorHeightsFilePath
                     dataContext:(CPLDataContext*) dataContext;
 
 /**
@@ -65,6 +70,15 @@
 - (bool) completeStep:(CPLHeadingEstimate*) SDKHeadingEstimate
            stepLength:(double) stepLength;
 
+/**
+ * @brief Given a route, get the start location of the route. This could be different from the origin location used to location on the route and, get a location on the route that is length meters apart from the start
+ * @param route
+ * @param length
+ * @return the initial and along the route locations stored in NSArray*
+ */
+
+- (NSArray*) getInitialLocationsWithRoute:(NSString*) routeFilePath
+                                   length:(double) length; 
 /**
  * @brief Gets the current location.
  * @return The current best estimated location.
@@ -114,7 +128,7 @@
  *        where the given sigma-rule applies to the initialization_range.
  * @return true if the location was reset successfully, false otherwise
  */
-- (bool) resetLocation:(CPLLocation*) initLocation
+- (bool) resetLocation:(NSArray*) initLocation
              resetFlag: (CPLResetFlag) resetFlag
    initializationRange:(int) initializationRange
              sigmaRule:(int) sigmaRule;
@@ -164,9 +178,11 @@
                        alternativeLocation:(CPLLocation*) alternativeLocation
                               mustBeInside:(bool) mustBeInside;
 
+- (CPLLocation*) chooseAlternativeLocation:(CPLLocation*) alternativeLocation;
+
 /**
  * Inject location - new particles will be generated at the given new location.
- * @param new_location - the location where to inject the particles
+ * @param location - the location where to inject the particles
  * @param likelihood - the proportion of the existing particles to be used in the new location
  * @param range - will inject particles in a circle with a radius of this value
  *        If using a location with an accuracy in metres, this can be used, but check the relevant documentation regarding
@@ -174,12 +190,24 @@
  *        represents 1 standard deviation in metres (the location will be within this distance 68% of the time). In Apple
  *        Core Location, however, the value is said to represent 3 standard deviations (the location will be within the
  *        distance 99.7% of the time).
- * @param sigma_rule - if set to 0, use a uniform distribution for the new particles, otherwise use a normal distribution
+ * @param sigmaRule - if set to 0, use a uniform distribution for the new particles, otherwise use a normal distribution
  *        where the given sigma-rule applies to the initialization_range.
  */
 - (void) injectLocation:(CPLLocation*) location
          withLikelihood:(int) likelihood
                andRange:(int) range
               sigmaRule:(int) sigmaRule;
+
+/**
+ * Check for any nearby landmarks given a FloorStatus object (other info will be used in the future).
+ * If the FloorStatus object suggests that a floor change has occurred, this function will return the endpoint of the
+ * landmark, which will be the starting location on the new floor. This can then be used for a call to `reset_location`. If no
+ * landmark is identified, an empty (non-valid) Location will be returned.
+ * @param floorStatus
+ * @return Location - A location on the landmark, if identified; empty if no landmark identified.
+ */
+- (CPLLocation*) checkLandmarks: (CPLFloor*) floorStatus;
+
+- (CPLLocation*) checkLandmarks;
 
 @end
