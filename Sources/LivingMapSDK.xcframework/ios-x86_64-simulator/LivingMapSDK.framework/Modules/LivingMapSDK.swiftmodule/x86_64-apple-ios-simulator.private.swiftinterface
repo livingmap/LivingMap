@@ -4262,6 +4262,7 @@ public func when(guarantees: [LivingMapSDK.Guarantee<Swift.Void>]) -> LivingMapS
   @_Concurrency.MainActor(unsafe) public func disableClickableAssets()
   @_Concurrency.MainActor(unsafe) public func enableClickableAssets()
   @_Concurrency.MainActor(unsafe) public func onPositioningReady()
+  @_Concurrency.MainActor(unsafe) public func mapClosed()
   @_Concurrency.MainActor(unsafe) public func set(cplCalibrationType: Swift.String)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)

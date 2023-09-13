@@ -1891,133 +1891,133 @@
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "StringLiteral",
-      "offset": 14053,
+      "offset": 14091,
       "length": 20,
       "value": "\"remaining_distance\""
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "StringLiteral",
-      "offset": 14107,
+      "offset": 14145,
       "length": 16,
       "value": "\"remaining_time\""
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "FloatLiteral",
-      "offset": 14164,
+      "offset": 14202,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "FloatLiteral",
-      "offset": 14178,
+      "offset": 14216,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 14293,
+      "offset": 14331,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "StringLiteral",
-      "offset": 20654,
+      "offset": 20692,
       "length": 9,
       "value": "\"payload\""
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "StringLiteral",
-      "offset": 20715,
+      "offset": 20753,
       "length": 13,
       "value": "\"totalLength\""
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "StringLiteral",
-      "offset": 20775,
+      "offset": 20813,
       "length": 11,
       "value": "\"totalTime\""
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 20896,
+      "offset": 20934,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 20954,
-      "length": 2,
-      "value": "-1"
-    },
-    {
-      "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
-      "kind": "StringLiteral",
-      "offset": 21013,
-      "length": 9,
-      "value": "\"UNKNOWN\""
-    },
-    {
-      "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 21090,
-      "length": 2,
-      "value": "-1"
-    },
-    {
-      "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 21151,
+      "offset": 20992,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "StringLiteral",
-      "offset": 21213,
+      "offset": 21051,
       "length": 9,
       "value": "\"UNKNOWN\""
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21315,
+      "offset": 21128,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 21189,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
+      "kind": "StringLiteral",
+      "offset": 21251,
+      "length": 9,
+      "value": "\"UNKNOWN\""
+    },
+    {
+      "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 21353,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21393,
+      "offset": 21431,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21459,
+      "offset": 21497,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 21518,
+      "offset": 21556,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/davidblake\/source\/ios\/ios\/AviationAccelerator\/AviationAccelerator\/LMAAMapManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 21578,
+      "offset": 21616,
       "length": 5,
       "value": "false"
     },
