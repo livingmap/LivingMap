@@ -2718,6 +2718,7 @@ public enum CacheProgress : Swift.String {
 public class LivingMapSDKMCacheManager {
   final public let monitor: LivingMapSDK.ConnectivityMonitor
   public init(authenticationParameters: LivingMapSDK.AuthenticationParameters, monitor: LivingMapSDK.ConnectivityMonitor? = nil)
+  public func mapClosed()
   public func initialiseCache(manifestURL: Swift.String, key: [Swift.String : Swift.String], manifestCallbacks: LivingMapSDK.ManifestCallbacks)
   public func retrieveCacheManifest(manifestURL: Swift.String, key: [Swift.String : Swift.String], manifestCallback: LivingMapSDK.ManifestCallbacks)
   public func getCachedManifests() -> [LivingMapSDK.CacheManifest]
