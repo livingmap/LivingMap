@@ -1,7 +1,7 @@
 framework module AviationAccelerator {
   umbrella header "AviationAccelerator.h"
-
   export *
+
   module * { export * }
 }
 

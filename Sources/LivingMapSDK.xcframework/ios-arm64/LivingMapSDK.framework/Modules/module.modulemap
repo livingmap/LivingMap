@@ -1,7 +1,7 @@
 framework module LivingMapSDK {
   umbrella header "LivingMapSDK.h"
-
   export *
+
   module * { export * }
 }
 
